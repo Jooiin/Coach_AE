@@ -10,12 +10,855 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>NOVA · Disciplinas</title>
+    <title>NOVA · Training</title>
 
     <link
         rel="stylesheet"
-        href="css/training.css"
+        href="css/index.css"
     >
+
+    <style>
+
+        /* =====================================================
+           NOVA · LEGAL MODAL
+        ====================================================== */
+
+        .nova-legal-text {
+
+            max-height:
+                min(
+                    58vh,
+                    620px
+                );
+
+            overflow-y:
+                auto;
+
+            padding-right:
+                10px;
+
+        }
+
+
+        .nova-legal-text::-webkit-scrollbar {
+
+            width:
+                4px;
+
+        }
+
+
+        .nova-legal-text::-webkit-scrollbar-track {
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .04
+                );
+
+            border-radius:
+                20px;
+
+        }
+
+
+        .nova-legal-text::-webkit-scrollbar-thumb {
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .18
+                );
+
+            border-radius:
+                20px;
+
+        }
+
+
+        .nova-legal-text p {
+
+            margin:
+                0 0 18px;
+
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .62
+                );
+
+            font-size:
+                13px;
+
+            line-height:
+                1.75;
+
+        }
+
+
+        .nova-legal-text p:last-child {
+
+            margin-bottom:
+                0;
+
+        }
+
+
+        .nova-legal-heading {
+
+            margin:
+                26px 0 12px;
+
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .9
+                );
+
+            font-size:
+                11px;
+
+            font-weight:
+                700;
+
+            letter-spacing:
+                .12em;
+
+            text-transform:
+                uppercase;
+
+        }
+
+
+        .nova-legal-heading:first-child {
+
+            margin-top:
+                0;
+
+        }
+
+
+        .nova-legal-list {
+
+            display:
+                grid;
+
+            gap:
+                9px;
+
+            margin:
+                0 0 20px;
+
+            padding:
+                0;
+
+            list-style:
+                none;
+
+        }
+
+
+        .nova-legal-list li {
+
+            position:
+                relative;
+
+            padding-left:
+                17px;
+
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .56
+                );
+
+            font-size:
+                12px;
+
+            line-height:
+                1.65;
+
+        }
+
+
+        .nova-legal-list li::before {
+
+            content:
+                "•";
+
+            position:
+                absolute;
+
+            left:
+                0;
+
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .32
+                );
+
+        }
+
+
+        .nova-modal-legal-footer {
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                space-between;
+
+            gap:
+                20px;
+
+            margin-top:
+                28px;
+
+            padding-top:
+                18px;
+
+            border-top:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .08
+                );
+
+        }
+
+
+        .nova-modal-legal-footer span {
+
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .32
+                );
+
+            font-size:
+                9px;
+
+            font-weight:
+                700;
+
+            letter-spacing:
+                .12em;
+
+            text-transform:
+                uppercase;
+
+        }
+
+
+        /* =====================================================
+           NOVA · FAQ MODAL
+        ====================================================== */
+
+        .nova-faq-text {
+
+            max-height:
+                min(
+                    62vh,
+                    650px
+                );
+
+            overflow-y:
+                auto;
+
+            padding-right:
+                8px;
+
+        }
+
+
+        .nova-faq-text::-webkit-scrollbar {
+
+            width:
+                4px;
+
+        }
+
+
+        .nova-faq-text::-webkit-scrollbar-track {
+
+            background:
+                rgba(
+                    0,
+                    0,
+                    0,
+                    .06
+                );
+
+            border-radius:
+                20px;
+
+        }
+
+
+        .nova-faq-text::-webkit-scrollbar-thumb {
+
+            background:
+                rgba(
+                    0,
+                    0,
+                    0,
+                    .18
+                );
+
+            border-radius:
+                20px;
+
+        }
+
+
+        .nova-faq-list {
+
+            display:
+                grid;
+
+            gap:
+                8px;
+
+            margin-top:
+                24px;
+
+        }
+
+
+        .nova-faq-item {
+
+            overflow:
+                hidden;
+
+            border:
+                1px solid
+                rgba(
+                    0,
+                    0,
+                    0,
+                    .09
+                );
+
+            border-radius:
+                16px;
+
+            background:
+                rgba(
+                    0,
+                    0,
+                    0,
+                    .025
+                );
+
+        }
+
+
+        .nova-faq-question {
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                space-between;
+
+            gap:
+                20px;
+
+            width:
+                100%;
+
+            padding:
+                17px 18px;
+
+            border:
+                0;
+
+            background:
+                transparent;
+
+            color:
+                rgba(
+                    0,
+                    0,
+                    0,
+                    .88
+                );
+
+            font-family:
+                inherit;
+
+            font-size:
+                13px;
+
+            font-weight:
+                700;
+
+            line-height:
+                1.45;
+
+            text-align:
+                left;
+
+            cursor:
+                pointer;
+
+        }
+
+
+        .nova-faq-question span {
+
+            flex:
+                1;
+
+        }
+
+
+        .nova-faq-icon {
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            flex:
+                0 0 auto;
+
+            width:
+                26px;
+
+            height:
+                26px;
+
+            border:
+                1px solid
+                rgba(
+                    0,
+                    0,
+                    0,
+                    .12
+                );
+
+            border-radius:
+                50%;
+
+            color:
+                rgba(
+                    0,
+                    0,
+                    0,
+                    .65
+                );
+
+            font-size:
+                16px;
+
+            font-weight:
+                400;
+
+            line-height:
+                1;
+
+            transition:
+                transform .25s ease,
+                background .25s ease,
+                color .25s ease;
+
+        }
+
+
+        .nova-faq-answer {
+
+            display:
+                none;
+
+            padding:
+                0 18px 18px;
+
+        }
+
+
+        .nova-faq-answer p {
+
+            margin:
+                0;
+
+            color:
+                rgba(
+                    0,
+                    0,
+                    0,
+                    .62
+                );
+
+            font-size:
+                12px;
+
+            line-height:
+                1.7;
+
+        }
+
+
+        .nova-faq-item.is-open
+        .nova-faq-answer {
+
+            display:
+                block;
+
+        }
+
+
+        .nova-faq-item.is-open
+        .nova-faq-icon {
+
+            transform:
+                rotate(45deg);
+
+            background:
+                #000;
+
+            color:
+                #fff;
+
+        }
+
+
+        .nova-faq-footer {
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                space-between;
+
+            gap:
+                20px;
+
+            margin-top:
+                24px;
+
+            padding-top:
+                17px;
+
+            border-top:
+                1px solid
+                rgba(
+                    0,
+                    0,
+                    0,
+                    .08
+                );
+
+        }
+
+
+        .nova-faq-footer span {
+
+            color:
+                rgba(
+                    0,
+                    0,
+                    0,
+                    .38
+                );
+
+            font-size:
+                9px;
+
+            font-weight:
+                700;
+
+            letter-spacing:
+                .12em;
+
+            text-transform:
+                uppercase;
+
+        }
+
+
+        @media (max-width: 700px) {
+
+            .nova-legal-text {
+
+                max-height:
+                    55vh;
+
+                padding-right:
+                    3px;
+
+            }
+
+
+            .nova-legal-text p {
+
+                font-size:
+                    12px;
+
+                line-height:
+                    1.7;
+
+                margin-bottom:
+                    16px;
+
+            }
+
+
+            .nova-legal-heading {
+
+                margin-top:
+                    23px;
+
+            }
+
+
+            .nova-modal-legal-footer {
+
+                align-items:
+                    flex-start;
+
+                flex-direction:
+                    column;
+
+                gap:
+                    7px;
+
+            }
+
+
+            .nova-faq-text {
+
+                max-height:
+                    58vh;
+
+                padding-right:
+                    3px;
+
+            }
+
+
+            .nova-faq-list {
+
+                margin-top:
+                    20px;
+
+                gap:
+                    7px;
+
+            }
+
+
+            .nova-faq-question {
+
+                padding:
+                    15px;
+
+                font-size:
+                    12px;
+
+            }
+
+
+            .nova-faq-answer {
+
+                padding:
+                    0 15px 16px;
+
+            }
+
+
+            .nova-faq-answer p {
+
+                font-size:
+                    11.5px;
+
+                line-height:
+                    1.65;
+
+            }
+
+
+            .nova-faq-footer {
+
+                align-items:
+                    flex-start;
+
+                flex-direction:
+                    column;
+
+                gap:
+                    7px;
+
+            }
+
+        }
+
+
+        .nova-legal-text p {
+
+            margin:
+                0 0 18px;
+
+            color:
+                rgba(
+                    0,
+                    0,
+                    0,
+                    .72
+                );
+
+            font-size:
+                13px;
+
+            line-height:
+                1.75;
+
+        }
+
+
+        .nova-legal-heading {
+
+            margin:
+                26px 0 12px;
+
+            color:
+                rgba(
+                    0,
+                    0,
+                    0,
+                    .9
+                );
+
+            font-size:
+                11px;
+
+            font-weight:
+                700;
+
+            letter-spacing:
+                .12em;
+
+            text-transform:
+                uppercase;
+
+        }
+
+
+        .nova-legal-list li {
+
+            position:
+                relative;
+
+            padding-left:
+                17px;
+
+            color:
+                rgba(
+                    0,
+                    0,
+                    0,
+                    .68
+                );
+
+            font-size:
+                12px;
+
+            line-height:
+                1.65;
+
+        }
+
+
+        .nova-legal-list li::before {
+
+            content:
+                "•";
+
+            position:
+                absolute;
+
+            left:
+                0;
+
+            color:
+                rgba(
+                    0,
+                    0,
+                    0,
+                    .4
+                );
+
+        }
+
+
+        .nova-modal-legal-footer span {
+
+            color:
+                rgba(
+                    0,
+                    0,
+                    0,
+                    .4
+                );
+
+            font-size:
+                9px;
+
+            font-weight:
+                700;
+
+            letter-spacing:
+                .12em;
+
+            text-transform:
+                uppercase;
+
+        }
+
+        /* =====================================================
+   NOVA · FAQ PLUS · SIN ANIMACIÓN
+===================================================== */
+
+.nova-faq-question > span:last-child {
+    transition: none !important;
+    transform: none !important;
+}
+
+.nova-faq-item[open] .nova-faq-question > span:last-child {
+    transition: none !important;
+    transform: none !important;
+}
+    </style>
 
 </head>
 
@@ -27,24 +870,24 @@
 
     <div
         class="nova-page-transition"
-        id="pageTransition"
+        id="novaPageTransition"
         aria-hidden="true"
     >
 
         <div class="nova-page-transition-inner">
 
-            <div class="nova-page-transition-brand">
+            <span class="nova-page-transition-brand">
                 NOVA
-            </div>
+            </span>
 
-            <div class="nova-page-transition-line"></div>
+            <span class="nova-page-transition-line"></span>
 
-            <div
+            <span
                 class="nova-page-transition-label"
-                id="pageTransitionLabel"
+                id="novaPageTransitionLabel"
             >
                 CARGANDO
-            </div>
+            </span>
 
         </div>
 
@@ -55,21 +898,20 @@
          NOVA · HEADER
     ====================================================== -->
 
-    <header class="nova-top">
+    <header
+        class="nova-top"
+        id="top"
+    >
 
         <div class="nova-top-inner">
 
             <a
                 href="index.html"
-                class="nova-brand nova-page-link"
-                data-page-title="NOVA"
-                aria-label="NOVA"
+                class="nova-brand"
+                aria-label="NOVA · Inicio"
             >
                 NOVA
             </a>
-
-
-            <!-- DESKTOP NAV -->
 
             <nav
                 class="nova-desktop-nav"
@@ -78,32 +920,26 @@
 
                 <a
                     href="training.html"
-                    class="nova-nav-link is-active nova-page-link"
-                    data-page-title="DISCIPLINAS"
+                    class="nova-nav-link is-active"
                 >
                     DISCIPLINAS
                 </a>
 
                 <a
                     href="programas.html"
-                    class="nova-nav-link nova-page-link"
-                    data-page-title="MEMBRESÍAS"
+                    class="nova-nav-link"
                 >
                     MEMBRESÍAS
                 </a>
 
                 <a
                     href="#novaPlan"
-                    class="nova-nav-link"
-                    data-page-title="PLAN"
+                    class="nova-nav-link js-open-survey"
                 >
                     PLAN
                 </a>
 
             </nav>
-
-
-            <!-- MENU BUTTON -->
 
             <button
                 type="button"
@@ -129,416 +965,370 @@
     ====================================================== -->
 
     <div
+        class="nova-menu-overlay"
+        id="novaMenuOverlay"
+        aria-hidden="true"
+    ></div>
+
+    <aside
         class="nova-menu"
         id="novaMenu"
         aria-hidden="true"
     >
 
-        <div
-            class="nova-menu-overlay"
-            id="novaMenuOverlay"
-        ></div>
-
-
         <div class="nova-menu-inner">
 
-            <button
-                type="button"
-                class="nova-menu-close"
-                id="novaMenuClose"
-                aria-label="Cerrar menú"
-            >
-                ×
-            </button>
+            <div class="nova-menu-top">
 
+                <span class="nova-menu-label">
+                    NOVA
+                </span>
+
+                <button
+                    type="button"
+                    class="nova-menu-close"
+                    id="novaMenuClose"
+                    aria-label="Cerrar menú"
+                >
+                    ×
+                </button>
+
+            </div>
 
             <nav
-                class="nova-menu-nav"
+                class="nova-menu-links"
                 aria-label="Menú móvil"
             >
 
                 <a
                     href="index.html"
-                    class="nova-menu-link nova-page-link"
-                    data-page-title="NOVA"
+                    class="nova-menu-link"
                 >
-
-                    <span class="nova-menu-number">
-                        01
-                    </span>
-
-                    <strong>
-                        NOVA
-                    </strong>
-
-                    <span class="nova-menu-arrow">
-                        →
-                    </span>
-
+                    <span>01</span>
+                    <strong>NOVA</strong>
                 </a>
-
 
                 <a
                     href="training.html"
-                    class="nova-menu-link is-active nova-page-link"
+                    class="nova-menu-link nova-page-link is-active"
                     data-page-title="DISCIPLINAS"
                 >
-
-                    <span class="nova-menu-number">
-                        02
-                    </span>
-
-                    <strong>
-                        DISCIPLINAS
-                    </strong>
-
-                    <span class="nova-menu-arrow">
-                        →
-                    </span>
-
+                    <span>02</span>
+                    <strong>DISCIPLINAS</strong>
                 </a>
-
 
                 <a
-                    href="programas.html"
-                    class="nova-menu-link nova-page-link"
-                    data-page-title="MEMBRESÍAS"
+                    href="#novaMemberships"
+                    class="nova-menu-link js-open-memberships"
                 >
-
-                    <span class="nova-menu-number">
-                        03
-                    </span>
-
-                    <strong>
-                        MEMBRESÍAS
-                    </strong>
-
-                    <span class="nova-menu-arrow">
-                        →
-                    </span>
-
+                    <span>03</span>
+                    <strong>MEMBRESÍAS</strong>
                 </a>
-
 
                 <a
                     href="#novaPlan"
-                    class="nova-menu-link"
-                    data-page-title="PLAN"
+                    class="nova-menu-link js-open-survey"
                 >
-
-                    <span class="nova-menu-number">
-                        04
-                    </span>
-
-                    <strong>
-                        PLAN
-                    </strong>
-
-                    <span class="nova-menu-arrow">
-                        →
-                    </span>
-
+                    <span>04</span>
+                    <strong>PLAN</strong>
                 </a>
 
             </nav>
 
-
-            <div class="nova-menu-footer">
-
-                <span>
-                    NOVA · TRAINING
-                </span>
-
-                <span>
-                    2026
-                </span>
-
-            </div>
-
         </div>
 
-    </div>
+    </aside>
 
 
     <!-- =====================================================
          NOVA · MAIN
     ====================================================== -->
 
-    <main class="nova-page nova-training-page">
+    <main
+        class="nova-page nova-training-page"
+        id="principalPage"
+    >
+
+        <div class="nova-container">
 
 
-        <!-- =================================================
-             HERO
-        ================================================== -->
+            <!-- =================================================
+                 01 · NOVA TRAINING
+            ================================================== -->
 
-        <section class="nova-training-hero">
+            <section
+                class="nova-training-hero"
+                aria-labelledby="trainingTitle"
+            >
 
-            <div class="nova-training-hero-inner">
-
-                <div class="nova-eyebrow">
-                    NOVA · DISCIPLINAS
+                <div class="nova-section-eyebrow">
+                    NOVA · TRAINING
                 </div>
 
-                <h1>
+                <h1
+                    class="nova-training-title"
+                    id="trainingTitle"
+                >
                     Entrenamiento.<br>
                     Rendimiento.<br>
                     Evolución.
                 </h1>
 
-                <p>
-                    Elige tu disciplina y entrena con una estructura
-                    diseñada para avanzar.
+                <p class="nova-training-intro">
+                    Todo lo que necesitas para entrenar con estructura,
+                    intención y dirección.
                 </p>
 
-            </div>
-
-        </section>
+            </section>
 
 
-        <!-- =================================================
-             NATACIÓN
-        ================================================== -->
+            <!-- =================================================
+                 02 · TRAINING NAVIGATION
+            ================================================== -->
 
-        <section
-            class="nova-training-section"
-            id="natacion"
-        >
-
-            <div class="nova-training-section-header">
-
-                <div>
-
-                    <div class="nova-eyebrow">
-                        01 · DISCIPLINA
-                    </div>
-
-                    <h2>
-                        NATACIÓN
-                    </h2>
-
-                </div>
-
-                <p>
-                    Técnica, resistencia y ritmo para construir
-                    una base sólida dentro del agua.
-                </p>
-
-            </div>
-
-
-            <div
-                class="nova-training-grid"
-                id="swimmingRoutineGrid"
-            ></div>
-
-        </section>
-
-
-        <!-- =================================================
-             FUERZA
-        ================================================== -->
-
-        <section
-            class="nova-training-section"
-            id="fuerza"
-        >
-
-            <div class="nova-training-section-header">
-
-                <div>
-
-                    <div class="nova-eyebrow">
-                        02 · DISCIPLINA
-                    </div>
-
-                    <h2>
-                        FUERZA
-                    </h2>
-
-                </div>
-
-                <p>
-                    Fuerza funcional, estabilidad, control y
-                    capacidad para construir un cuerpo más fuerte.
-                </p>
-
-            </div>
-
-
-            <div
-                class="nova-training-grid"
-                id="strengthRoutineGrid"
-            ></div>
-
-        </section>
-
-
-    </main>
-
-
-    <!-- =====================================================
-         NOVA · ROUTINE MODAL
-    ====================================================== -->
-
-    <div
-        class="nova-routine-modal"
-        id="routineModal"
-        aria-hidden="true"
-    >
-
-        <div
-            class="nova-routine-modal-overlay"
-            id="routineModalOverlay"
-        ></div>
-
-
-        <div
-            class="nova-routine-modal-panel"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="routineModalTitle"
-        >
-
-            <button
-                type="button"
-                class="nova-routine-modal-close"
-                id="routineModalClose"
-                aria-label="Cerrar rutina"
+            <section
+                class="nova-training-navigation"
+                aria-labelledby="trainingNavigationTitle"
             >
-                ×
-            </button>
 
+                <div class="nova-training-navigation-header">
 
-            <div class="nova-routine-modal-header">
-
-                <div
-                    class="nova-routine-modal-number"
-                    id="routineModalNumber"
-                >
-                    01
-                </div>
-
-                <div>
-
-                    <div
-                        class="nova-eyebrow"
-                        id="routineModalDiscipline"
-                    >
-                        NATACIÓN
+                    <div class="nova-section-eyebrow">
+                        NOVA · TRAINING
                     </div>
 
                     <h2
-                        id="routineModalTitle"
+                        class="nova-training-navigation-title"
+                        id="trainingNavigationTitle"
                     >
-                        TÉCNICA Y BASE
+                        ¿CÓMO QUIERES<br>
+                        ENTRENAR HOY?
                     </h2>
 
                 </div>
 
-            </div>
+
+                <!-- =============================================
+                     FOUR MAIN CARDS
+                ============================================== -->
+
+                <div class="nova-training-cards">
 
 
-            <div class="nova-routine-modal-meta">
+                    <!-- =========================================
+                         CARD 01 · MÉTODO
+                    ========================================== -->
 
-                <div>
-
-                    <span>
-                        OBJETIVO
-                    </span>
-
-                    <strong id="routineModalObjective">
-                        Técnica
-                    </strong>
-
-                </div>
-
-
-                <div>
-
-                    <span>
-                        DURACIÓN
-                    </span>
-
-                    <strong id="routineModalDuration">
-                        60 min
-                    </strong>
-
-                </div>
-
-
-                <div>
-
-                    <span>
-                        NIVEL
-                    </span>
-
-                    <strong id="routineModalLevel">
-                        Base
-                    </strong>
-
-                </div>
-
-            </div>
-
-
-            <div class="nova-routine-modal-content">
-
-                <div
-                    class="nova-routine-description"
-                    id="routineModalDescription"
-                ></div>
-
-
-                <div class="nova-routine-blocks">
-
-                    <div class="nova-routine-block">
-
-                        <div class="nova-routine-block-title">
-                            SESIÓN
-                        </div>
+                    <a
+                        href="#novaMethod"
+                        class="nova-training-card js-open-method"
+                        data-page-title="MÉTODO NOVA"
+                    >
 
                         <div
-                            class="nova-routine-list"
-                            id="routineModalSession"
+                            class="nova-training-card-image"
+                            style="background-image: url('img/WhatsApp\ Image\ 2.jpeg');"
                         ></div>
 
-                    </div>
+                        <div class="nova-training-card-overlay"></div>
 
+                        <div class="nova-training-card-top">
 
-                    <div class="nova-routine-block">
+                            <span class="nova-training-card-number">
+                                01
+                            </span>
 
-                        <div class="nova-routine-block-title">
-                            MATERIAL
                         </div>
 
-                        <div
-                            class="nova-routine-material"
-                            id="routineModalMaterial"
-                        ></div>
+                        <div class="nova-training-card-content">
 
-                    </div>
+                            <span class="nova-training-card-label">
+                                CONOCE CÓMO ENTRENAMOS
+                            </span>
 
+                            <h3>
+                                MÉTODO<br>
+                                NOVA
+                            </h3>
 
-                    <div class="nova-routine-block">
+                            <p>
+                                Una estructura de entrenamiento basada
+                                en conocer, diseñar, entrenar y evolucionar.
+                            </p>
 
-                        <div class="nova-routine-block-title">
-                            ENFOQUE
+                            <span class="nova-training-card-button">
+                                CONTINUAR
+                                <span>→</span>
+                            </span>
+
                         </div>
 
+                    </a>
+
+
+                    <!-- =========================================
+                         CARD 02 · DISCIPLINAS
+                    ========================================== -->
+
+                    <a
+                        href="training.html"
+                        class="nova-training-card nova-page-link"
+                        data-page-title="DISCIPLINAS"
+                    >
+
                         <div
-                            class="nova-routine-focus"
-                            id="routineModalFocus"
+                            class="nova-training-card-image"
+                            style="background-image: url('img/WhatsApp Image 4.jpeg');"
                         ></div>
 
-                    </div>
+                        <div class="nova-training-card-overlay"></div>
+
+                        <div class="nova-training-card-top">
+
+                            <span class="nova-training-card-number">
+                                02
+                            </span>
+
+                        </div>
+
+                        <div class="nova-training-card-content">
+
+                            <span class="nova-training-card-label">
+                                ELIGE TU DISCIPLINA
+                            </span>
+
+                            <h3>
+                                NOVA ·<br>
+                                DISCIPLINAS
+                            </h3>
+
+                            <p>
+                                Natación y fuerza funcional para construir
+                                rendimiento desde diferentes caminos.
+                            </p>
+
+                            <span class="nova-training-card-button">
+                                CONTINUAR
+                                <span>→</span>
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- =========================================
+                         CARD 03 · MEMBRESÍAS
+                    ========================================== -->
+
+                    <a
+                        href="#novaMemberships"
+                        class="nova-training-card js-open-memberships"
+                        data-page-title="MEMBRESÍAS"
+                    >
+
+                        <div
+                            class="nova-training-card-image"
+                            style="background-image: url('img/WhatsApp\ Image\ 3.jpeg');"
+                        ></div>
+
+                        <div class="nova-training-card-overlay"></div>
+
+                        <div class="nova-training-card-top">
+
+                            <span class="nova-training-card-number">
+                                03
+                            </span>
+
+                        </div>
+
+                        <div class="nova-training-card-content">
+
+                            <span class="nova-training-card-label">
+                                ENCUENTRA TU ACCESO
+                            </span>
+
+                            <h3>
+                                NOVA ·<br>
+                                MEMBRESÍAS
+                            </h3>
+
+                            <p>
+                                Explora los programas disponibles y elige
+                                la forma de entrenamiento que mejor se adapte
+                                a ti.
+                            </p>
+
+                            <span class="nova-training-card-button">
+                                CONTINUAR
+                                <span>→</span>
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- =========================================
+                         CARD 04 · ENCUENTRA TU PLAN
+                    ========================================== -->
+
+                    <a
+                        href="#novaPlan"
+                        class="nova-training-card nova-training-card-featured js-open-survey"
+                        data-page-title="PLAN"
+                    >
+
+                        <div
+                            class="nova-training-card-image"
+                            style="background-image: url('img/chaps.22.JPG');"
+                        ></div>
+
+                        <div class="nova-training-card-overlay"></div>
+
+                        <div class="nova-training-card-top">
+
+                            <span class="nova-training-card-number">
+                                04
+                            </span>
+
+                        </div>
+
+                        <div class="nova-training-card-content">
+
+                            <span class="nova-training-card-label">
+                                NO SABES POR DÓNDE EMPEZAR
+                            </span>
+
+                            <h3>
+                                NOVA ·<br>
+                                ENCUENTRA TU PLAN
+                            </h3>
+
+                            <p>
+                                Responde unas preguntas y descubre qué opción
+                                de entrenamiento puede ajustarse mejor a tus
+                                objetivos.
+                            </p>
+
+                            <span class="nova-training-card-button">
+                                CONTINUAR
+                                <span>→</span>
+                            </span>
+
+                        </div>
+
+                    </a>
+
 
                 </div>
 
-            </div>
+            </section>
+
 
         </div>
 
-    </div>
+    </main>
 
 
     <!-- =====================================================
@@ -547,22 +1337,39 @@
 
     <footer class="nova-footer">
 
-        <div class="nova-footer-grid">
+        <div class="nova-footer-inner">
 
+            <div class="nova-footer-brand">
 
-            <!-- ENTRENAMIENTOS -->
+                <a
+                    href="index.html#top"
+                    class="nova-footer-logo"
+                >
+                    NOVA
+                </a>
+
+                <p>
+                    TRAINING
+                </p>
+
+                <span>
+                    Entrenamiento. Rendimiento. Evolución.
+                </span>
+
+            </div>
+
 
             <div class="nova-footer-column">
 
-                <div class="nova-footer-title">
+                <h3>
                     ENTRENAMIENTOS
-                </div>
+                </h3>
 
-                <a href="training.html#natacion">
+                <a href="training.html">
                     Natación
                 </a>
 
-                <a href="training.html#fuerza">
+                <a href="training.html">
                     Fuerza
                 </a>
 
@@ -573,34 +1380,29 @@
             </div>
 
 
-            <!-- PROGRAMAS -->
-
             <div class="nova-footer-column">
 
-                <div class="nova-footer-title">
+                <h3>
                     PROGRAMAS
-                </div>
+                </h3>
 
                 <a
-                    href="programas.html"
-                    class="nova-page-link"
-                    data-page-title="MEMBRESÍAS"
+                    href="#novaMemberships"
+                    class="js-open-memberships"
                 >
                     Membresías
                 </a>
 
                 <a
-                    href="plan.html"
-                    class="nova-page-link"
-                    data-page-title="PLAN"
+                    href="#novaPlan"
+                    class="js-open-survey"
                 >
                     Encuentra tu plan
                 </a>
 
                 <a
-                    href="metodologia.html"
-                    class="nova-page-link"
-                    data-page-title="MÉTODO NOVA"
+                    href="#novaMethod"
+                    class="js-open-method"
                 >
                     Metodología
                 </a>
@@ -608,15 +1410,16 @@
             </div>
 
 
-            <!-- INFORMACIÓN -->
-
             <div class="nova-footer-column">
 
-                <div class="nova-footer-title">
+                <h3>
                     INFORMACIÓN
-                </div>
+                </h3>
 
-                <a href="index.html#metodo">
+                <a
+                    href="#novaMethod"
+                    class="js-open-method"
+                >
                     Método NOVA
                 </a>
 
@@ -636,9 +1439,8 @@
                 </a>
 
                 <a
-                    href="index.html#dudas"
-                    class="nova-page-link"
-                    data-page-title="PLAN"
+                    href="#novaPlan"
+                    class="js-open-survey"
                 >
                     Comenzar
                 </a>
@@ -646,67 +1448,83 @@
             </div>
 
 
-            <!-- CONTACTO -->
-
             <div class="nova-footer-column">
 
-                <div class="nova-footer-title">
+                <h3>
                     CONTACTO
-                </div>
+                </h3>
 
                 <a
                     href="https://wa.me/525612584271"
                     target="_blank"
-                    rel="noopener"
+                    rel="noopener noreferrer"
                 >
                     WhatsApp
                 </a>
 
                 <a href="mailto:hola@nova.training">
-                    hola@nova.training
+                    Correo
                 </a>
 
             </div>
 
 
-            <!-- LEGAL -->
+            <!-- =================================================
+                 LEGAL
+            ================================================== -->
 
             <div class="nova-footer-column">
 
-                <div class="nova-footer-title">
+                <h3>
                     LEGAL
-                </div>
+                </h3>
 
                 <a
-                    href="privacidad.html"
-                    class="nova-page-link"
-                    data-page-title="PRIVACIDAD"
+                    href="#novaLegal"
+                    class="js-open-legal"
+                    data-legal="privacy"
                 >
                     Aviso de privacidad
                 </a>
 
                 <a
-                    href="terminos.html"
-                    class="nova-page-link"
-                    data-page-title="TÉRMINOS"
+                    href="#novaLegal"
+                    class="js-open-legal"
+                    data-legal="terms"
                 >
                     Términos y condiciones
                 </a>
 
                 <a
-                    href="cookies.html"
-                    class="nova-page-link"
-                    data-page-title="COOKIES"
+                    href="#novaLegal"
+                    class="js-open-legal"
+                    data-legal="cookies"
                 >
-                    Cookies
+                    Política de cookies
                 </a>
 
                 <a
-                    href="aviso-legal.html"
-                    class="nova-page-link"
-                    data-page-title="AVISO LEGAL"
+                    href="#novaLegal"
+                    class="js-open-legal"
+                    data-legal="notice"
                 >
                     Aviso legal
+                </a>
+
+                <a
+                    href="#novaLegal"
+                    class="js-open-legal"
+                    data-legal="cancellations"
+                >
+                    Cancelaciones y reembolsos
+                </a>
+
+                <a
+                    href="#novaLegal"
+                    class="js-open-legal"
+                    data-legal="responsibility"
+                >
+                    Aviso de responsabilidad
                 </a>
 
             </div>
@@ -730,71 +1548,62 @@
 
 
     <!-- =====================================================
+         NOVA · MODAL GLOBAL
+    ====================================================== -->
+
+    <div
+        class="nova-modal"
+        id="novaModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="nova-modal-backdrop"
+            data-modal-close
+        ></div>
+
+
+        <div
+            class="nova-modal-dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="novaModalTitle"
+        >
+
+            <button
+                type="button"
+                class="nova-modal-close"
+                id="novaModalClose"
+                aria-label="Cerrar"
+            >
+                ×
+            </button>
+
+
+            <div
+                class="nova-modal-content"
+                id="novaModalContent"
+            ></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
          NOVA · JAVASCRIPT
+         MENÚ + TRANSICIONES + MODALES + ENCUESTA + LEGAL + FAQ
     ====================================================== -->
 
     <script>
 
         document.addEventListener(
             "DOMContentLoaded",
-            () => {
+            function () {
 
 
                 /* =================================================
-                   PAGE TRANSITION
-                ================================================== */
-
-                const pageTransition =
-                    document.getElementById(
-                        "pageTransition"
-                    );
-
-                const pageTransitionLabel =
-                    document.getElementById(
-                        "pageTransitionLabel"
-                    );
-
-
-                function startPageTransition(link) {
-
-                    const destination =
-                        link.getAttribute("href");
-
-                    if (!destination) {
-                        return;
-                    }
-
-                    const title =
-                        link.dataset.pageTitle ||
-                        link.textContent.trim() ||
-                        "NOVA";
-
-                    pageTransitionLabel.textContent =
-                        title;
-
-                    document.body.classList.add(
-                        "nova-page-changing"
-                    );
-
-                    pageTransition.classList.add(
-                        "is-active"
-                    );
-
-                    window.setTimeout(
-                        () => {
-
-                            window.location.href =
-                                destination;
-
-                        },
-                        650
-                    );
-
-                }
-
-
-                /* =================================================
-                   MOBILE MENU
+                   ELEMENTOS GENERALES
                 ================================================== */
 
                 const menuButton =
@@ -818,28 +1627,106 @@
                     );
 
 
+                const pageTransition =
+                    document.getElementById(
+                        "novaPageTransition"
+                    );
+
+                const pageTransitionLabel =
+                    document.getElementById(
+                        "novaPageTransitionLabel"
+                    );
+
+
+                const pageLinks =
+                    document.querySelectorAll(
+                        ".nova-page-link"
+                    );
+
+
+                const modal =
+                    document.getElementById(
+                        "novaModal"
+                    );
+
+                const modalContent =
+                    document.getElementById(
+                        "novaModalContent"
+                    );
+
+                const modalClose =
+                    document.getElementById(
+                        "novaModalClose"
+                    );
+
+
+                /*
+                 * RESPUESTAS DE "TU PLAN"
+                 *
+                 * Se mantienen únicamente en memoria durante
+                 * esta visita. No modifica la encuesta ni su flujo.
+                 */
+
+                let NOVA_SURVEY_ANSWERS = null;
+
+
+                /* =================================================
+                   MENÚ
+                ================================================== */
+
                 function openMenu() {
 
-                    menuButton.classList.add(
-                        "is-open"
-                    );
+                    if (
+                        !menu ||
+                        !menuButton
+                    ) {
+                        return;
+                    }
+
 
                     menu.classList.add(
                         "is-open"
                     );
 
-                    document.body.classList.add(
-                        "nova-menu-open"
+
+                    if (menuOverlay) {
+
+                        menuOverlay.classList.add(
+                            "is-open"
+                        );
+
+                    }
+
+
+                    menuButton.classList.add(
+                        "is-open"
                     );
+
 
                     menuButton.setAttribute(
                         "aria-expanded",
                         "true"
                     );
 
+
                     menu.setAttribute(
                         "aria-hidden",
                         "false"
+                    );
+
+
+                    if (menuOverlay) {
+
+                        menuOverlay.setAttribute(
+                            "aria-hidden",
+                            "false"
+                        );
+
+                    }
+
+
+                    document.body.classList.add(
+                        "nova-menu-open"
                     );
 
                 }
@@ -847,46 +1734,805 @@
 
                 function closeMenu() {
 
-                    menuButton.classList.remove(
-                        "is-open"
-                    );
+                    if (
+                        !menu ||
+                        !menuButton
+                    ) {
+                        return;
+                    }
+
 
                     menu.classList.remove(
                         "is-open"
                     );
 
-                    document.body.classList.remove(
-                        "nova-menu-open"
+
+                    if (menuOverlay) {
+
+                        menuOverlay.classList.remove(
+                            "is-open"
+                        );
+
+                    }
+
+
+                    menuButton.classList.remove(
+                        "is-open"
                     );
+
 
                     menuButton.setAttribute(
                         "aria-expanded",
                         "false"
                     );
 
+
                     menu.setAttribute(
                         "aria-hidden",
                         "true"
                     );
 
+
+                    if (menuOverlay) {
+
+                        menuOverlay.setAttribute(
+                            "aria-hidden",
+                            "true"
+                        );
+
+                    }
+
+
+                    document.body.classList.remove(
+                        "nova-menu-open"
+                    );
+
                 }
 
 
-                menuButton.addEventListener(
+                if (menuButton) {
+
+                    menuButton.addEventListener(
+                        "click",
+                        function () {
+
+                            if (
+                                menuButton.classList.contains(
+                                    "is-open"
+                                )
+                            ) {
+
+                                closeMenu();
+
+                            } else {
+
+                                openMenu();
+
+                            }
+
+                        }
+                    );
+
+                }
+
+
+                if (menuClose) {
+
+                    menuClose.addEventListener(
+                        "click",
+                        closeMenu
+                    );
+
+                }
+
+
+                if (menuOverlay) {
+
+                    menuOverlay.addEventListener(
+                        "click",
+                        closeMenu
+                    );
+
+                }
+
+
+                /* =================================================
+                   TRANSICIÓN DE PÁGINA
+                ================================================== */
+
+                function startPageTransition(
+                    link
+                ) {
+
+                    if (!link) {
+                        return;
+                    }
+
+
+                    const destination =
+                        link.getAttribute(
+                            "href"
+                        );
+
+
+                    if (
+                        !destination ||
+                        destination === "#" ||
+                        destination.startsWith(
+                            "javascript:"
+                        )
+                    ) {
+                        return;
+                    }
+
+
+                    const title =
+                        link.getAttribute(
+                            "data-page-title"
+                        ) || "NOVA";
+
+
+                    if (pageTransitionLabel) {
+
+                        pageTransitionLabel.textContent =
+                            title;
+
+                    }
+
+
+                    document.body.classList.add(
+                        "nova-page-changing"
+                    );
+
+
+                    if (pageTransition) {
+
+                        pageTransition.classList.add(
+                            "is-active"
+                        );
+
+                    }
+
+
+                    window.setTimeout(
+                        function () {
+
+                            window.location.href =
+                                destination;
+
+                        },
+                        650
+                    );
+
+                }
+
+
+                pageLinks.forEach(
+                    function (link) {
+
+                        link.addEventListener(
+                            "click",
+                            function (event) {
+
+                                if (
+                                    event.ctrlKey ||
+                                    event.metaKey ||
+                                    event.shiftKey ||
+                                    event.altKey ||
+                                    event.button !== 0
+                                ) {
+
+                                    return;
+
+                                }
+
+
+                                event.preventDefault();
+
+
+                                closeMenu();
+
+
+                                startPageTransition(
+                                    link
+                                );
+
+                            }
+                        );
+
+                    }
+                );
+
+
+                /* =================================================
+                   MODAL
+                ================================================== */
+
+                function openModal(
+                    html
+                ) {
+
+                    if (
+                        !modal ||
+                        !modalContent
+                    ) {
+                        return;
+                    }
+
+
+                    modalContent.innerHTML =
+                        html;
+
+
+                    modal.classList.add(
+                        "is-open"
+                    );
+
+
+                    modal.setAttribute(
+                        "aria-hidden",
+                        "false"
+                    );
+
+
+                    document.body.classList.add(
+                        "nova-modal-open"
+                    );
+
+                }
+
+
+                function closeModal() {
+
+                    if (!modal) {
+                        return;
+                    }
+
+
+                    modal.classList.remove(
+                        "is-open"
+                    );
+
+
+                    modal.setAttribute(
+                        "aria-hidden",
+                        "true"
+                    );
+
+
+                    document.body.classList.remove(
+                        "nova-modal-open"
+                    );
+
+                }
+
+
+                if (modalClose) {
+
+                    modalClose.addEventListener(
+                        "click",
+                        closeModal
+                    );
+
+                }
+
+
+                if (modal) {
+
+                    modal.addEventListener(
+                        "click",
+                        function (event) {
+
+                            if (
+                                event.target.hasAttribute(
+                                    "data-modal-close"
+                                )
+                            ) {
+
+                                closeModal();
+
+                            }
+
+                        }
+                    );
+
+                }
+
+
+                /* =================================================
+                   MÉTODO NOVA
+                ================================================== */
+
+                const methodHTML = `
+
+                    <div class="nova-modal-eyebrow">
+                        NOVA · MÉTODO
+                    </div>
+
+
+                    <h2 id="novaModalTitle">
+                        No improvisamos.<br>
+                        Construimos.
+                    </h2>
+
+
+                    <div class="nova-modal-text">
+
+                        <p>
+                            La metodología NOVA parte de entender
+                            dónde estás, qué quieres conseguir y qué
+                            necesitas para avanzar.
+                        </p>
+
+                        <p>
+                            A partir de ahí construimos una estructura
+                            de entrenamiento que pueda evolucionar
+                            contigo.
+                        </p>
+
+                    </div>
+
+
+                    <div class="nova-modal-list">
+
+                        <div class="nova-modal-list-item">
+
+                            <span>01</span>
+
+                            <strong>
+                                CONOCEMOS
+                            </strong>
+
+                        </div>
+
+
+                        <div class="nova-modal-list-item">
+
+                            <span>02</span>
+
+                            <strong>
+                                DISEÑAMOS
+                            </strong>
+
+                        </div>
+
+
+                        <div class="nova-modal-list-item">
+
+                            <span>03</span>
+
+                            <strong>
+                                ENTRENAMOS
+                            </strong>
+
+                        </div>
+
+
+                        <div class="nova-modal-list-item">
+
+                            <span>04</span>
+
+                            <strong>
+                                EVOLUCIONAMOS
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="nova-modal-text">
+
+                        <p>
+                            Cada etapa tiene un propósito: conocer tu
+                            punto de partida, diseñar el trabajo,
+                            ejecutarlo con intención y ajustar el proceso
+                            conforme evolucionas.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="nova-modal-action js-modal-go-training"
+                    >
+                        VER ENTRENAMIENTOS
+                        <span aria-hidden="true">
+                            →
+                        </span>
+                    </button>
+
+                `;
+
+
+                document
+                    .querySelectorAll(
+                        ".js-open-method"
+                    )
+                    .forEach(
+                        function (link) {
+
+                            link.addEventListener(
+                                "click",
+                                function (event) {
+
+                                    event.preventDefault();
+
+                                    closeMenu();
+
+                                    openModal(
+                                        methodHTML
+                                    );
+
+                                }
+                            );
+
+                        }
+                    );
+
+
+                document.addEventListener(
                     "click",
-                    () => {
+                    function (event) {
+
+                        const button =
+                            event.target.closest(
+                                ".js-modal-go-training"
+                            );
+
+
+                        if (!button) {
+                            return;
+                        }
+
+
+                        closeModal();
+
+
+                        window.setTimeout(
+                            function () {
+
+                                startPageTransition(
+                                    {
+                                        getAttribute: function (
+                                            attribute
+                                        ) {
+
+                                            if (
+                                                attribute ===
+                                                "href"
+                                            ) {
+
+                                                return "training.html";
+
+                                            }
+
+
+                                            if (
+                                                attribute ===
+                                                "data-page-title"
+                                            ) {
+
+                                                return "DISCIPLINAS";
+
+                                            }
+
+
+                                            return null;
+
+                                        }
+                                    }
+                                );
+
+                            },
+                            250
+                        );
+
+                    }
+                );
+
+
+                /* =================================================
+                   MEMBRESÍAS
+                ================================================== */
+
+                const NOVA_MEMBERSHIPS = [
+
+                    {
+
+                        number:
+                            "01",
+
+                        category:
+                            "NATACIÓN",
+
+                        title:
+                            "BASE",
+
+                        price:
+                            "$999",
+
+                        description:
+                            "Construye una base sólida de técnica, resistencia y adaptación dentro del agua.",
+
+                        details: [
+
+                            "Técnica",
+                            "Resistencia",
+                            "Ritmos",
+                            "Adaptación",
+                            "Progresión",
+                            "Seguimiento"
+
+                        ]
+
+                    },
+
+
+                    {
+
+                        number:
+                            "02",
+
+                        category:
+                            "NATACIÓN",
+
+                        title:
+                            "RENDIMIENTO",
+
+                        price:
+                            "$1,499",
+
+                        description:
+                            "Entrena para mejorar técnica, ritmos, resistencia y capacidad de rendimiento en alberca y/o aguas abiertas.",
+
+                        details: [
+
+                            "Eficiencia técnica",
+                            "Ritmo",
+                            "Velocidad",
+                            "Resistencia",
+                            "Carga",
+                            "Adaptación",
+                            "Seguimiento"
+
+                        ]
+
+                    },
+
+
+                    {
+
+                        number:
+                            "03",
+
+                        category:
+                            "FUERA DEL AGUA",
+
+                        title:
+                            "FUERZA",
+
+                        price:
+                            "$499",
+
+                        description:
+                            "Desarrolla capacidad física, acondicionamiento y fuerza para complementar tu entrenamiento.",
+
+                        details: [
+
+                            "Fuerza general",
+                            "Progresión",
+                            "Capacidad física",
+                            "Control de carga",
+                            "Complemento",
+                            "Seguimiento"
+
+                        ]
+
+                    }
+
+                ];
+
+
+                function membershipsHTML() {
+
+                    return `
+
+                        <div class="nova-modal-eyebrow">
+                            NOVA · MEMBRESÍAS
+                        </div>
+
+
+                        <h2 id="novaModalTitle">
+                            Encuentra tu punto de partida.
+                        </h2>
+
+
+                        <div class="nova-modal-text">
+
+                            <p>
+                                Elige la estructura que mejor se adapte
+                                a lo que quieres trabajar.
+                            </p>
+
+                        </div>
+
+
+                        <div class="nova-modal-memberships">
+
+                            ${NOVA_MEMBERSHIPS
+                                .map(
+                                    function (
+                                        membership,
+                                        index
+                                    ) {
+
+                                        return `
+
+                                            <article
+                                                class="nova-modal-membership"
+                                            >
+
+                                                <div class="nova-modal-membership-top">
+
+                                                    <span>
+                                                        ${membership.number}
+                                                    </span>
+
+                                                    <small>
+                                                        ${membership.category}
+                                                    </small>
+
+                                                </div>
+
+
+                                                <div class="nova-modal-membership-main">
+
+                                                    <h3>
+                                                        ${membership.title}
+                                                    </h3>
+
+                                                    <p>
+                                                        ${membership.description}
+                                                    </p>
+
+                                                </div>
+
+
+                                                <div class="nova-modal-membership-bottom">
+
+                                                    <strong>
+                                                        ${membership.price}
+                                                    </strong>
+
+                                                    <button
+                                                        type="button"
+                                                        class="nova-modal-membership-button"
+                                                        data-membership-index="${index}"
+                                                    >
+                                                        CONOCER
+                                                        <span>
+                                                            →
+                                                        </span>
+                                                    </button>
+
+                                                </div>
+
+                                            </article>
+
+                                        `;
+
+                                    }
+                                )
+                                .join("")}
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="nova-modal-action js-open-survey"
+                        >
+                            NO SÉ QUÉ ELEGIR
+                            <span aria-hidden="true">
+                                →
+                            </span>
+                        </button>
+
+                    `;
+
+                }
+
+
+                function openMemberships() {
+
+                    closeMenu();
+
+                    openModal(
+                        membershipsHTML()
+                    );
+
+                }
+
+
+                document
+                    .querySelectorAll(
+                        ".js-open-memberships"
+                    )
+                    .forEach(
+                        function (link) {
+
+                            link.addEventListener(
+                                "click",
+                                function (event) {
+
+                                    event.preventDefault();
+
+                                    openMemberships();
+
+                                }
+                            );
+
+                        }
+                    );
+
+
+                document.addEventListener(
+                    "click",
+                    function (event) {
+
+                        const membershipButton =
+                            event.target.closest(
+                                ".nova-modal-membership-button"
+                            );
+
 
                         if (
-                            menu.classList.contains(
-                                "is-open"
+                            membershipButton
+                        ) {
+
+                            const index =
+                                Number(
+                                    membershipButton.dataset
+                                        .membershipIndex
+                                );
+
+
+                            const membership =
+                                NOVA_MEMBERSHIPS[index];
+
+
+                            if (membership) {
+
+                                openMembershipDetail(
+                                    membership
+                                );
+
+                            }
+
+
+                            return;
+
+                        }
+
+
+                        const surveyButton =
+                            event.target.closest(
+                                ".js-open-survey"
+                            );
+
+
+                        if (
+                            surveyButton &&
+                            !surveyButton.classList.contains(
+                                "nova-nav-link"
                             )
                         ) {
 
-                            closeMenu();
+                            event.preventDefault();
 
-                        } else {
-
-                            openMenu();
+                            openSurvey();
 
                         }
 
@@ -894,72 +2540,1179 @@
                 );
 
 
-                menuClose.addEventListener(
-                    "click",
-                    closeMenu
-                );
+                function openMembershipDetail(
+                    membership
+                ) {
+
+                    let whatsappMessage =
+                        "Hola NOVA, quiero conocer el plan " +
+                        membership.title +
+                        " de " +
+                        membership.price +
+                        ".";
 
 
-                menuOverlay.addEventListener(
-                    "click",
-                    closeMenu
-                );
+                    /*
+                     * Si el usuario llegó desde "TU PLAN",
+                     * agregamos únicamente sus respuestas al mensaje.
+                     */
+
+                    if (NOVA_SURVEY_ANSWERS) {
+
+                        whatsappMessage +=
+                            "\n\nMIS RESPUESTAS DE TU PLAN:";
+
+
+                        whatsappMessage +=
+                            "\n• Disciplina: " +
+                            NOVA_SURVEY_ANSWERS.disciplina;
+
+
+                        whatsappMessage +=
+                            "\n• Objetivo: " +
+                            NOVA_SURVEY_ANSWERS.objetivo;
+
+
+                        whatsappMessage +=
+                            "\n• Nivel: " +
+                            NOVA_SURVEY_ANSWERS.nivel;
+
+
+                        whatsappMessage +=
+                            "\n• Experiencia: " +
+                            NOVA_SURVEY_ANSWERS.experiencia;
+
+
+                        whatsappMessage +=
+                            "\n• Disponibilidad: " +
+                            NOVA_SURVEY_ANSWERS.disponibilidad;
+
+
+                        whatsappMessage +=
+                            "\n• Distancia más larga: " +
+                            NOVA_SURVEY_ANSWERS.distancia;
+
+
+                        whatsappMessage +=
+                            "\n• Modalidad: " +
+                            NOVA_SURVEY_ANSWERS.modalidad;
+
+
+                        whatsappMessage +=
+                            "\n\nPLAN RECOMENDADO: " +
+                            NOVA_SURVEY_ANSWERS.plan;
+
+                    }
+
+
+                    const html = `
+
+                        <div class="nova-modal-eyebrow">
+                            NOVA · ${membership.category}
+                        </div>
+
+
+                        <h2 id="novaModalTitle">
+                            ${membership.title}
+                        </h2>
+
+
+                        <div class="nova-modal-text">
+
+                            <p>
+                                ${membership.description}
+                            </p>
+
+                        </div>
+
+
+                        <div class="nova-modal-list">
+
+                            ${membership.details
+                                .map(
+                                    function (
+                                        detail,
+                                        index
+                                    ) {
+
+                                        return `
+
+                                            <div class="nova-modal-list-item">
+
+                                                <span>
+                                                    ${String(
+                                                        index + 1
+                                                    ).padStart(
+                                                        2,
+                                                        "0"
+                                                    )}
+                                                </span>
+
+                                                <strong>
+                                                    ${detail}
+                                                </strong>
+
+                                            </div>
+
+                                        `;
+
+                                    }
+                                )
+                                .join("")}
+
+                        </div>
+
+
+                        <div class="nova-plan-investment">
+
+                            <span>
+                                INVERSIÓN
+                            </span>
+
+                            <strong>
+                                ${membership.price}
+                            </strong>
+
+                        </div>
+
+
+                        <a
+                            href="https://wa.me/525612584271?text=${encodeURIComponent(
+                                whatsappMessage
+                            )}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="nova-modal-action"
+                        >
+                            QUIERO ESTE PLAN
+                            <span aria-hidden="true">
+                                →
+                            </span>
+                        </a>
+
+                    `;
+
+
+                    openModal(
+                        html
+                    );
+
+                }
 
 
                 /* =================================================
-                   PAGE LINKS
+                   FAQ NOVA
                 ================================================== */
+
+                const NOVA_FAQ_CONTENT = [
+
+                    {
+
+                        question:
+                            "¿Necesito experiencia para comenzar?",
+
+                        answer:
+                            "No es indispensable. NOVA cuenta con diferentes estructuras de entrenamiento que pueden adaptarse a distintos niveles de experiencia y objetivos."
+
+                    },
+
+
+                    {
+
+                        question:
+                            "¿Qué disciplinas incluye NOVA?",
+
+                        answer:
+                            "NOVA integra tres áreas de entrenamiento: natación, fuerza y HIT. Dependiendo del programa elegido, puedes trabajar una disciplina o combinar diferentes estímulos."
+
+                    },
+
+
+                    {
+
+                        question:
+                            "¿Puedo combinar natación con fuerza?",
+
+                        answer:
+                            "Sí. El programa POTENCIA combina natación y fuerza dentro de una misma estructura, buscando que ambas áreas trabajen de forma complementaria."
+
+                    },
+
+
+                    {
+
+                        question:
+                            "¿Qué programa debo elegir?",
+
+                        answer:
+                            "Depende de tu objetivo. EVOLUCIÓN está orientado al desarrollo de la natación; POTENCIA combina natación y fuerza; FUERA DEL AGUA integra HIT y fuerza; y FUERZA se centra exclusivamente en el desarrollo de fuerza."
+
+                    },
+
+
+                    {
+
+                        question:
+                            "¿Cómo se realiza el seguimiento?",
+
+                        answer:
+                            "El nivel de seguimiento depende del programa contratado. Puede incluir comunicación directa, ajustes de entrenamiento, revisión del progreso y videollamadas de acuerdo con el nivel de atención correspondiente."
+
+                    },
+
+
+                    {
+
+                        question:
+                            "¿Se utilizan videollamadas?",
+
+                        answer:
+                            "Sí. Los programas que incluyen videollamadas cuentan con sesiones de seguimiento destinadas a revisar el proceso, resolver dudas y realizar los ajustes necesarios."
+
+                    },
+
+
+                    {
+
+                        question:
+                            "¿Cómo funciona el análisis de video?",
+
+                        answer:
+                            "En los programas que incluyen análisis de video, se revisan aspectos técnicos del movimiento para identificar oportunidades de mejora y proporcionar correcciones específicas."
+
+                    },
+
+
+                    {
+
+                        question:
+                            "¿Puedo combinar el programa con mi entrenamiento actual?",
+
+                        answer:
+                            "Sí. La planificación puede considerar tu carga actual de entrenamiento para evitar estímulos innecesarios y mantener una progresión adecuada."
+
+                    },
+
+
+                    {
+
+                        question:
+                            "¿Qué pasa si no puedo cumplir todas las sesiones?",
+
+                        answer:
+                            "El programa puede ajustarse cuando existen cambios en tu disponibilidad. Se priorizan los estímulos más importantes para mantener la continuidad del proceso."
+
+                    },
+
+
+                    {
+
+                        question:
+                            "¿Cómo se realizan los ajustes?",
+
+                        answer:
+                            "Los ajustes se realizan considerando tu evolución, cumplimiento, disponibilidad y respuesta al entrenamiento. El nivel de atención varía según el programa elegido."
+
+                    },
+
+
+                    {
+
+                        question:
+                            "¿Puedo cambiar de programa posteriormente?",
+
+                        answer:
+                            "Sí. Si tus objetivos cambian o necesitas un nivel diferente de acompañamiento, podemos valorar el cambio hacia otro programa de NOVA."
+
+                    },
+
+
+                    {
+
+                        question:
+                            "¿Puede haber sesiones presenciales?",
+
+                        answer:
+                            "Esto depende de varios factores, como la zona en donde resides, la disponibilidad, las condiciones de la instalación y el espacio disponible dentro de la agenda."
+
+                    }
+
+                ];
+
+
+                function openFAQ() {
+
+                    closeMenu();
+
+
+                    const faqHTML = `
+
+                        <div class="nova-modal-eyebrow">
+                            NOVA · INFORMACIÓN
+                        </div>
+
+
+                        <h2 id="novaModalTitle">
+                            Preguntas frecuentes
+                        </h2>
+
+
+                        <div class="nova-modal-text">
+
+                            <p>
+                                Encuentra respuestas sobre los programas,
+                                disciplinas y forma de trabajo de NOVA.
+                            </p>
+
+                        </div>
+
+
+                        <div class="nova-faq-text">
+
+                            <div class="nova-faq-list">
+
+                                ${NOVA_FAQ_CONTENT
+                                    .map(
+                                        function (
+                                            faq,
+                                            index
+                                        ) {
+
+                                            return `
+
+                                                <article
+                                                    class="nova-faq-item"
+                                                >
+
+                                                    <button
+                                                        type="button"
+                                                        class="nova-faq-question"
+                                                        aria-expanded="false"
+                                                    >
+
+                                                        <span>
+                                                            ${String(
+                                                                index + 1
+                                                            ).padStart(
+                                                                2,
+                                                                "0"
+                                                            )}
+                                                            ·
+                                                            ${faq.question}
+                                                        </span>
+
+                                                        <span
+                                                            class="nova-faq-icon"
+                                                            aria-hidden="true"
+                                                        >
+                                                            +
+                                                        </span>
+
+                                                    </button>
+
+
+                                                    <div
+                                                        class="nova-faq-answer"
+                                                    >
+
+                                                        <p>
+                                                            ${faq.answer}
+                                                        </p>
+
+                                                    </div>
+
+                                                </article>
+
+                                            `;
+
+                                        }
+                                    )
+                                    .join("")}
+
+                            </div>
+
+
+                            <div class="nova-faq-footer">
+
+                                <span>
+                                    NOVA · TRAINING
+                                </span>
+
+                                <span>
+                                    Información
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    `;
+
+
+                    openModal(
+                        faqHTML
+                    );
+
+
+                    modalContent
+                        .querySelectorAll(
+                            ".nova-faq-question"
+                        )
+                        .forEach(
+                            function (
+                                questionButton
+                            ) {
+
+                                questionButton.addEventListener(
+                                    "click",
+                                    function () {
+
+                                        const item =
+                                            questionButton.closest(
+                                                ".nova-faq-item"
+                                            );
+
+
+                                        if (!item) {
+                                            return;
+                                        }
+
+
+                                        const isOpen =
+                                            item.classList.contains(
+                                                "is-open"
+                                            );
+
+
+                                        modalContent
+                                            .querySelectorAll(
+                                                ".nova-faq-item"
+                                            )
+                                            .forEach(
+                                                function (
+                                                    faqItem
+                                                ) {
+
+                                                    faqItem.classList.remove(
+                                                        "is-open"
+                                                    );
+
+
+                                                    const button =
+                                                        faqItem.querySelector(
+                                                            ".nova-faq-question"
+                                                        );
+
+
+                                                    if (button) {
+
+                                                        button.setAttribute(
+                                                            "aria-expanded",
+                                                            "false"
+                                                        );
+
+                                                    }
+
+                                                }
+                                            );
+
+
+                                        if (!isOpen) {
+
+                                            item.classList.add(
+                                                "is-open"
+                                            );
+
+
+                                            questionButton.setAttribute(
+                                                "aria-expanded",
+                                                "true"
+                                            );
+
+                                        }
+
+                                    }
+                                );
+
+                            }
+                        );
+
+                }
+
 
                 document
                     .querySelectorAll(
-                        ".nova-page-link"
+                        ".js-open-faq"
                     )
                     .forEach(
-                        (link) => {
+                        function (link) {
 
                             link.addEventListener(
                                 "click",
-                                (event) => {
+                                function (event) {
 
-                                    const href =
-                                        link.getAttribute(
-                                            "href"
-                                        );
+                                    event.preventDefault();
 
-                                    if (!href) {
-                                        return;
-                                    }
+                                    openFAQ();
 
+                                }
+                            );
 
-                                    if (
-                                        event.button !== 0 ||
-                                        event.metaKey ||
-                                        event.ctrlKey ||
-                                        event.shiftKey ||
-                                        event.altKey
-                                    ) {
-                                        return;
-                                    }
+                        }
+                    );
 
 
-                                    if (
-                                        href.startsWith(
-                                            "index.html#"
-                                        ) ||
-                                        href.startsWith(
-                                            "training.html#"
-                                        )
-                                    ) {
-                                        return;
-                                    }
+                /* =================================================
+                   LEGAL NOVA
+                ================================================== */
 
+                const NOVA_LEGAL_CONTENT = {
+
+                    privacy: {
+
+                        eyebrow:
+                            "NOVA · LEGAL",
+
+                        title:
+                            "Aviso de privacidad",
+
+                        content: `
+
+                            <div class="nova-legal-heading">
+                                01 · Responsable
+                            </div>
+
+                            <p>
+                                NOVA es responsable del tratamiento de los
+                                datos personales que sean proporcionados
+                                voluntariamente por los usuarios a través
+                                de este sitio web, formularios, medios de
+                                contacto o durante la contratación de sus
+                                servicios.
+                            </p>
+
+
+                            <div class="nova-legal-heading">
+                                02 · Datos que podemos recopilar
+                            </div>
+
+                            <p>
+                                Dependiendo de la interacción que tengas
+                                con NOVA, podremos solicitar información
+                                necesaria para atender tu solicitud,
+                                gestionar un programa o mantener la
+                                comunicación relacionada con los servicios.
+                            </p>
+
+                            <ul class="nova-legal-list">
+
+                                <li>
+                                    Nombre y datos de contacto.
+                                </li>
+
+                                <li>
+                                    Información relacionada con tus
+                                    objetivos de entrenamiento.
+                                </li>
+
+                                <li>
+                                    Información necesaria para organizar
+                                    y dar seguimiento al servicio.
+                                </li>
+
+                                <li>
+                                    Información que el usuario decida
+                                    proporcionar voluntariamente.
+                                </li>
+
+                            </ul>
+
+
+                            <div class="nova-legal-heading">
+                                03 · Finalidades
+                            </div>
+
+                            <p>
+                                Los datos podrán utilizarse para responder
+                                solicitudes de información, gestionar
+                                programas de entrenamiento, coordinar
+                                comunicación, dar seguimiento al atleta,
+                                procesar solicitudes relacionadas con los
+                                servicios y mantener una relación adecuada
+                                con los usuarios.
+                            </p>
+
+
+                            <div class="nova-legal-heading">
+                                04 · Protección de la información
+                            </div>
+
+                            <p>
+                                NOVA procurará implementar medidas
+                                razonables para proteger la información
+                                personal contra acceso, uso, alteración
+                                o divulgación no autorizada.
+                            </p>
+
+
+                            <div class="nova-legal-heading">
+                                05 · Derechos del usuario
+                            </div>
+
+                            <p>
+                                El usuario podrá solicitar información
+                                relacionada con el tratamiento de sus
+                                datos personales y ejercer los derechos
+                                que correspondan conforme a la legislación
+                                aplicable.
+                            </p>
+
+
+                            <div class="nova-legal-heading">
+                                06 · Contacto
+                            </div>
+
+                            <p>
+                                Para cualquier asunto relacionado con el
+                                tratamiento de datos personales puedes
+                                comunicarte con NOVA mediante los medios
+                                de contacto disponibles en este sitio.
+                            </p>
+
+                        `
+
+                    },
+
+
+                    terms: {
+
+                        eyebrow:
+                            "NOVA · LEGAL",
+
+                        title:
+                            "Términos y condiciones",
+
+                        content: `
+
+                            <div class="nova-legal-heading">
+                                01 · Aceptación
+                            </div>
+
+                            <p>
+                                El acceso y utilización del sitio web de
+                                NOVA implica la aceptación de los presentes
+                                términos y condiciones.
+                            </p>
+
+
+                            <div class="nova-legal-heading">
+                                02 · Servicios
+                            </div>
+
+                            <p>
+                                NOVA ofrece programas y estructuras de
+                                entrenamiento relacionados con natación,
+                                fuerza y otras modalidades descritas en
+                                el sitio. Las características, duración,
+                                nivel de atención y condiciones pueden
+                                variar dependiendo del programa contratado.
+                            </p>
+
+
+                            <div class="nova-legal-heading">
+                                03 · Información proporcionada
+                            </div>
+
+                            <p>
+                                El usuario se compromete a proporcionar
+                                información correcta y suficiente cuando
+                                sea necesaria para la prestación del
+                                servicio.
+                            </p>
+
+
+                            <div class="nova-legal-heading">
+                                04 · Uso personal
+                            </div>
+
+                            <p>
+                                Los programas, entrenamientos, materiales
+                                y contenidos proporcionados por NOVA son
+                                para uso personal del usuario que los
+                                contrata.
+                            </p>
+
+                            <p>
+                                No está permitido compartir, revender,
+                                reproducir, distribuir o comercializar
+                                contenidos de NOVA sin autorización.
+                            </p>
+
+
+                            <div class="nova-legal-heading">
+                                05 · Propiedad intelectual
+                            </div>
+
+                            <p>
+                                Los textos, entrenamientos, estructuras,
+                                imágenes, elementos gráficos, metodología
+                                y demás contenidos del sitio pertenecen
+                                a NOVA o se utilizan con las autorizaciones
+                                correspondientes.
+                            </p>
+
+
+                            <div class="nova-legal-heading">
+                                06 · Modificaciones
+                            </div>
+
+                            <p>
+                                NOVA podrá actualizar, modificar o mejorar
+                                sus programas, contenidos y servicios
+                                cuando resulte necesario.
+                            </p>
+
+
+                            <div class="nova-legal-heading">
+                                07 · Uso responsable
+                            </div>
+
+                            <p>
+                                El usuario deberá utilizar los servicios
+                                de manera responsable y seguir las
+                                recomendaciones de seguridad correspondientes
+                                a cada actividad.
+                            </p>
+
+                        `
+
+                    },
+
+
+                    cookies: {
+
+                        eyebrow:
+                            "NOVA · LEGAL",
+
+                        title:
+                            "Política de cookies",
+
+                        content: `
+
+                            <div class="nova-legal-heading">
+                                01 · ¿Qué son las cookies?
+                            </div>
+
+                            <p>
+                                Las cookies son pequeños archivos que
+                                pueden almacenarse en el dispositivo del
+                                usuario cuando visita un sitio web.
+                            </p>
+
+
+                            <div class="nova-legal-heading">
+                                02 · Uso en NOVA
+                            </div>
+
+                            <p>
+                                El sitio web de NOVA puede utilizar cookies
+                                y tecnologías similares para permitir el
+                                correcto funcionamiento de determinadas
+                                funciones y mejorar la experiencia de
+                                navegación.
+                            </p>
+
+
+                            <div class="nova-legal-heading">
+                                03 · Para qué pueden utilizarse
+                            </div>
+
+                            <ul class="nova-legal-list">
+
+                                <li>
+                                    Mantener funciones necesarias del sitio.
+                                </li>
+
+                                <li>
+                                    Recordar determinadas preferencias.
+                                </li>
+
+                                <li>
+                                    Obtener información técnica relacionada
+                                    con la navegación.
+                                </li>
+
+                                <li>
+                                    Mejorar la experiencia de usuario.
+                                </li>
+
+                            </ul>
+
+
+                            <div class="nova-legal-heading">
+                                04 · Servicios externos
+                            </div>
+
+                            <p>
+                                Algunas funciones o servicios externos
+                                utilizados por el sitio podrían establecer
+                                sus propias cookies de acuerdo con sus
+                                respectivas políticas de privacidad.
+                            </p>
+
+
+                            <div class="nova-legal-heading">
+                                05 · Configuración
+                            </div>
+
+                            <p>
+                                El usuario puede configurar su navegador
+                                para bloquear, eliminar o limitar el uso
+                                de cookies. Algunas funciones del sitio
+                                podrían verse afectadas si se deshabilitan
+                                determinadas cookies.
+                            </p>
+
+                        `
+
+                    },
+
+
+                    notice: {
+
+                        eyebrow:
+                            "NOVA · LEGAL",
+
+                        title:
+                            "Aviso legal",
+
+                        content: `
+
+                            <div class="nova-legal-heading">
+                                01 · Información general
+                            </div>
+
+                            <p>
+                                NOVA es una plataforma dedicada a ofrecer
+                                información, programas y servicios
+                                relacionados con entrenamiento deportivo.
+                            </p>
+
+
+                            <div class="nova-legal-heading">
+                                02 · Contenido
+                            </div>
+
+                            <p>
+                                La información publicada en este sitio
+                                tiene carácter informativo y está
+                                relacionada con los servicios y programas
+                                ofrecidos por NOVA.
+                            </p>
+
+
+                            <div class="nova-legal-heading">
+                                03 · Actualización de información
+                            </div>
+
+                            <p>
+                                NOVA procurará mantener la información del
+                                sitio actualizada. Sin embargo, determinados
+                                contenidos, precios, disponibilidad,
+                                características de programas o condiciones
+                                pueden modificarse.
+                            </p>
+
+
+                            <div class="nova-legal-heading">
+                                04 · Información de entrenamiento
+                            </div>
+
+                            <p>
+                                El contenido del sitio y los programas de
+                                entrenamiento no deberán interpretarse como
+                                sustituto de una valoración médica,
+                                diagnóstico, tratamiento o atención
+                                profesional de la salud.
+                            </p>
+
+
+                            <div class="nova-legal-heading">
+                                05 · Contacto
+                            </div>
+
+                            <p>
+                                Para cualquier duda relacionada con los
+                                servicios, programas o información publicada,
+                                el usuario puede ponerse en contacto con NOVA
+                                mediante los canales disponibles en este sitio.
+                            </p>
+
+                        `
+
+                    },
+
+
+                    cancellations: {
+
+                        eyebrow:
+                            "NOVA · LEGAL",
+
+                        title:
+                            "Cancelaciones y reembolsos",
+
+                        content: `
+
+                            <div class="nova-legal-heading">
+                                01 · Condiciones generales
+                            </div>
+
+                            <p>
+                                Las condiciones de cancelación y reembolso
+                                dependerán del servicio o programa
+                                contratado y de las condiciones informadas
+                                al momento de realizar la compra.
+                            </p>
+
+
+                            <div class="nova-legal-heading">
+                                02 · Solicitudes
+                            </div>
+
+                            <p>
+                                Si necesitas cancelar un servicio o
+                                solicitar una revisión de tu compra,
+                                deberás comunicarte con NOVA utilizando
+                                los medios de contacto disponibles.
+                            </p>
+
+
+                            <div class="nova-legal-heading">
+                                03 · Revisión
+                            </div>
+
+                            <p>
+                                Las solicitudes serán revisadas considerando
+                                la fecha de contratación, el estado del
+                                servicio, el acceso utilizado y las
+                                condiciones específicas aplicables a la
+                                compra.
+                            </p>
+
+
+                            <div class="nova-legal-heading">
+                                04 · Programas iniciados
+                            </div>
+
+                            <p>
+                                Una vez iniciado o utilizado un programa,
+                                el derecho a cancelación o reembolso podrá
+                                estar sujeto a las condiciones aplicables
+                                al servicio contratado.
+                            </p>
+
+
+                            <div class="nova-legal-heading">
+                                05 · Cambios de programa
+                            </div>
+
+                            <p>
+                                Los cambios de programa podrán ser
+                                considerados cuando existan razones
+                                relacionadas con los objetivos,
+                                disponibilidad o necesidades del atleta.
+                            </p>
+
+
+                            <div class="nova-legal-heading">
+                                06 · Resolución
+                            </div>
+
+                            <p>
+                                NOVA comunicará al usuario la resolución
+                                de cualquier solicitud de cancelación,
+                                cambio o reembolso mediante los canales
+                                de contacto correspondientes.
+                            </p>
+
+                        `
+
+                    },
+
+
+                    responsibility: {
+
+                        eyebrow:
+                            "NOVA · LEGAL",
+
+                        title:
+                            "Aviso de responsabilidad",
+
+                        content: `
+
+                            <div class="nova-legal-heading">
+                                01 · Naturaleza del servicio
+                            </div>
+
+                            <p>
+                                Los programas de NOVA tienen carácter
+                                formativo y de entrenamiento deportivo.
+                            </p>
+
+
+                            <div class="nova-legal-heading">
+                                02 · Riesgos del entrenamiento
+                            </div>
+
+                            <p>
+                                La práctica de actividad física y deportiva
+                                implica riesgos inherentes a la propia
+                                actividad. El usuario deberá realizar los
+                                entrenamientos de acuerdo con su nivel,
+                                capacidades y condiciones personales.
+                            </p>
+
+
+                            <div class="nova-legal-heading">
+                                03 · Condiciones personales
+                            </div>
+
+                            <p>
+                                Antes de iniciar un programa de entrenamiento,
+                                el usuario deberá considerar si se encuentra
+                                en condiciones adecuadas para realizar
+                                actividad física y, cuando corresponda,
+                                consultar con un profesional de la salud.
+                            </p>
+
+
+                            <div class="nova-legal-heading">
+                                04 · Instalaciones y equipo
+                            </div>
+
+                            <p>
+                                Las sesiones deberán realizarse en
+                                instalaciones adecuadas y utilizando el
+                                equipo correspondiente, especialmente en
+                                actividades de natación, aguas abiertas,
+                                fuerza y entrenamiento de alta intensidad.
+                            </p>
+
+
+                            <div class="nova-legal-heading">
+                                05 · Actividades acuáticas
+                            </div>
+
+                            <p>
+                                En actividades acuáticas, el usuario deberá
+                                respetar las normas de seguridad de la
+                                instalación y contar con las condiciones
+                                necesarias para realizar la sesión.
+                            </p>
+
+
+                            <div class="nova-legal-heading">
+                                06 · Comunicación del atleta
+                            </div>
+
+                            <p>
+                                El atleta es responsable de comunicar
+                                cualquier circunstancia que pueda afectar
+                                su capacidad para realizar el entrenamiento
+                                y de detener la actividad cuando considere
+                                que continuar representa un riesgo.
+                            </p>
+
+
+                            <div class="nova-legal-heading">
+                                07 · Alcance
+                            </div>
+
+                            <p>
+                                La planificación proporcionada por NOVA
+                                no sustituye una evaluación médica,
+                                fisioterapéutica o de cualquier otra
+                                especialidad sanitaria.
+                            </p>
+
+                        `
+
+                    }
+
+                };
+
+
+                function openLegalDocument(
+                    type
+                ) {
+
+                    const legalDocument =
+                        NOVA_LEGAL_CONTENT[type];
+
+
+                    if (!legalDocument) {
+                        return;
+                    }
+
+
+                    openModal(`
+
+                        <div class="nova-modal-eyebrow">
+                            ${legalDocument.eyebrow}
+                        </div>
+
+
+                        <h2 id="novaModalTitle">
+                            ${legalDocument.title}
+                        </h2>
+
+
+                        <div class="nova-modal-text nova-legal-text">
+
+                            ${legalDocument.content}
+
+                        </div>
+
+
+                        <div class="nova-modal-legal-footer">
+
+                            <span>
+                                NOVA · TRAINING
+                            </span>
+
+                            <span>
+                                Información legal
+                            </span>
+
+                        </div>
+
+                    `);
+
+                }
+
+
+                document
+                    .querySelectorAll(
+                        ".js-open-legal"
+                    )
+                    .forEach(
+                        function (link) {
+
+                            link.addEventListener(
+                                "click",
+                                function (event) {
 
                                     event.preventDefault();
 
                                     closeMenu();
 
-                                    startPageTransition(
-                                        link
+                                    const type =
+                                        link.getAttribute(
+                                            "data-legal"
+                                        );
+
+                                    openLegalDocument(
+                                        type
                                     );
 
                                 }
@@ -970,20 +3723,605 @@
 
 
                 /* =================================================
-                   KEYBOARD
+                   ENCUESTA
+                ================================================== */
+
+                const surveyQuestions = [
+
+                    {
+
+                        eyebrow:
+                            "01 · DISCIPLINA",
+
+                        title:
+                            "¿Qué quieres entrenar?",
+
+                        options: [
+
+                            "Natación",
+                            "Aguas abiertas",
+                            "Fuerza",
+                            "No estoy seguro"
+
+                        ]
+
+                    },
+
+
+                    {
+
+                        eyebrow:
+                            "02 · OBJETIVO",
+
+                        title:
+                            "¿Qué quieres mejorar?",
+
+                        options: [
+
+                            "Técnica",
+                            "Resistencia",
+                            "Velocidad",
+                            "Fuerza",
+                            "Prepararme para una competencia",
+                            "Otro"
+
+                        ]
+
+                    },
+
+
+                    {
+
+                        eyebrow:
+                            "03 · NIVEL",
+
+                        title:
+                            "¿Cuál es tu nivel?",
+
+                        options: [
+
+                            "Principiante",
+                            "Intermedio",
+                            "Avanzado",
+                            "No estoy seguro"
+
+                        ]
+
+                    },
+
+
+                    {
+
+                        eyebrow:
+                            "04 · EXPERIENCIA",
+
+                        title:
+                            "¿Cuánto tiempo llevas entrenando?",
+
+                        options: [
+
+                            "Menos de 6 meses",
+                            "6 meses a 1 año",
+                            "1 a 3 años",
+                            "Más de 3 años"
+
+                        ]
+
+                    },
+
+
+                    {
+
+                        eyebrow:
+                            "05 · DISPONIBILIDAD",
+
+                        title:
+                            "¿Cuánto tiempo tienes disponible por entrenamiento?",
+
+                        options: [
+
+                            "30–45 min",
+                            "45–60 min",
+                            "60–90 min",
+                            "90+ min",
+                            "Entreno cuando tengo disponibilidad"
+
+                        ]
+
+                    },
+
+
+                    {
+
+                        eyebrow:
+                            "06 · DISTANCIA",
+
+                        title:
+                            "¿Cuál ha sido la distancia más larga que has nadado?",
+
+                        options: [
+
+                            "500 m",
+                            "1K a 3K",
+                            "3K a 5K",
+                            "5K a 10K",
+                            "Otro"
+
+                        ]
+
+                    },
+
+
+                    {
+
+                        eyebrow:
+                            "07 · ENTRENAMIENTO",
+
+                        title:
+                            "¿Qué modalidad buscas?",
+
+                        description:
+                            "La modalidad presencial está sujeta a ubicación y disponibilidad. El entrenamiento online te permite seguir tu programa desde donde estés.",
+
+                        options: [
+
+                            "Online",
+                            "Presencial",
+                            "No estoy seguro"
+
+                        ]
+
+                    }
+
+                ];
+
+
+                function openSurvey() {
+
+                    closeMenu();
+
+                    let currentStep =
+                        0;
+
+                    const answers = {};
+
+
+                    function renderQuestion() {
+
+                        const question =
+                            surveyQuestions[
+                                currentStep
+                            ];
+
+
+                        const progress =
+                            (
+                                (
+                                    currentStep + 1
+                                ) /
+                                surveyQuestions.length
+                            ) *
+                            100;
+
+
+                        openModal(`
+
+                            <div class="nova-survey">
+
+                                <div class="nova-survey-top">
+
+                                    <div class="nova-modal-eyebrow">
+                                        NOVA · ENCUENTRA TU PLAN
+                                    </div>
+
+                                    <div class="nova-survey-progress-text">
+                                        ${currentStep + 1}
+                                        /
+                                        ${surveyQuestions.length}
+                                    </div>
+
+                                </div>
+
+
+                                <div class="nova-survey-progress">
+
+                                    <span
+                                        style="width:${progress}%"
+                                    ></span>
+
+                                </div>
+
+
+                                <div class="nova-survey-question">
+
+                                    <p class="nova-survey-eyebrow">
+                                        ${question.eyebrow}
+                                    </p>
+
+
+                                    <h2 id="novaModalTitle">
+                                        ${question.title}
+                                    </h2>
+
+
+                                    ${
+                                        question.description
+                                            ? `
+                                                <p class="nova-modal-text">
+                                                    ${question.description}
+                                                </p>
+                                            `
+                                            : ""
+                                    }
+
+
+                                    <div class="nova-survey-options">
+
+                                        ${question.options
+                                            .map(
+                                                function (
+                                                    option
+                                                ) {
+
+                                                    return `
+
+                                                        <button
+                                                            type="button"
+                                                            class="nova-survey-option"
+                                                            data-survey-value="${option}"
+                                                        >
+
+                                                            <span>
+                                                                ${option}
+                                                            </span>
+
+                                                            <span
+                                                                aria-hidden="true"
+                                                            >
+                                                                →
+                                                            </span>
+
+                                                        </button>
+
+                                                    `;
+
+                                                }
+                                            )
+                                            .join("")}
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        `);
+
+
+                        modalContent
+                            .querySelectorAll(
+                                ".nova-survey-option"
+                            )
+                            .forEach(
+                                function (
+                                    optionButton
+                                ) {
+
+                                    optionButton.addEventListener(
+                                        "click",
+                                        function () {
+
+                                            answers[
+                                                currentStep
+                                            ] =
+                                                optionButton.dataset
+                                                    .surveyValue;
+
+
+                                            currentStep++;
+
+
+                                            if (
+                                                currentStep <
+                                                surveyQuestions.length
+                                            ) {
+
+                                                renderQuestion();
+
+                                            } else {
+
+                                                renderSurveyResult();
+
+                                            }
+
+                                        }
+                                    );
+
+                                }
+                            );
+
+                    }
+
+
+                    function renderSurveyResult() {
+
+                        let suggestedPlan =
+                            "BASE";
+
+
+                        const discipline =
+                            answers[0];
+
+                        const goal =
+                            answers[1];
+
+
+                        if (
+                            discipline ===
+                            "Fuerza"
+                        ) {
+
+                            suggestedPlan =
+                                "FUERZA";
+
+                        } else if (
+                            discipline ===
+                            "Aguas abiertas"
+                        ) {
+
+                            suggestedPlan =
+                                "RENDIMIENTO";
+
+                        } else if (
+                            goal ===
+                            "Velocidad"
+                        ) {
+
+                            suggestedPlan =
+                                "RENDIMIENTO";
+
+                        } else {
+
+                            suggestedPlan =
+                                "BASE";
+
+                        }
+
+
+                        const plan =
+                            NOVA_MEMBERSHIPS.find(
+                                function (
+                                    membership
+                                ) {
+
+                                    return (
+                                        membership.title ===
+                                        suggestedPlan
+                                    );
+
+                                }
+                            );
+
+
+                        if (!plan) {
+                            return;
+                        }
+
+
+                        /*
+                         * GUARDAMOS LAS RESPUESTAS DE "TU PLAN"
+                         * para utilizarlas únicamente cuando el usuario
+                         * llegue al botón "QUIERO ESTE PLAN".
+                         */
+
+                        NOVA_SURVEY_ANSWERS = {
+
+                            disciplina:
+                                answers[0] ||
+                                "No especificado",
+
+                            objetivo:
+                                answers[1] ||
+                                "No especificado",
+
+                            nivel:
+                                answers[2] ||
+                                "No especificado",
+
+                            experiencia:
+                                answers[3] ||
+                                "No especificado",
+
+                            disponibilidad:
+                                answers[4] ||
+                                "No especificado",
+
+                            distancia:
+                                answers[5] ||
+                                "No especificado",
+
+                            modalidad:
+                                answers[6] ||
+                                "No especificado",
+
+                            plan:
+                                plan.title
+
+                        };
+
+
+                        openModal(`
+
+                            <div class="nova-survey-result">
+
+                                <div class="nova-modal-eyebrow">
+                                    NOVA · PUNTO DE PARTIDA
+                                </div>
+
+
+                                <h2 id="novaModalTitle">
+                                    Tenemos una idea para ti.
+                                </h2>
+
+
+                                <div class="nova-modal-text">
+
+                                    <p>
+                                        De acuerdo con tus respuestas,
+                                        puedes comenzar explorando:
+                                    </p>
+
+                                </div>
+
+
+                                <div class="nova-survey-result-plan">
+
+                                    <span>
+                                        ${plan.category}
+                                    </span>
+
+                                    <strong>
+                                        ${plan.title}
+                                    </strong>
+
+                                    <b>
+                                        ${plan.price}
+                                    </b>
+
+                                </div>
+
+
+                                <div class="nova-modal-text">
+
+                                    <p>
+                                        Puedes conocer el plan y después
+                                        continuar directamente con NOVA
+                                        si quieres comenzar.
+                                    </p>
+
+                                </div>
+
+
+                                <div class="nova-survey-result-actions">
+
+                                    <button
+                                        type="button"
+                                        class="nova-modal-action"
+                                        id="surveyPlanButton"
+                                    >
+                                        CONOCER PLAN
+                                        <span aria-hidden="true">
+                                            →
+                                        </span>
+                                    </button>
+
+
+                                    <button
+                                        type="button"
+                                        class="nova-survey-restart"
+                                        id="surveyRestartButton"
+                                    >
+                                        VOLVER A HACER LA ENCUESTA
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        `);
+
+
+                        const surveyPlanButton =
+                            document.getElementById(
+                                "surveyPlanButton"
+                            );
+
+
+                        const surveyRestartButton =
+                            document.getElementById(
+                                "surveyRestartButton"
+                            );
+
+
+                        if (surveyPlanButton) {
+
+                            surveyPlanButton.addEventListener(
+                                "click",
+                                function () {
+
+                                    openMembershipDetail(
+                                        plan
+                                    );
+
+                                }
+                            );
+
+                        }
+
+
+                        if (surveyRestartButton) {
+
+                            surveyRestartButton.addEventListener(
+                                "click",
+                                function () {
+
+                                    NOVA_SURVEY_ANSWERS =
+                                        null;
+
+                                    currentStep =
+                                        0;
+
+                                    renderQuestion();
+
+                                }
+                            );
+
+                        }
+
+                    }
+
+
+                    renderQuestion();
+
+                }
+
+
+                /* =================================================
+                   ESC
                 ================================================== */
 
                 document.addEventListener(
                     "keydown",
-                    (event) => {
+                    function (event) {
 
                         if (
                             event.key === "Escape"
                         ) {
 
-                            closeMenu();
+                            if (
+                                modal &&
+                                modal.classList.contains(
+                                    "is-open"
+                                )
+                            ) {
 
-                            closeRoutineModal();
+                                closeModal();
+
+                                return;
+
+                            }
+
+
+                            if (
+                                menu &&
+                                menu.classList.contains(
+                                    "is-open"
+                                )
+                            ) {
+
+                                closeMenu();
+
+                            }
 
                         }
 
@@ -997,10 +4335,14 @@
 
                 window.addEventListener(
                     "resize",
-                    () => {
+                    function () {
 
                         if (
-                            window.innerWidth > 900
+                            window.innerWidth > 900 &&
+                            menu &&
+                            menu.classList.contains(
+                                "is-open"
+                            )
                         ) {
 
                             closeMenu();
@@ -1012,690 +4354,24 @@
 
 
                 /* =================================================
-                   ROUTINES
-                ================================================== */
-
-                const swimmingRoutines = [
-
-                    {
-                        number: "01",
-                        title: "TÉCNICA Y BASE",
-                        objective: "Técnica",
-                        duration: "60 min",
-                        level: "Base",
-                        description:
-                            "Sesión enfocada en construir una base técnica sólida y mejorar la eficiencia del nado sin buscar fatiga excesiva.",
-                        session: [
-                            "300m libre continuo · ritmo cómodo",
-                            "4×100m · técnica de libre · 20\" descanso",
-                            "4×200m · libre aeróbico · ritmo constante · 30\" descanso",
-                            "4×100m · libre progresivo 1–4 · 20\" descanso",
-                            "200m libre suave"
-                        ],
-                        material:
-                            "Sin material.",
-                        focus:
-                            "Posición corporal, longitud de brazada, respiración y control del ritmo."
-                    },
-
-
-                    {
-                        number: "02",
-                        title: "RESISTENCIA AERÓBICA",
-                        objective: "Resistencia",
-                        duration: "65 min",
-                        level: "Base",
-                        description:
-                            "Trabajo continuo y sostenido para desarrollar la capacidad aeróbica y mantener una técnica estable cuando aumenta el volumen.",
-                        session: [
-                            "300m libre continuo",
-                            "3×200m · libre aeróbico · 30\" descanso",
-                            "4×200m · libre · ritmo constante · 25\" descanso",
-                            "2×300m · libre · ritmo controlado · 30\" descanso",
-                            "200m suave"
-                        ],
-                        material:
-                            "Sin material.",
-                        focus:
-                            "Mantener una respiración controlada y una brazada eficiente durante todo el volumen."
-                    },
-
-
-                    {
-                        number: "03",
-                        title: "TÉCNICA + RITMO",
-                        objective: "Ritmo",
-                        duration: "60 min",
-                        level: "Base",
-                        description:
-                            "Combinación de técnica y cambios progresivos de ritmo para aprender a acelerar sin perder eficiencia.",
-                        session: [
-                            "300m libre continuo",
-                            "4×100m · técnica de libre · 20\" descanso",
-                            "4×200m · libre · primeros 100m controlados + últimos 100m progresivos",
-                            "3×200m · ritmo medio/alto · 30\" descanso",
-                            "200m recuperación"
-                        ],
-                        material:
-                            "Pull buoy opcional durante los bloques técnicos.",
-                        focus:
-                            "Cambiar de ritmo conservando posición corporal, respiración y longitud de brazada."
-                    },
-
-
-                    {
-                        number: "04",
-                        title: "RECUPERACIÓN AERÓBICA",
-                        objective: "Recuperación",
-                        duration: "50–55 min",
-                        level: "Base",
-                        description:
-                            "Sesión de carga controlada para acumular trabajo aeróbico sin generar una fatiga elevada.",
-                        session: [
-                            "300m libre continuo · muy cómodo",
-                            "4×100m · elección de estilo · técnica suave · 20\" descanso",
-                            "4×200m · libre aeróbico cómodo · 30\" descanso",
-                            "2×100m · progresivos suaves",
-                            "200m afloje"
-                        ],
-                        material:
-                            "Sin material.",
-                        focus:
-                            "Recuperar mientras se mantiene movimiento, técnica y sensación de agua."
-                    },
-
-
-                    {
-                        number: "05",
-                        title: "TRABAJO FUERTE",
-                        objective: "Umbral",
-                        duration: "65–70 min",
-                        level: "Rendimiento",
-                        description:
-                            "Sesión orientada a sostener esfuerzos altos durante bloques largos, buscando control del ritmo y tolerancia al esfuerzo.",
-                        session: [
-                            "300m libre continuo",
-                            "4×100m · progresivos · 20\" descanso",
-                            "4×200m · ritmo fuerte controlado · 30\" descanso",
-                            "3×200m · ritmo alto · 30\" descanso",
-                            "2×100m · fuertes · 25\" descanso",
-                            "200m suave"
-                        ],
-                        material:
-                            "Pull buoy en 2×200m si se desea aumentar el trabajo de tracción.",
-                        focus:
-                            "Sostener intensidad sin perder técnica ni convertir cada repetición en un sprint."
-                    },
-
-
-                    {
-                        number: "06",
-                        title: "VELOCIDAD E INTENSIDAD",
-                        objective: "Velocidad",
-                        duration: "55–60 min",
-                        level: "Rendimiento",
-                        description:
-                            "Trabajo de aceleración y velocidad con recuperaciones suficientes para mantener calidad en cada bloque.",
-                        session: [
-                            "300m libre continuo",
-                            "4×100m · técnica + progresión · 20\" descanso",
-                            "6×100m · ritmo fuerte · 30\" descanso",
-                            "4×200m · 100m controlado + 100m fuerte · 30\" descanso",
-                            "4×100m · máximo controlado · 35\" descanso",
-                            "200m recuperación"
-                        ],
-                        material:
-                            "Sin material.",
-                        focus:
-                            "Acelerar con control, mantener frecuencia de brazada y conservar una técnica eficiente."
-                    },
-
-
-                    {
-                        number: "07",
-                        title: "FONDO Y CONTROL",
-                        objective: "Fondo",
-                        duration: "70 min",
-                        level: "Rendimiento",
-                        description:
-                            "Sesión de mayor volumen para desarrollar resistencia y capacidad de mantener un ritmo estable durante distancias prolongadas.",
-                        session: [
-                            "300m libre continuo",
-                            "2×300m · libre aeróbico · 30\" descanso",
-                            "4×200m · ritmo constante · 30\" descanso",
-                            "2×300m · ritmo medio · 35\" descanso",
-                            "200m libre suave"
-                        ],
-                        material:
-                            "Pull buoy opcional en uno de los bloques de 300m.",
-                        focus:
-                            "Regular el esfuerzo, evitar cambios innecesarios de ritmo y terminar con capacidad de mantener la técnica."
-                    }
-
-                ];
-
-
-                const strengthRoutines = [
-
-                    {
-                        number: "01",
-                        title: "PIERNAS + CORE",
-                        objective: "Fuerza",
-                        duration: "50–60 min",
-                        level: "Base",
-                        description:
-                            "Sesión centrada en producir fuerza desde las piernas y mantener estabilidad del tronco durante los movimientos.",
-                        session: [
-                            "Calentamiento general · 8–10 min",
-                            "Sentadilla frontal · 4×6",
-                            "Peso muerto rumano · 4×8",
-                            "Zancada atrás · 3×10 por pierna",
-                            "Elevación de pantorrilla · 3×15",
-                            "Plancha frontal · 3×40–60\"",
-                            "Dead bug · 3×10 por lado"
-                        ],
-                        material:
-                            "Barra, discos y espacio de trabajo.",
-                        focus:
-                            "Control de rodilla, estabilidad de cadera y capacidad de mantener el tronco firme."
-                    },
-
-
-                    {
-                        number: "02",
-                        title: "TREN SUPERIOR",
-                        objective: "Fuerza",
-                        duration: "50–60 min",
-                        level: "Base",
-                        description:
-                            "Trabajo de empuje y tracción para desarrollar fuerza general del tren superior y estabilidad escapular.",
-                        session: [
-                            "Calentamiento de hombros · 8–10 min",
-                            "Press de hombro · 4×6",
-                            "Remo con barra · 4×8",
-                            "Flexiones · 3×10–15",
-                            "Remo unilateral · 3×10 por lado",
-                            "Pike push-up · 3×8–12",
-                            "Plancha lateral · 3×30–45\" por lado"
-                        ],
-                        material:
-                            "Barra, discos y espacio de trabajo.",
-                        focus:
-                            "Control escapular, estabilidad del hombro y ejecución limpia."
-                    },
-
-
-                    {
-                        number: "03",
-                        title: "UNILATERAL + ESTABILIDAD",
-                        objective: "Estabilidad",
-                        duration: "50–55 min",
-                        level: "Base",
-                        description:
-                            "Sesión unilateral para trabajar fuerza, equilibrio y control entre ambos lados del cuerpo.",
-                        session: [
-                            "Calentamiento dinámico · 8–10 min",
-                            "Bulgarian split squat · 4×8 por pierna",
-                            "Peso muerto unilateral · 3×8 por lado",
-                            "Step-up · 3×10 por pierna",
-                            "Press unilateral · 3×8 por lado",
-                            "Farmer carry · 4×30–40m",
-                            "Pallof press · 3×10 por lado"
-                        ],
-                        material:
-                            "Mancuernas o carga disponible y espacio de trabajo.",
-                        focus:
-                            "Control de pelvis, estabilidad del tobillo, rodilla y cadera."
-                    },
-
-
-                    {
-                        number: "04",
-                        title: "CUERPO COMPLETO",
-                        objective: "Fuerza general",
-                        duration: "55–60 min",
-                        level: "Intermedio",
-                        description:
-                            "Entrenamiento de cuerpo completo combinando patrones principales de fuerza para desarrollar capacidad general.",
-                        session: [
-                            "Calentamiento general · 8–10 min",
-                            "Sentadilla frontal · 4×5",
-                            "Press de hombro · 4×6",
-                            "Peso muerto rumano · 3×8",
-                            "Remo con barra · 3×8",
-                            "Zancada caminando · 3×10 por pierna",
-                            "Plancha con apoyo de antebrazos · 3×45–60\""
-                        ],
-                        material:
-                            "Barra, discos y espacio de trabajo.",
-                        focus:
-                            "Ejecutar cada patrón con control y mantener calidad técnica durante toda la sesión."
-                    },
-
-
-                    {
-                        number: "05",
-                        title: "CONTROL CORPORAL",
-                        objective: "Control",
-                        duration: "45–55 min",
-                        level: "Intermedio",
-                        description:
-                            "Sesión enfocada en controlar el cuerpo bajo tensión, mejorando estabilidad y coordinación.",
-                        session: [
-                            "Calentamiento dinámico · 8 min",
-                            "Sentadilla tempo · 4×6",
-                            "Push-up tempo · 4×8–12",
-                            "Remo unilateral · 3×10 por lado",
-                            "Split squat isométrico · 3×30–40\" por pierna",
-                            "Bear crawl · 4×20–30m",
-                            "Hollow hold · 3×30–40\""
-                        ],
-                        material:
-                            "Sin material obligatorio.",
-                        focus:
-                            "Tempo, posiciones estables, tensión corporal y control del movimiento."
-                    },
-
-
-                    {
-                        number: "06",
-                        title: "CADENA POSTERIOR",
-                        objective: "Potencia posterior",
-                        duration: "50–60 min",
-                        level: "Intermedio",
-                        description:
-                            "Trabajo específico de glúteos, isquiotibiales y espalda para fortalecer la cadena posterior.",
-                        session: [
-                            "Calentamiento dinámico · 8–10 min",
-                            "Peso muerto rumano · 4×6",
-                            "Hip thrust · 4×8",
-                            "Good morning · 3×10",
-                            "Zancada atrás · 3×10 por pierna",
-                            "Superman · 3×12",
-                            "Dead bug · 3×10 por lado"
-                        ],
-                        material:
-                            "Barra y discos.",
-                        focus:
-                            "Bisagra de cadera, tensión de isquiotibiales y activación de glúteos."
-                    },
-
-
-                    {
-                        number: "07",
-                        title: "FUERZA + POTENCIA",
-                        objective: "Potencia",
-                        duration: "55–65 min",
-                        level: "Rendimiento",
-                        description:
-                            "Sesión que combina fuerza y movimientos explosivos para desarrollar capacidad de producir fuerza con velocidad.",
-                        session: [
-                            "Calentamiento general · 10 min",
-                            "Saltos verticales · 4×5",
-                            "Sentadilla frontal · 5×4",
-                            "Push press · 4×5",
-                            "Peso muerto rumano · 4×6",
-                            "Zancada explosiva · 3×6 por pierna",
-                            "Farmer carry · 4×30m",
-                            "Hollow hold · 3×40\""
-                        ],
-                        material:
-                            "Barra, discos y espacio suficiente para movimientos explosivos.",
-                        focus:
-                            "Producir fuerza rápidamente sin sacrificar posición, control ni calidad técnica."
-                    }
-
-                ];
-
-
-                /* =================================================
-                   ROUTINE CARD CREATION
-                ================================================== */
-
-                const swimmingGrid =
-                    document.getElementById(
-                        "swimmingRoutineGrid"
-                    );
-
-                const strengthGrid =
-                    document.getElementById(
-                        "strengthRoutineGrid"
-                    );
-
-
-                function createRoutineCard(
-                    routine,
-                    discipline
-                ) {
-
-                    const card =
-                        document.createElement("article");
-
-                    card.className =
-                        "nova-training-card nova-routine-card";
-
-
-                    card.innerHTML = `
-
-                        <div class="nova-training-card-image">
-
-                            <div
-                                class="nova-training-card-overlay"
-                            ></div>
-
-                        </div>
-
-
-                        <div class="nova-training-card-top">
-
-                            <span>
-                                ${routine.number}
-                            </span>
-
-                            <span>
-                                →
-                            </span>
-
-                        </div>
-
-
-                        <div class="nova-training-card-content">
-
-                            <div class="nova-training-card-label">
-                                ${discipline}
-                            </div>
-
-                            <h3>
-                                ${routine.title}
-                            </h3>
-
-                            <p>
-                                ${routine.description}
-                            </p>
-
-                            <button
-                                type="button"
-                                class="nova-training-card-button"
-                            >
-                                <span>
-                                    VER RUTINA
-                                </span>
-
-                                <span>
-                                    →
-                                </span>
-                            </button>
-
-                        </div>
-
-                    `;
-
-
-                    const image =
-                        card.querySelector(
-                            ".nova-training-card-image"
-                        );
-
-
-                    if (
-                        discipline === "NATACIÓN"
-                    ) {
-
-                        image.style.backgroundImage =
-                            "url('img/WhatsApp Image 4.jpeg')";
-
-                    } else {
-
-                        image.style.backgroundImage =
-                            "url('img/WhatsApp Image 3.jpeg')";
-
-                    }
-
-
-                    const button =
-                        card.querySelector(
-                            ".nova-training-card-button"
-                        );
-
-
-                    button.addEventListener(
-                        "click",
-                        (event) => {
-
-                            event.preventDefault();
-                            event.stopPropagation();
-
-                            openRoutineModal(
-                                routine,
-                                discipline
-                            );
-
-                        }
-                    );
-
-
-                    return card;
-
-                }
-
-
-                swimmingRoutines.forEach(
-                    (routine) => {
-
-                        swimmingGrid.appendChild(
-                            createRoutineCard(
-                                routine,
-                                "NATACIÓN"
-                            )
-                        );
-
-                    }
-                );
-
-
-                strengthRoutines.forEach(
-                    (routine) => {
-
-                        strengthGrid.appendChild(
-                            createRoutineCard(
-                                routine,
-                                "FUERZA"
-                            )
-                        );
-
-                    }
-                );
-
-
-                /* =================================================
-                   ROUTINE MODAL
-                ================================================== */
-
-                const routineModal =
-                    document.getElementById(
-                        "routineModal"
-                    );
-
-                const routineModalOverlay =
-                    document.getElementById(
-                        "routineModalOverlay"
-                    );
-
-                const routineModalClose =
-                    document.getElementById(
-                        "routineModalClose"
-                    );
-
-                const routineModalNumber =
-                    document.getElementById(
-                        "routineModalNumber"
-                    );
-
-                const routineModalDiscipline =
-                    document.getElementById(
-                        "routineModalDiscipline"
-                    );
-
-                const routineModalTitle =
-                    document.getElementById(
-                        "routineModalTitle"
-                    );
-
-                const routineModalObjective =
-                    document.getElementById(
-                        "routineModalObjective"
-                    );
-
-                const routineModalDuration =
-                    document.getElementById(
-                        "routineModalDuration"
-                    );
-
-                const routineModalLevel =
-                    document.getElementById(
-                        "routineModalLevel"
-                    );
-
-                const routineModalDescription =
-                    document.getElementById(
-                        "routineModalDescription"
-                    );
-
-                const routineModalSession =
-                    document.getElementById(
-                        "routineModalSession"
-                    );
-
-                const routineModalMaterial =
-                    document.getElementById(
-                        "routineModalMaterial"
-                    );
-
-                const routineModalFocus =
-                    document.getElementById(
-                        "routineModalFocus"
-                    );
-
-
-                function openRoutineModal(
-                    routine,
-                    discipline
-                ) {
-
-                    routineModalNumber.textContent =
-                        routine.number;
-
-                    routineModalDiscipline.textContent =
-                        discipline;
-
-                    routineModalTitle.textContent =
-                        routine.title;
-
-                    routineModalObjective.textContent =
-                        routine.objective;
-
-                    routineModalDuration.textContent =
-                        routine.duration;
-
-                    routineModalLevel.textContent =
-                        routine.level;
-
-                    routineModalDescription.textContent =
-                        routine.description;
-
-                    routineModalMaterial.textContent =
-                        routine.material;
-
-                    routineModalFocus.textContent =
-                        routine.focus;
-
-
-                    routineModalSession.innerHTML =
-                        "";
-
-
-                    routine.session.forEach(
-                        (item) => {
-
-                            const sessionItem =
-                                document.createElement(
-                                    "div"
-                                );
-
-                            sessionItem.className =
-                                "nova-routine-session-item";
-
-                            sessionItem.textContent =
-                                item;
-
-                            routineModalSession.appendChild(
-                                sessionItem
-                            );
-
-                        }
-                    );
-
-
-                    routineModal.classList.add(
-                        "is-open"
-                    );
-
-                    routineModal.setAttribute(
-                        "aria-hidden",
-                        "false"
-                    );
-
-                    document.body.classList.add(
-                        "nova-routine-modal-open"
-                    );
-
-                }
-
-
-                function closeRoutineModal() {
-
-                    routineModal.classList.remove(
-                        "is-open"
-                    );
-
-                    routineModal.setAttribute(
-                        "aria-hidden",
-                        "true"
-                    );
-
-                    document.body.classList.remove(
-                        "nova-routine-modal-open"
-                    );
-
-                }
-
-
-                routineModalClose.addEventListener(
-                    "click",
-                    closeRoutineModal
-                );
-
-
-                routineModalOverlay.addEventListener(
-                    "click",
-                    closeRoutineModal
-                );
-
-
-                /* =================================================
                    PAGE SHOW
                 ================================================== */
 
                 window.addEventListener(
                     "pageshow",
-                    () => {
+                    function () {
+
+                        if (pageTransition) {
+
+                            pageTransition.classList.remove(
+                                "is-active"
+                            );
+
+                        }
+
 
                         document.body.classList.remove(
                             "nova-page-changing"
-                        );
-
-                        pageTransition.classList.remove(
-                            "is-active"
                         );
 
                     }
