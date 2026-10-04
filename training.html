@@ -17,9 +17,1206 @@
         href="css/training.css"
     >
 
+    <style>
+
+        /* =====================================================
+           NOVA · TRAINING · METODOLOGÍA + COACH
+        ====================================================== */
+
+        .nova-training-extra-section {
+
+            width: min(
+                var(--nova-max-width, 1309px),
+                calc(100% - 56px)
+            );
+
+            margin: 0 auto;
+
+            padding:
+                0 0 100px;
+
+        }
+
+
+        .nova-training-extra-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                minmax(0, 1.45fr)
+                minmax(280px, .55fr);
+
+            gap: 20px;
+
+        }
+
+
+        .nova-training-extra-card {
+
+            position: relative;
+
+            min-height: 360px;
+
+            overflow: hidden;
+
+            border-radius:
+                var(--nova-radius-lg, 26px);
+
+            background:
+                var(--nova-black, #111111);
+
+            color:
+                var(--nova-white, #ffffff);
+
+            cursor: pointer;
+
+            isolation: isolate;
+
+            transition:
+                transform .45s var(--nova-ease, cubic-bezier(.22,1,.36,1)),
+                box-shadow .45s ease;
+
+        }
+
+
+        .nova-training-extra-card:hover {
+
+            transform:
+                translateY(-5px);
+
+            box-shadow:
+                0 24px 60px rgba(0,0,0,.14);
+
+        }
+
+
+        .nova-training-extra-image {
+
+            position: absolute;
+
+            inset: 0;
+
+            z-index: -2;
+
+            background-position: center;
+
+            background-size: cover;
+
+            background-repeat: no-repeat;
+
+            transition:
+                transform .8s var(--nova-ease, cubic-bezier(.22,1,.36,1));
+
+        }
+
+
+        .nova-training-extra-card:hover
+        .nova-training-extra-image {
+
+            transform:
+                scale(1.045);
+
+        }
+
+
+        .nova-training-extra-overlay {
+
+            position: absolute;
+
+            inset: 0;
+
+            z-index: -1;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    rgba(0,0,0,.08) 0%,
+                    rgba(0,0,0,.22) 38%,
+                    rgba(0,0,0,.88) 100%
+                );
+
+        }
+
+
+        .nova-training-extra-top {
+
+            position: absolute;
+
+            top: 24px;
+
+            left: 26px;
+
+            right: 26px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+            letter-spacing: .12em;
+
+        }
+
+
+        .nova-training-extra-content {
+
+            position: absolute;
+
+            left: 26px;
+
+            right: 26px;
+
+            bottom: 26px;
+
+        }
+
+
+        .nova-training-extra-label {
+
+            margin-bottom: 9px;
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            letter-spacing: .14em;
+
+            text-transform: uppercase;
+
+            opacity: .72;
+
+        }
+
+
+        .nova-training-extra-content h3 {
+
+            margin: 0 0 9px;
+
+            font-size: clamp(
+                28px,
+                3vw,
+                46px
+            );
+
+            line-height: .95;
+
+            letter-spacing: -.045em;
+
+        }
+
+
+        .nova-training-extra-content p {
+
+            max-width: 570px;
+
+            margin: 0;
+
+            font-size: 14px;
+
+            line-height: 1.55;
+
+            color:
+                rgba(255,255,255,.74);
+
+        }
+
+
+        .nova-training-extra-button {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 12px;
+
+            margin-top: 20px;
+
+            min-height: 42px;
+
+            padding:
+                0 17px;
+
+            border: 1px solid
+                rgba(255,255,255,.18);
+
+            border-radius: 999px;
+
+            background:
+                rgba(255,255,255,.10);
+
+            color:
+                #fff;
+
+            font: inherit;
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            letter-spacing: .08em;
+
+            text-transform: uppercase;
+
+            backdrop-filter:
+                blur(12px);
+
+            -webkit-backdrop-filter:
+                blur(12px);
+
+        }
+
+
+        /* =====================================================
+           COACH CARD
+        ====================================================== */
+
+        .nova-coach-pill {
+
+            min-height: 360px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: space-between;
+
+            padding: 26px;
+
+            background:
+                var(--nova-bg-alt, #e9e8e2);
+
+            color:
+                var(--nova-black, #111111);
+
+        }
+
+
+        .nova-coach-pill:hover {
+
+            background:
+                #dfded8;
+
+        }
+
+
+        .nova-coach-pill-top {
+
+            display: flex;
+
+            align-items: flex-start;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+        }
+
+
+        .nova-coach-pill-label {
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            letter-spacing: .13em;
+
+            text-transform: uppercase;
+
+            color:
+                var(--nova-gray, #686868);
+
+        }
+
+
+        .nova-coach-photo-button {
+
+            width: 78px;
+
+            height: 78px;
+
+            padding: 0;
+
+            border: 0;
+
+            border-radius: 50%;
+
+            overflow: hidden;
+
+            background:
+                #111;
+
+            cursor: pointer;
+
+            flex-shrink: 0;
+
+            box-shadow:
+                0 10px 25px rgba(0,0,0,.13);
+
+            transition:
+                transform .4s var(--nova-ease, cubic-bezier(.22,1,.36,1));
+
+        }
+
+
+        .nova-coach-pill:hover
+        .nova-coach-photo-button {
+
+            transform:
+                scale(1.05);
+
+        }
+
+
+        .nova-coach-photo-button img {
+
+            width: 100%;
+
+            height: 100%;
+
+            display: block;
+
+            object-fit: cover;
+
+        }
+
+
+        .nova-coach-pill-content {
+
+            margin-top: auto;
+
+            padding-top: 45px;
+
+        }
+
+
+        .nova-coach-pill-content h3 {
+
+            margin: 0 0 9px;
+
+            font-size: clamp(
+                28px,
+                3vw,
+                42px
+            );
+
+            line-height: .95;
+
+            letter-spacing: -.045em;
+
+        }
+
+
+        .nova-coach-pill-content p {
+
+            margin: 0;
+
+            max-width: 360px;
+
+            font-size: 13px;
+
+            line-height: 1.55;
+
+            color:
+                var(--nova-gray, #686868);
+
+        }
+
+
+        .nova-coach-pill-action {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            margin-top: 20px;
+
+            padding: 0;
+
+            border: 0;
+
+            background: transparent;
+
+            color:
+                var(--nova-black, #111111);
+
+            font: inherit;
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            letter-spacing: .08em;
+
+            text-transform: uppercase;
+
+            cursor: pointer;
+
+        }
+
+
+        .nova-coach-pill-action span:last-child {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            width: 28px;
+
+            height: 28px;
+
+            border-radius: 50%;
+
+            background:
+                var(--nova-black, #111111);
+
+            color:
+                #fff;
+
+            transition:
+                transform .3s ease;
+
+        }
+
+
+        .nova-coach-pill:hover
+        .nova-coach-pill-action span:last-child {
+
+            transform:
+                translateX(4px);
+
+        }
+
+
+        /* =====================================================
+           INFORMATION MODALS
+        ====================================================== */
+
+        .nova-info-modal {
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 6000;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 24px;
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            pointer-events: none;
+
+            transition:
+                opacity .35s ease,
+                visibility .35s ease;
+
+        }
+
+
+        .nova-info-modal.is-open {
+
+            opacity: 1;
+
+            visibility: visible;
+
+            pointer-events: auto;
+
+        }
+
+
+        .nova-info-modal-overlay {
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                rgba(0,0,0,.58);
+
+            backdrop-filter:
+                blur(12px);
+
+            -webkit-backdrop-filter:
+                blur(12px);
+
+        }
+
+
+        .nova-info-modal-panel {
+
+            position: relative;
+
+            width: min(
+                900px,
+                100%
+            );
+
+            max-height:
+                min(850px, calc(100vh - 48px));
+
+            overflow-y: auto;
+
+            border-radius:
+                var(--nova-radius-lg, 26px);
+
+            background:
+                var(--nova-bg, #f5f4ef);
+
+            color:
+                var(--nova-black, #111111);
+
+            transform:
+                translateY(25px)
+                scale(.97);
+
+            opacity: 0;
+
+            transition:
+                transform .5s var(--nova-ease, cubic-bezier(.22,1,.36,1)),
+                opacity .35s ease;
+
+            box-shadow:
+                0 35px 100px rgba(0,0,0,.25);
+
+        }
+
+
+        .nova-info-modal.is-open
+        .nova-info-modal-panel {
+
+            transform:
+                translateY(0)
+                scale(1);
+
+            opacity: 1;
+
+        }
+
+
+        .nova-info-modal-close {
+
+            position: absolute;
+
+            top: 18px;
+
+            right: 18px;
+
+            z-index: 5;
+
+            width: 42px;
+
+            height: 42px;
+
+            border: 0;
+
+            border-radius: 50%;
+
+            background:
+                rgba(17,17,17,.08);
+
+            color:
+                var(--nova-black, #111111);
+
+            font-size: 26px;
+
+            line-height: 1;
+
+            cursor: pointer;
+
+            transition:
+                transform .3s ease,
+                background .3s ease;
+
+        }
+
+
+        .nova-info-modal-close:hover {
+
+            transform:
+                rotate(90deg);
+
+            background:
+                rgba(17,17,17,.14);
+
+        }
+
+
+        .nova-info-modal-content {
+
+            padding: 46px;
+
+        }
+
+
+        .nova-info-modal-eyebrow {
+
+            margin-bottom: 12px;
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            letter-spacing: .14em;
+
+            color:
+                var(--nova-gray, #686868);
+
+        }
+
+
+        .nova-info-modal-content h2 {
+
+            margin: 0 0 18px;
+
+            max-width: 720px;
+
+            font-size: clamp(
+                38px,
+                6vw,
+                72px
+            );
+
+            line-height: .92;
+
+            letter-spacing: -.055em;
+
+        }
+
+
+        .nova-info-modal-intro {
+
+            max-width: 680px;
+
+            margin: 0 0 34px;
+
+            font-size: 16px;
+
+            line-height: 1.65;
+
+            color:
+                var(--nova-gray, #686868);
+
+        }
+
+
+        /* =====================================================
+           METODOLOGÍA IMAGES
+        ====================================================== */
+
+        .nova-methodology-images {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap: 12px;
+
+            margin-bottom: 34px;
+
+        }
+
+
+        .nova-methodology-image {
+
+            height: 270px;
+
+            overflow: hidden;
+
+            border-radius:
+                18px;
+
+            background:
+                #ddd;
+
+        }
+
+
+        .nova-methodology-image img {
+
+            width: 100%;
+
+            height: 100%;
+
+            display: block;
+
+            object-fit: cover;
+
+            transition:
+                transform .7s var(--nova-ease, cubic-bezier(.22,1,.36,1));
+
+        }
+
+
+        .nova-methodology-image:hover img {
+
+            transform:
+                scale(1.04);
+
+        }
+
+
+        .nova-methodology-steps {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, minmax(0, 1fr));
+
+            gap: 10px;
+
+        }
+
+
+        .nova-methodology-step {
+
+            min-height: 150px;
+
+            padding: 18px;
+
+            border:
+                1px solid
+                rgba(17,17,17,.10);
+
+            border-radius:
+                16px;
+
+            background:
+                rgba(255,255,255,.45);
+
+        }
+
+
+        .nova-methodology-step-number {
+
+            display: block;
+
+            margin-bottom: 28px;
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            color:
+                var(--nova-gray-light, #969696);
+
+        }
+
+
+        .nova-methodology-step strong {
+
+            display: block;
+
+            margin-bottom: 7px;
+
+            font-size: 13px;
+
+            letter-spacing: .02em;
+
+        }
+
+
+        .nova-methodology-step p {
+
+            margin: 0;
+
+            font-size: 12px;
+
+            line-height: 1.5;
+
+            color:
+                var(--nova-gray, #686868);
+
+        }
+
+
+        /* =====================================================
+           COACH MODAL
+        ====================================================== */
+
+        .nova-coach-modal-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                300px
+                minmax(0, 1fr);
+
+            gap: 34px;
+
+            align-items: start;
+
+        }
+
+
+        .nova-coach-modal-photo {
+
+            height: 390px;
+
+            overflow: hidden;
+
+            border-radius:
+                22px;
+
+            background:
+                #ddd;
+
+        }
+
+
+        .nova-coach-modal-photo img {
+
+            width: 100%;
+
+            height: 100%;
+
+            display: block;
+
+            object-fit: cover;
+
+        }
+
+
+        .nova-coach-modal-copy p {
+
+            margin: 0 0 18px;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+
+            color:
+                var(--nova-gray, #686868);
+
+        }
+
+
+        .nova-coach-modal-role {
+
+            display: inline-flex;
+
+            padding: 8px 12px;
+
+            border-radius: 999px;
+
+            background:
+                var(--nova-black, #111111);
+
+            color:
+                #fff;
+
+            font-size: 9px;
+
+            font-weight: 800;
+
+            letter-spacing: .08em;
+
+            text-transform: uppercase;
+
+            margin-bottom: 22px;
+
+        }
+
+
+        .nova-coach-modal-list {
+
+            display: grid;
+
+            gap: 10px;
+
+            margin-top: 24px;
+
+        }
+
+
+        .nova-coach-modal-list div {
+
+            padding:
+                14px 0;
+
+            border-top:
+                1px solid
+                rgba(17,17,17,.10);
+
+            font-size: 12px;
+
+            line-height: 1.5;
+
+        }
+
+
+        .nova-coach-modal-list strong {
+
+            display: block;
+
+            margin-bottom: 3px;
+
+            font-size: 10px;
+
+            letter-spacing: .08em;
+
+            text-transform: uppercase;
+
+        }
+
+
+        /* =====================================================
+           BODY LOCK
+        ====================================================== */
+
+        body.nova-info-modal-open {
+
+            overflow: hidden;
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ====================================================== */
+
+        @media (max-width: 900px) {
+
+            .nova-training-extra-section {
+
+                width:
+                    calc(100% - 32px);
+
+                padding-bottom: 76px;
+
+            }
+
+
+            .nova-training-extra-grid {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .nova-training-extra-card,
+            .nova-coach-pill {
+
+                min-height: 390px;
+
+            }
+
+
+            .nova-methodology-steps {
+
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+
+            }
+
+
+            .nova-coach-modal-grid {
+
+                grid-template-columns:
+                    220px
+                    minmax(0, 1fr);
+
+            }
+
+
+            .nova-coach-modal-photo {
+
+                height: 330px;
+
+            }
+
+        }
+
+
+        @media (max-width: 640px) {
+
+            .nova-training-extra-section {
+
+                width:
+                    calc(100% - 32px);
+
+                padding-bottom: 60px;
+
+            }
+
+
+            .nova-training-extra-card,
+            .nova-coach-pill {
+
+                min-height: 340px;
+
+                border-radius:
+                    20px;
+
+            }
+
+
+            .nova-training-extra-content {
+
+                left: 21px;
+
+                right: 21px;
+
+                bottom: 21px;
+
+            }
+
+
+            .nova-training-extra-top {
+
+                top: 20px;
+
+                left: 21px;
+
+                right: 21px;
+
+            }
+
+
+            .nova-coach-pill {
+
+                padding: 21px;
+
+            }
+
+
+            .nova-coach-modal-panel {
+
+                width: 100%;
+
+                max-height:
+                    calc(100vh - 24px);
+
+                border-radius:
+                    22px;
+
+            }
+
+
+            .nova-info-modal {
+
+                align-items: flex-end;
+
+                padding: 12px;
+
+            }
+
+
+            .nova-info-modal-content {
+
+                padding:
+                    42px 22px 26px;
+
+            }
+
+
+            .nova-info-modal-content h2 {
+
+                font-size: 42px;
+
+            }
+
+
+            .nova-methodology-images {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .nova-methodology-image {
+
+                height: 220px;
+
+            }
+
+
+            .nova-methodology-steps {
+
+                grid-template-columns:
+                    1fr 1fr;
+
+            }
+
+
+            .nova-coach-modal-grid {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .nova-coach-modal-photo {
+
+                height: 300px;
+
+            }
+
+        }
+
+
+        @media (max-width: 390px) {
+
+            .nova-methodology-steps {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+            .nova-training-extra-card,
+            .nova-coach-pill {
+
+                min-height: 320px;
+
+            }
+
+        }
+
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .nova-info-modal,
+            .nova-info-modal-panel,
+            .nova-training-extra-image,
+            .nova-training-extra-card,
+            .nova-coach-photo-button,
+            .nova-methodology-image img {
+
+                transition:
+                    none !important;
+
+            }
+
+        }
+
+    </style>
+
 </head>
 
 <body>
+
 
     <!-- =====================================================
          NOVA · PAGE TRANSITION
@@ -69,41 +1266,22 @@
             </a>
 
 
-            <!-- DESKTOP NAV -->
+<nav
+    class="nova-desktop-nav"
+    aria-label="Navegación principal"
+>
 
-            <nav
-                class="nova-desktop-nav"
-                aria-label="Navegación principal"
-            >
+    <a
+        href="index.html"
+        class="nova-nav-link js-open-memberships"
+    >
+        INICIO
+    </a>
 
-                <a
-                    href="training.html"
-                    class="nova-nav-link is-active nova-page-link"
-                    data-page-title="DISCIPLINAS"
-                >
-                    DISCIPLINAS
-                </a>
-
-                <a
-                    href="programas.html"
-                    class="nova-nav-link nova-page-link"
-                    data-page-title="MEMBRESÍAS"
-                >
-                    MEMBRESÍAS
-                </a>
-
-                <a
-                    href="plan.html"
-                    class="nova-nav-link nova-page-link"
-                    data-page-title="PLAN"
-                >
-                    PLAN
-                </a>
+</nav>
 
             </nav>
 
-
-            <!-- MENU BUTTON -->
 
             <button
                 type="button"
@@ -151,107 +1329,37 @@
                 ×
             </button>
 
+<nav
+    class="nova-menu-nav"
+    aria-label="Menú móvil"
+>
 
-            <nav
-                class="nova-menu-nav"
-                aria-label="Menú móvil"
-            >
+    <a
+        href="index.html"
+        class="nova-menu-link nova-page-link"
+        data-page-title="NOVA"
+    >
 
-                <a
-                    href="index.html"
-                    class="nova-menu-link nova-page-link"
-                    data-page-title="NOVA"
-                >
+        <span class="nova-menu-number">
+            01
+        </span>
 
-                    <span class="nova-menu-number">
-                        01
-                    </span>
+        <strong>
+            INICIO
+        </strong>
 
-                    <strong>
-                        NOVA
-                    </strong>
+        <span class="nova-menu-arrow">
+            →
+        </span>
 
-                    <span class="nova-menu-arrow">
-                        →
-                    </span>
-
-                </a>
-
-
-                <a
-                    href="training.html"
-                    class="nova-menu-link is-active nova-page-link"
-                    data-page-title="DISCIPLINAS"
-                >
-
-                    <span class="nova-menu-number">
-                        02
-                    </span>
-
-                    <strong>
-                        DISCIPLINAS
-                    </strong>
-
-                    <span class="nova-menu-arrow">
-                        →
-                    </span>
-
-                </a>
+    </a>
 
 
-                <a
-                    href="programas.html"
-                    class="nova-menu-link nova-page-link"
-                    data-page-title="MEMBRESÍAS"
-                >
-
-                    <span class="nova-menu-number">
-                        03
-                    </span>
-
-                    <strong>
-                        MEMBRESÍAS
-                    </strong>
-
-                    <span class="nova-menu-arrow">
-                        →
-                    </span>
-
-                </a>
-
-
-                <a
-                    href="plan.html"
-                    class="nova-menu-link nova-page-link"
-                    data-page-title="PLAN"
-                >
-
-                    <span class="nova-menu-number">
-                        04
-                    </span>
-
-                    <strong>
-                        PLAN
-                    </strong>
-
-                    <span class="nova-menu-arrow">
-                        →
-                    </span>
-
-                </a>
-
-            </nav>
-
+</nav>
 
             <div class="nova-menu-footer">
 
-                <span>
-                    NOVA · TRAINING
-                </span>
-
-                <span>
-                    2026
-                </span>
+ 
 
             </div>
 
@@ -373,6 +1481,184 @@
         </section>
 
 
+        <!-- =================================================
+             METODOLOGÍA + COACH
+        ================================================== -->
+
+        <section class="nova-training-extra-section">
+
+            <div class="nova-training-section-header">
+
+                <div>
+
+                    <div class="nova-eyebrow">
+                        03 · NOVA
+                    </div>
+
+                    <h2>
+                        CÓMO ENTRENAMOS
+                    </h2>
+
+                </div>
+
+                <p>
+                    Una metodología construida para que cada sesión
+                    tenga un propósito y cada etapa tenga dirección.
+                </p>
+
+            </div>
+
+
+            <div class="nova-training-extra-grid">
+
+
+                <!-- =================================================
+                     METODOLOGÍA
+                ================================================== -->
+
+                <article
+                    class="nova-training-extra-card"
+                    id="metodologiaCard"
+                    tabindex="0"
+                    role="button"
+                    aria-label="Ver metodología NOVA"
+                >
+
+                    <div
+                        class="nova-training-extra-image"
+                        style="
+                            background-image:
+                            url('img/WhatsApp Image 4.jpeg');
+                        "
+                    ></div>
+
+                    <div class="nova-training-extra-overlay"></div>
+
+
+                    <div class="nova-training-extra-top">
+
+                        <span>
+                            03
+                        </span>
+
+                        <span>
+                            +
+                        </span>
+
+                    </div>
+
+
+                    <div class="nova-training-extra-content">
+
+                        <div class="nova-training-extra-label">
+                            METODOLOGÍA NOVA
+                        </div>
+
+                        <h3>
+                            No improvisamos.<br>
+                            Construimos.
+                        </h3>
+
+                        <p>
+                            Conocemos, diseñamos, entrenamos y
+                            evolucionamos a través de un proceso
+                            estructurado.
+                        </p>
+
+                        <button
+                            type="button"
+                            class="nova-training-extra-button"
+                            id="metodologiaButton"
+                        >
+                            <span>
+                                VER METODOLOGÍA
+                            </span>
+
+                            <span>
+                                →
+                            </span>
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- =================================================
+                     COACH
+                ================================================== -->
+
+                <article
+                    class="nova-coach-pill nova-training-extra-card"
+                    id="coachCard"
+                >
+
+                    <div class="nova-coach-pill-top">
+
+                        <div class="nova-coach-pill-label">
+                            COACH NOVA
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="nova-coach-photo-button"
+                            id="coachPhotoButton"
+                            aria-label="Ver información del coach"
+                        >
+
+                            <img
+                                src="img/perfil1.jpeg"
+                                alt="Coach Alan Espinosa"
+                            >
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="nova-coach-pill-content">
+
+                        <div class="nova-coach-pill-label">
+                            ALAN ESPINOSA
+                        </div>
+
+                        <h3>
+                            Entrena<br>
+                            con intención.
+                        </h3>
+
+                        <p>
+                            Natación, aguas abiertas y fuerza
+                            funcional.
+                        </p>
+
+
+                        <button
+                            type="button"
+                            class="nova-coach-pill-action"
+                            id="coachInfoButton"
+                        >
+
+                            <span>
+                                CONOCER AL COACH
+                            </span>
+
+                            <span>
+                                →
+                            </span>
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
     </main>
 
 
@@ -427,9 +1713,7 @@
                         NATACIÓN
                     </div>
 
-                    <h2
-                        id="routineModalTitle"
-                    >
+                    <h2 id="routineModalTitle">
                         TÉCNICA Y BASE
                     </h2>
 
@@ -542,6 +1826,292 @@
 
 
     <!-- =====================================================
+         NOVA · METODOLOGÍA MODAL
+    ====================================================== -->
+
+    <div
+        class="nova-info-modal"
+        id="methodologyModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="nova-info-modal-overlay"
+            id="methodologyModalOverlay"
+        ></div>
+
+
+        <div
+            class="nova-info-modal-panel"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="methodologyModalTitle"
+        >
+
+            <button
+                type="button"
+                class="nova-info-modal-close"
+                id="methodologyModalClose"
+                aria-label="Cerrar metodología"
+            >
+                ×
+            </button>
+
+
+            <div class="nova-info-modal-content">
+
+                <div class="nova-info-modal-eyebrow">
+                    NOVA · METODOLOGÍA
+                </div>
+
+                <h2 id="methodologyModalTitle">
+                    No improvisamos.<br>
+                    Construimos.
+                </h2>
+
+                <p class="nova-info-modal-intro">
+                    En NOVA cada entrenamiento parte de un objetivo.
+                    Observamos dónde estás, diseñamos el trabajo que
+                    necesitas y construimos una progresión para que
+                    puedas avanzar con intención.
+                </p>
+
+
+                <div class="nova-methodology-images">
+
+                    <div class="nova-methodology-image">
+
+                        <img
+                            src="img/WhatsApp Image 4.jpeg"
+                            alt="Entrenamiento de natación NOVA"
+                        >
+
+                    </div>
+
+
+                    <div class="nova-methodology-image">
+
+                        <img
+                            src="img/WhatsApp Image 3.jpeg"
+                            alt="Entrenamiento de fuerza NOVA"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="nova-methodology-steps">
+
+
+                    <div class="nova-methodology-step">
+
+                        <span class="nova-methodology-step-number">
+                            01
+                        </span>
+
+                        <strong>
+                            CONOCEMOS
+                        </strong>
+
+                        <p>
+                            Entendemos tu punto de partida,
+                            tus objetivos y lo que necesitas.
+                        </p>
+
+                    </div>
+
+
+                    <div class="nova-methodology-step">
+
+                        <span class="nova-methodology-step-number">
+                            02
+                        </span>
+
+                        <strong>
+                            DISEÑAMOS
+                        </strong>
+
+                        <p>
+                            Estructuramos el entrenamiento
+                            alrededor de una dirección clara.
+                        </p>
+
+                    </div>
+
+
+                    <div class="nova-methodology-step">
+
+                        <span class="nova-methodology-step-number">
+                            03
+                        </span>
+
+                        <strong>
+                            ENTRENAMOS
+                        </strong>
+
+                        <p>
+                            Ejecutamos sesiones con intención,
+                            técnica y progresión.
+                        </p>
+
+                    </div>
+
+
+                    <div class="nova-methodology-step">
+
+                        <span class="nova-methodology-step-number">
+                            04
+                        </span>
+
+                        <strong>
+                            EVOLUCIONAMOS
+                        </strong>
+
+                        <p>
+                            Medimos el proceso y ajustamos
+                            para seguir avanzando.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         NOVA · COACH MODAL
+    ====================================================== -->
+
+    <div
+        class="nova-info-modal"
+        id="coachModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="nova-info-modal-overlay"
+            id="coachModalOverlay"
+        ></div>
+
+
+        <div
+            class="nova-info-modal-panel"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="coachModalTitle"
+        >
+
+            <button
+                type="button"
+                class="nova-info-modal-close"
+                id="coachModalClose"
+                aria-label="Cerrar información del coach"
+            >
+                ×
+            </button>
+
+
+            <div class="nova-info-modal-content">
+
+                <div class="nova-coach-modal-grid">
+
+
+                    <div class="nova-coach-modal-photo">
+
+                        <img
+                            src="img/perfil1.jpeg"
+                            alt="Coach Alan Espinosa"
+                        >
+
+                    </div>
+
+
+                    <div class="nova-coach-modal-copy">
+
+                        <div class="nova-info-modal-eyebrow">
+                            NOVA · COACH
+                        </div>
+
+                        <h2 id="coachModalTitle">
+                            Alan<br>
+                            Espinosa.
+                        </h2>
+
+                        <div class="nova-coach-modal-role">
+                            Coach NOVA
+                        </div>
+
+
+                        <p>
+                            Coach en natación, aguas abiertas y
+                            fuerza funcional.
+                        </p>
+
+                        <p>
+                            El objetivo es crear entrenamientos
+                            claros, estructurados y progresivos que
+                            permitan desarrollar rendimiento sin
+                            perder de vista la técnica y el control.
+                        </p>
+
+
+                        <div class="nova-coach-modal-list">
+
+                            <div>
+
+                                <strong>
+                                    NATACIÓN
+                                </strong>
+
+                                Técnica, resistencia, ritmo y
+                                preparación para aguas abiertas.
+
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    FUERZA
+                                </strong>
+
+                                Fuerza funcional, estabilidad,
+                                control corporal y capacidad física.
+
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    MÉTODO
+                                </strong>
+
+                                Entrenamiento con estructura,
+                                progresión y una intención clara.
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
          NOVA · FOOTER
     ====================================================== -->
 
@@ -549,8 +2119,6 @@
 
         <div class="nova-footer-grid">
 
-
-            <!-- ENTRENAMIENTOS -->
 
             <div class="nova-footer-column">
 
@@ -572,8 +2140,6 @@
 
             </div>
 
-
-            <!-- PROGRAMAS -->
 
             <div class="nova-footer-column">
 
@@ -608,8 +2174,6 @@
             </div>
 
 
-            <!-- INFORMACIÓN -->
-
             <div class="nova-footer-column">
 
                 <div class="nova-footer-title">
@@ -618,6 +2182,13 @@
 
                 <a href="index.html#metodo">
                     Método NOVA
+                </a>
+
+                <a
+                    href="#novaFaq"
+                    class="js-open-faq"
+                >
+                    FAQs
                 </a>
 
                 <a href="training.html">
@@ -629,7 +2200,7 @@
                 </a>
 
                 <a
-                    href="plan.html"
+                    href="index.html#dudas"
                     class="nova-page-link"
                     data-page-title="PLAN"
                 >
@@ -638,8 +2209,6 @@
 
             </div>
 
-
-            <!-- CONTACTO -->
 
             <div class="nova-footer-column">
 
@@ -661,8 +2230,6 @@
 
             </div>
 
-
-            <!-- LEGAL -->
 
             <div class="nova-footer-column">
 
@@ -963,49 +2530,7 @@
 
 
                 /* =================================================
-                   KEYBOARD
-                ================================================== */
-
-                document.addEventListener(
-                    "keydown",
-                    (event) => {
-
-                        if (
-                            event.key === "Escape"
-                        ) {
-
-                            closeMenu();
-
-                            closeRoutineModal();
-
-                        }
-
-                    }
-                );
-
-
-                /* =================================================
-                   RESIZE
-                ================================================== */
-
-                window.addEventListener(
-                    "resize",
-                    () => {
-
-                        if (
-                            window.innerWidth > 900
-                        ) {
-
-                            closeMenu();
-
-                        }
-
-                    }
-                );
-
-
-                /* =================================================
-                   ROUTINES
+                   ROUTINE DATA
                 ================================================== */
 
                 const swimmingRoutines = [
@@ -1031,7 +2556,6 @@
                             "Posición corporal, longitud de brazada, respiración y control del ritmo."
                     },
 
-
                     {
                         number: "02",
                         title: "RESISTENCIA AERÓBICA",
@@ -1052,7 +2576,6 @@
                         focus:
                             "Mantener una respiración controlada y una brazada eficiente durante todo el volumen."
                     },
-
 
                     {
                         number: "03",
@@ -1075,7 +2598,6 @@
                             "Cambiar de ritmo conservando posición corporal, respiración y longitud de brazada."
                     },
 
-
                     {
                         number: "04",
                         title: "RECUPERACIÓN AERÓBICA",
@@ -1096,7 +2618,6 @@
                         focus:
                             "Recuperar mientras se mantiene movimiento, técnica y sensación de agua."
                     },
-
 
                     {
                         number: "05",
@@ -1120,7 +2641,6 @@
                             "Sostener intensidad sin perder técnica ni convertir cada repetición en un sprint."
                     },
 
-
                     {
                         number: "06",
                         title: "VELOCIDAD E INTENSIDAD",
@@ -1142,7 +2662,6 @@
                         focus:
                             "Acelerar con control, mantener frecuencia de brazada y conservar una técnica eficiente."
                     },
-
 
                     {
                         number: "07",
@@ -1193,7 +2712,6 @@
                             "Control de rodilla, estabilidad de cadera y capacidad de mantener el tronco firme."
                     },
 
-
                     {
                         number: "02",
                         title: "TREN SUPERIOR",
@@ -1216,7 +2734,6 @@
                         focus:
                             "Control escapular, estabilidad del hombro y ejecución limpia."
                     },
-
 
                     {
                         number: "03",
@@ -1241,7 +2758,6 @@
                             "Control de pelvis, estabilidad del tobillo, rodilla y cadera."
                     },
 
-
                     {
                         number: "04",
                         title: "CUERPO COMPLETO",
@@ -1264,7 +2780,6 @@
                         focus:
                             "Ejecutar cada patrón con control y mantener calidad técnica durante toda la sesión."
                     },
-
 
                     {
                         number: "05",
@@ -1289,7 +2804,6 @@
                             "Tempo, posiciones estables, tensión corporal y control del movimiento."
                     },
 
-
                     {
                         number: "06",
                         title: "CADENA POSTERIOR",
@@ -1312,7 +2826,6 @@
                         focus:
                             "Bisagra de cadera, tensión de isquiotibiales y activación de glúteos."
                     },
-
 
                     {
                         number: "07",
@@ -1676,6 +3189,285 @@
 
 
                 /* =================================================
+                   INFORMATION MODALS
+                ================================================== */
+
+                const methodologyModal =
+                    document.getElementById(
+                        "methodologyModal"
+                    );
+
+                const methodologyModalOverlay =
+                    document.getElementById(
+                        "methodologyModalOverlay"
+                    );
+
+                const methodologyModalClose =
+                    document.getElementById(
+                        "methodologyModalClose"
+                    );
+
+                const methodologyCard =
+                    document.getElementById(
+                        "metodologiaCard"
+                    );
+
+                const methodologyButton =
+                    document.getElementById(
+                        "metodologiaButton"
+                    );
+
+
+                const coachModal =
+                    document.getElementById(
+                        "coachModal"
+                    );
+
+                const coachModalOverlay =
+                    document.getElementById(
+                        "coachModalOverlay"
+                    );
+
+                const coachModalClose =
+                    document.getElementById(
+                        "coachModalClose"
+                    );
+
+                const coachCard =
+                    document.getElementById(
+                        "coachCard"
+                    );
+
+                const coachPhotoButton =
+                    document.getElementById(
+                        "coachPhotoButton"
+                    );
+
+                const coachInfoButton =
+                    document.getElementById(
+                        "coachInfoButton"
+                    );
+
+
+                function openInfoModal(modal) {
+
+                    modal.classList.add(
+                        "is-open"
+                    );
+
+                    modal.setAttribute(
+                        "aria-hidden",
+                        "false"
+                    );
+
+                    document.body.classList.add(
+                        "nova-info-modal-open"
+                    );
+
+                }
+
+
+                function closeInfoModal(modal) {
+
+                    modal.classList.remove(
+                        "is-open"
+                    );
+
+                    modal.setAttribute(
+                        "aria-hidden",
+                        "true"
+                    );
+
+                    const anotherModalIsOpen =
+                        document.querySelector(
+                            ".nova-info-modal.is-open"
+                        );
+
+                    if (!anotherModalIsOpen) {
+
+                        document.body.classList.remove(
+                            "nova-info-modal-open"
+                        );
+
+                    }
+
+                }
+
+
+                function openMethodology() {
+
+                    openInfoModal(
+                        methodologyModal
+                    );
+
+                }
+
+
+                function openCoach() {
+
+                    openInfoModal(
+                        coachModal
+                    );
+
+                }
+
+
+                methodologyButton.addEventListener(
+                    "click",
+                    (event) => {
+
+                        event.stopPropagation();
+
+                        openMethodology();
+
+                    }
+                );
+
+
+                methodologyCard.addEventListener(
+                    "click",
+                    () => {
+
+                        openMethodology();
+
+                    }
+                );
+
+
+                methodologyModalClose.addEventListener(
+                    "click",
+                    () => {
+
+                        closeInfoModal(
+                            methodologyModal
+                        );
+
+                    }
+                );
+
+
+                methodologyModalOverlay.addEventListener(
+                    "click",
+                    () => {
+
+                        closeInfoModal(
+                            methodologyModal
+                        );
+
+                    }
+                );
+
+
+                coachPhotoButton.addEventListener(
+                    "click",
+                    (event) => {
+
+                        event.stopPropagation();
+
+                        openCoach();
+
+                    }
+                );
+
+
+                coachInfoButton.addEventListener(
+                    "click",
+                    (event) => {
+
+                        event.stopPropagation();
+
+                        openCoach();
+
+                    }
+                );
+
+
+                coachCard.addEventListener(
+                    "click",
+                    () => {
+
+                        openCoach();
+
+                    }
+                );
+
+
+                coachModalClose.addEventListener(
+                    "click",
+                    () => {
+
+                        closeInfoModal(
+                            coachModal
+                        );
+
+                    }
+                );
+
+
+                coachModalOverlay.addEventListener(
+                    "click",
+                    () => {
+
+                        closeInfoModal(
+                            coachModal
+                        );
+
+                    }
+                );
+
+
+                /* =================================================
+                   KEYBOARD
+                ================================================== */
+
+                document.addEventListener(
+                    "keydown",
+                    (event) => {
+
+                        if (
+                            event.key !== "Escape"
+                        ) {
+                            return;
+                        }
+
+
+                        closeMenu();
+
+                        closeRoutineModal();
+
+                        closeInfoModal(
+                            methodologyModal
+                        );
+
+                        closeInfoModal(
+                            coachModal
+                        );
+
+                    }
+                );
+
+
+                /* =================================================
+                   RESIZE
+                ================================================== */
+
+                window.addEventListener(
+                    "resize",
+                    () => {
+
+                        if (
+                            window.innerWidth > 900
+                        ) {
+
+                            closeMenu();
+
+                        }
+
+                    }
+                );
+
+
+                /* =================================================
                    PAGE SHOW
                 ================================================== */
 
@@ -1694,6 +3486,28 @@
                     }
                 );
 
+
+                /* =================================================
+                   ACCESSIBILITY · METHODOLOGY
+                ================================================== */
+
+                methodologyCard.addEventListener(
+                    "keydown",
+                    (event) => {
+
+                        if (
+                            event.key === "Enter" ||
+                            event.key === " "
+                        ) {
+
+                            event.preventDefault();
+
+                            openMethodology();
+
+                        }
+
+                    }
+                );
 
             }
         );
