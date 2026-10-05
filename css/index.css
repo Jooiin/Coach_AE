@@ -5542,3 +5542,423 @@ img {
     }
 
 }
+
+/* =========================================================
+   NOVA · MÉTODO · FEATURES
+   ========================================================= */
+
+.nova-features {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin: 34px 0;
+}
+
+
+/* =========================================================
+   TARJETA
+   ========================================================= */
+
+.nova-feature {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+    padding: 24px 22px 22px;
+
+    background: var(--nova-bg-alt, #e9e8e2);
+    border-radius: 18px;
+
+    border: 1px solid rgba(17, 17, 17, 0.07);
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   ICONO
+   ========================================================= */
+
+.nova-feature-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 20px;
+
+    color: var(--nova-black, #111);
+
+    flex-shrink: 0;
+}
+
+
+.nova-feature-icon svg {
+    width: 46px;
+    height: 46px;
+
+    display: block;
+
+    overflow: visible;
+}
+
+
+/* =========================================================
+   CONTENIDO
+   ========================================================= */
+
+.nova-feature-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    min-width: 0;
+}
+
+
+.nova-feature-label {
+    margin: 0 0 8px;
+
+    font-size: 10px;
+    line-height: 1.2;
+
+    font-weight: 700;
+    letter-spacing: 0.14em;
+
+    color: rgba(17, 17, 17, 0.55);
+}
+
+
+.nova-feature h3 {
+    margin: 0 0 10px;
+
+    max-width: 100%;
+
+    font-size: 19px;
+    line-height: 1.12;
+
+    font-weight: 700;
+    letter-spacing: -0.025em;
+
+    color: var(--nova-black, #111);
+}
+
+
+.nova-feature-content > p:last-child {
+    margin: 0;
+
+    max-width: 100%;
+
+    font-size: 13px;
+    line-height: 1.55;
+
+    font-weight: 400;
+
+    color: rgba(17, 17, 17, 0.66);
+}
+
+
+/* =========================================================
+   AJUSTE PARA MODAL
+   ========================================================= */
+
+.nova-modal-text + .nova-method-images + .nova-features {
+    margin-top: 30px;
+}
+
+
+.nova-features + .nova-modal-list {
+    margin-top: 30px;
+}
+
+
+/* =========================================================
+   IMÁGENES DEL MÉTODO
+   ========================================================= */
+
+.nova-method-images {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 14px;
+
+    margin: 30px 0;
+}
+
+
+.nova-method-image {
+    position: relative;
+
+    width: 100%;
+    aspect-ratio: 1.45 / 1;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    background: var(--nova-bg-alt, #e9e8e2);
+}
+
+
+.nova-method-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   LISTA · 01 / 02 / 03 / 04
+   ========================================================= */
+
+.nova-modal-list {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 10px;
+
+    margin: 30px 0;
+}
+
+
+.nova-modal-list-item {
+    min-height: 62px;
+
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    padding: 15px 17px;
+
+    box-sizing: border-box;
+
+    background: var(--nova-bg-alt, #e9e8e2);
+
+    border-radius: 14px;
+
+    border: 1px solid rgba(17, 17, 17, 0.06);
+}
+
+
+.nova-modal-list-item span {
+    font-size: 10px;
+    line-height: 1;
+
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+
+    color: rgba(17, 17, 17, 0.42);
+}
+
+
+.nova-modal-list-item strong {
+    font-size: 12px;
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    letter-spacing: 0.04em;
+
+    color: var(--nova-black, #111);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .nova-features {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+
+        margin: 28px 0;
+    }
+
+
+    .nova-feature {
+        padding: 20px 17px 19px;
+        border-radius: 16px;
+    }
+
+
+    .nova-feature-icon {
+        width: 42px;
+        height: 42px;
+
+        margin-bottom: 16px;
+    }
+
+
+    .nova-feature-icon svg {
+        width: 40px;
+        height: 40px;
+    }
+
+
+    .nova-feature h3 {
+        font-size: 17px;
+    }
+
+
+    .nova-feature-content > p:last-child {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+
+    .nova-method-images {
+        gap: 10px;
+    }
+
+
+    .nova-modal-list {
+        gap: 8px;
+    }
+
+}
+
+
+/* =========================================================
+   MÓVIL
+   ========================================================= */
+
+@media (max-width: 520px) {
+
+    .nova-features {
+        grid-template-columns: 1fr;
+        gap: 10px;
+
+        margin: 26px 0;
+    }
+
+
+    .nova-feature {
+        min-height: auto;
+
+        padding: 19px 18px;
+
+        border-radius: 15px;
+    }
+
+
+    .nova-feature-icon {
+        width: 40px;
+        height: 40px;
+
+        margin-bottom: 14px;
+    }
+
+
+    .nova-feature-icon svg {
+        width: 38px;
+        height: 38px;
+    }
+
+
+    .nova-feature-label {
+        margin-bottom: 7px;
+
+        font-size: 9px;
+    }
+
+
+    .nova-feature h3 {
+        margin-bottom: 8px;
+
+        font-size: 17px;
+        line-height: 1.15;
+    }
+
+
+    .nova-feature-content > p:last-child {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+
+    .nova-method-images {
+        grid-template-columns: 1fr;
+        gap: 10px;
+
+        margin: 24px 0;
+    }
+
+
+    .nova-method-image {
+        aspect-ratio: 1.7 / 1;
+        border-radius: 15px;
+    }
+
+
+    .nova-modal-list {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+
+        margin: 26px 0;
+    }
+
+
+    .nova-modal-list-item {
+        min-height: 56px;
+
+        padding: 13px 12px;
+
+        gap: 10px;
+
+        border-radius: 12px;
+    }
+
+
+    .nova-modal-list-item strong {
+        font-size: 10px;
+    }
+
+}
+
+
+/* =========================================================
+   MÓVIL MUY PEQUEÑO
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .nova-features {
+        grid-template-columns: 1fr;
+    }
+
+
+    .nova-feature {
+        padding: 17px 16px;
+    }
+
+
+    .nova-feature h3 {
+        font-size: 16px;
+    }
+
+
+    .nova-feature-content > p:last-child {
+        font-size: 11.5px;
+    }
+
+
+    .nova-modal-list-item {
+        padding: 12px 10px;
+    }
+
+}
