@@ -291,7 +291,7 @@
 
                             <h3>
                                 MÉTODO<br>
-                                NOVA
+                                
                             </h3>
 
                             <p>
@@ -311,11 +311,12 @@
 
                     <!-- =========================================
                          CARD 02 · DISCIPLINAS
+                         SIN TRANSICIÓN DE PÁGINA
                     ========================================== -->
 
                     <a
-                        href="training.html"
-                        class="nova-training-card nova-page-link"
+                        href="#novaDisciplines"
+                        class="nova-training-card js-open-disciplines"
                         data-page-title="DISCIPLINAS"
                     >
 
@@ -341,8 +342,8 @@
                             </span>
 
                             <h3>
-                                NOVA ·<br>
-                                DISCIPLINAS
+                                DISCIPLINAS<br>
+                                
                             </h3>
 
                             <p>
@@ -392,8 +393,8 @@
                             </span>
 
                             <h3>
-                                NOVA ·<br>
-                                MEMBRESÍAS
+                                MEMBRESÍAS<br>
+                                
                             </h3>
 
                             <p>
@@ -444,8 +445,8 @@
                             </span>
 
                             <h3>
-                                NOVA ·<br>
-                                ENCUENTRA TU PLAN
+                                ENCUENTRA TU PLAN<br>
+                                
                             </h3>
 
                             <p>
@@ -597,13 +598,13 @@
                     CONTACTO
                 </h3>
 
-                <a
-                    href="https://wa.me/525612584271"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    WhatsApp
-                </a>
+<a
+    href="https://calendly.com/alancoach8/nueva-reunion"
+    target="_blank"
+    rel="noopener noreferrer"
+>
+    Calendly
+</a>
 
                 <a href="mailto:hola@nova.training">
                     Correo
@@ -1182,570 +1183,406 @@
                 }
 
 
-               /* =================================================
-   MÉTODO NOVA
-================================================== */
+                /* =================================================
+                   DISCIPLINAS NOVA
+                ================================================== */
 
-const methodHTML = `
+                const disciplinesHTML = `
 
-    <div class="nova-modal-eyebrow">
-        NOVA · MÉTODO
-    </div>
+                    <div class="nova-modal-eyebrow">
+                        NOVA · DISCIPLINAS
+                    </div>
 
 
-    <h2 id="novaModalTitle">
-        No improvisamos.<br>
-        Construimos.
-    </h2>
+                    <h2 id="novaModalTitle">
+                        Elige tu disciplina.
+                    </h2>
 
 
-    <div class="nova-modal-text">
+                    <div class="nova-modal-text">
 
-        <p>
-            La metodología NOVA parte de entender
-            dónde estás, qué quieres conseguir y qué
-            necesitas para avanzar.
-        </p>
+                        <p>
+                            Entrena desde el camino que mejor se adapte
+                            a tus objetivos y construye rendimiento con
+                            una estructura clara.
+                        </p>
 
-        <p>
-            A partir de ahí construimos una estructura
-            de entrenamiento que pueda evolucionar
-            contigo.
-        </p>
+                    </div>
 
-    </div>
 
+                    <div class="nova-modal-list">
 
-    <!-- =================================================
-         IMÁGENES · MÉTODO NOVA
-    ================================================== -->
+                        <div class="nova-modal-list-item">
 
-    <div class="nova-method-images">
+                            <span>
+                                01
+                            </span>
 
-        <div class="nova-method-image">
-
-            <img
-                src="img/beneficio1.jpeg"
-                alt="Entrenamiento NOVA"
-            >
-
-        </div>
-
-
-        <div class="nova-method-image">
-
-            <img
-                src="img/beneficio1.jpeg"
-                alt="Proceso de entrenamiento NOVA"
-            >
-
-        </div>
-
-    </div>
-
-
-    <!-- =================================================
-         CARACTERÍSTICAS · MÉTODO NOVA
-    ================================================== -->
+                            <strong>
+                                NATACIÓN
+                            </strong>
 
-    <div class="nova-features">
+                        </div>
 
 
-        <!-- FEATURE 01 -->
+                        <div class="nova-modal-text">
 
-        <article class="nova-feature">
+                            <p>
+                                Técnica, resistencia, ritmo y eficiencia.
+                                Trabajamos los diferentes estilos para mejorar
+                                la coordinación, el control corporal y la capacidad
+                                de nadar mejor durante más tiempo.
+                            </p>
 
-            <div
-                class="nova-feature-icon"
-                aria-hidden="true"
-            >
-
-                <svg
-                    viewBox="0 0 64 64"
-                    role="img"
-                >
+                        </div>
 
-                    <rect
-                        x="12"
-                        y="15"
-                        width="40"
-                        height="38"
-                        rx="5"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2.5"
-                    />
 
-                    <line
-                        x1="12"
-                        y1="25"
-                        x2="52"
-                        y2="25"
-                        stroke="currentColor"
-                        stroke-width="2.5"
-                    />
-
-                    <line
-                        x1="22"
-                        y1="9"
-                        x2="22"
-                        y2="19"
-                        stroke="currentColor"
-                        stroke-width="2.5"
-                        stroke-linecap="round"
-                    />
-
-                    <line
-                        x1="42"
-                        y1="9"
-                        x2="42"
-                        y2="19"
-                        stroke="currentColor"
-                        stroke-width="2.5"
-                        stroke-linecap="round"
-                    />
-
-                    <circle
-                        cx="23"
-                        cy="34"
-                        r="2"
-                        fill="currentColor"
-                    />
-
-                    <circle
-                        cx="32"
-                        cy="34"
-                        r="2"
-                        fill="currentColor"
-                    />
-
-                    <circle
-                        cx="41"
-                        cy="34"
-                        r="2"
-                        fill="currentColor"
-                    />
-
-                    <circle
-                        cx="23"
-                        cy="43"
-                        r="2"
-                        fill="currentColor"
-                    />
-
-                    <circle
-                        cx="32"
-                        cy="43"
-                        r="2"
-                        fill="currentColor"
-                    />
-
-                </svg>
-
-            </div>
-
-
-            <div class="nova-feature-content">
-
-                <p class="nova-feature-label">
-                    PROGRAMACIÓN
-                </p>
-
-                <h3>
-                    Nuevos entrenamientos cada semana
-                </h3>
-
-                <p>
-                    Una variedad de sesiones y estructuras
-                    para seguir construyendo capacidad,
-                    técnica y rendimiento.
-                </p>
-
-            </div>
-
-        </article>
-
-
-
-        <!-- FEATURE 02 -->
-
-        <article class="nova-feature">
-
-            <div
-                class="nova-feature-icon"
-                aria-hidden="true"
-            >
-
-                <svg
-                    viewBox="0 0 64 64"
-                    role="img"
-                >
-
-                    <circle
-                        cx="32"
-                        cy="32"
-                        r="22"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2.5"
-                    />
-
-                    <path
-                        d="M32 18v15l10 6"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    />
-
-                    <path
-                        d="M46 17l5 5"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2.5"
-                        stroke-linecap="round"
-                    />
-
-                    <path
-                        d="M51 22l-7 1"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2.5"
-                        stroke-linecap="round"
-                    />
-
-                </svg>
-
-            </div>
-
-
-            <div class="nova-feature-content">
-
-                <p class="nova-feature-label">
-                    ESTRUCTURA
-                </p>
-
-                <h3>
-                    Sabe qué entrenar
-                </h3>
-
-                <p>
-                    Cada sesión tiene un propósito y forma
-                    parte de una estructura pensada para
-                    avanzar.
-                </p>
-
-            </div>
-
-        </article>
-
-
-
-        <!-- FEATURE 03 -->
-
-        <article class="nova-feature">
-
-            <div
-                class="nova-feature-icon"
-                aria-hidden="true"
-            >
-
-                <svg
-                    viewBox="0 0 64 64"
-                    role="img"
-                >
-
-                    <circle
-                        cx="32"
-                        cy="22"
-                        r="8"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2.5"
-                    />
-
-                    <path
-                        d="M18 51c1-10 7-15 14-15s13 5 14 15"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2.5"
-                        stroke-linecap="round"
-                    />
-
-                    <path
-                        d="M14 31h12"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2.5"
-                        stroke-linecap="round"
-                    />
-
-                    <path
-                        d="M38 31h12"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2.5"
-                        stroke-linecap="round"
-                    />
+                        <div class="nova-modal-list-item">
 
-                </svg>
+                            <span>
+                                02
+                            </span>
 
-            </div>
+                            <strong>
+                                AGUAS ABIERTAS
+                            </strong>
 
+                        </div>
 
-            <div class="nova-feature-content">
 
-                <p class="nova-feature-label">
-                    COACHING
-                </p>
+                        <div class="nova-modal-text">
 
-                <h3>
-                    Entrena con dirección
-                </h3>
+                            <p>
+                                Nadar fuera de la piscina requiere adaptarse al entorno.
+                                Entrenamos orientación, respiración, ritmo, resistencia
+                                y capacidad para responder al oleaje, corriente y distancia.
+                            </p>
 
-                <p>
-                    Una metodología construida alrededor
-                    de tu nivel, tus objetivos y tu proceso.
-                </p>
+                        </div>
 
-            </div>
 
-        </article>
+                        <div class="nova-modal-list-item">
 
+                            <span>
+                                03
+                            </span>
 
+                            <strong>
+                                FUERZA
+                            </strong>
 
-        <!-- FEATURE 04 -->
+                        </div>
 
-        <article class="nova-feature">
 
-            <div
-                class="nova-feature-icon"
-                aria-hidden="true"
-            >
+                        <div class="nova-modal-text">
 
-                <svg
-                    viewBox="0 0 64 64"
-                    role="img"
-                >
+                            <p>
+                                Desarrollamos fuerza dentro y fuera del agua.
+                                En el agua, para mejorar la brazada, posición y propulsión;
+                                fuera del agua, para construir potencia, estabilidad,
+                                resistencia y control.
+                            </p>
 
-                    <path
-                        d="M13 47L25 35l8 7 18-22"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    />
+                        </div>
 
-                    <path
-                        d="M41 20h10v10"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    />
+                    </div>
 
-                    <line
-                        x1="13"
-                        y1="52"
-                        x2="51"
-                        y2="52"
-                        stroke="currentColor"
-                        stroke-width="2.5"
-                        stroke-linecap="round"
-                    />
 
-                </svg>
+                    <div class="nova-modal-footer-action">
 
-            </div>
+                        <a
+                            href="training.html"
+                            class="nova-modal-action js-go-training-direct"
+                        >
+                            IR A TRAINING
 
+                            <span aria-hidden="true">
+                                →
+                            </span>
 
-            <div class="nova-feature-content">
+                        </a>
 
-                <p class="nova-feature-label">
-                    EVOLUCIÓN
-                </p>
+                    </div>
 
-                <h3>
-                    Tu entrenamiento cambia contigo
-                </h3>
+                `;
 
-                <p>
-                    El trabajo puede ajustarse conforme
-                    cambian tu capacidad, experiencia
-                    y objetivos.
-                </p>
 
-            </div>
+                document
+                    .querySelectorAll(
+                        ".js-open-disciplines"
+                    )
+                    .forEach(
+                        function (link) {
 
-        </article>
+                            link.addEventListener(
+                                "click",
+                                function (event) {
 
+                                    event.preventDefault();
 
-    </div>
+                                    closeMenu();
 
+                                    openModal(
+                                        disciplinesHTML
+                                    );
 
-    <div class="nova-modal-list">
-
-        <div class="nova-modal-list-item">
-
-            <span>01</span>
-
-            <strong>
-                CONOCEMOS
-            </strong>
-
-        </div>
-
-
-        <div class="nova-modal-list-item">
-
-            <span>02</span>
-
-            <strong>
-                DISEÑAMOS
-            </strong>
-
-        </div>
-
-
-        <div class="nova-modal-list-item">
-
-            <span>03</span>
-
-            <strong>
-                ENTRENAMOS
-            </strong>
-
-        </div>
-
-
-        <div class="nova-modal-list-item">
-
-            <span>04</span>
-
-            <strong>
-                EVOLUCIONAMOS
-            </strong>
-
-        </div>
-
-    </div>
-
-
-    <div class="nova-modal-text">
-
-        <p>
-            Cada etapa tiene un propósito: conocer tu
-            punto de partida, diseñar el trabajo,
-            ejecutarlo con intención y ajustar el proceso
-            conforme evolucionas.
-        </p>
-
-    </div>
-
-
-    <button
-        type="button"
-        class="nova-modal-action js-modal-go-training"
-    >
-        VER ENTRENAMIENTOS
-
-        <span aria-hidden="true">
-            →
-        </span>
-
-    </button>
-
-`;
-
-
-document
-    .querySelectorAll(
-        ".js-open-method"
-    )
-    .forEach(
-        function (link) {
-
-            link.addEventListener(
-                "click",
-                function (event) {
-
-                    event.preventDefault();
-
-                    closeMenu();
-
-                    openModal(
-                        methodHTML
-                    );
-
-                }
-            );
-
-        }
-    );
-
-
-document.addEventListener(
-    "click",
-    function (event) {
-
-        const button =
-            event.target.closest(
-                ".js-modal-go-training"
-            );
-
-
-        if (!button) {
-            return;
-        }
-
-
-        closeModal();
-
-
-        window.setTimeout(
-            function () {
-
-                startPageTransition(
-                    {
-                        getAttribute: function (
-                            attribute
-                        ) {
-
-                            if (
-                                attribute ===
-                                "href"
-                            ) {
-
-                                return "training.html";
-
-                            }
-
-
-                            if (
-                                attribute ===
-                                "data-page-title"
-                            ) {
-
-                                return "DISCIPLINAS";
-
-                            }
-
-
-                            return null;
+                                }
+                            );
 
                         }
+                    );
+
+
+                document.addEventListener(
+                    "click",
+                    function (event) {
+
+                        const trainingButton =
+                            event.target.closest(
+                                ".js-go-training-direct"
+                            );
+
+
+                        if (!trainingButton) {
+                            return;
+                        }
+
+
+                        event.preventDefault();
+
+
+                        closeModal();
+
+
+                        window.location.href =
+                            "training.html";
+
                     }
                 );
 
-            },
-            250
-        );
 
-    }
-);
+                /* =================================================
+                   MÉTODO NOVA
+                ================================================== */
+
+                const methodHTML = `
+
+                    <div class="nova-modal-eyebrow">
+                        NOVA · MÉTODO
+                    </div>
+
+
+                    <h2 id="novaModalTitle">
+                        No improvisamos.<br>
+                        Construimos.
+                    </h2>
+
+
+                    <div class="nova-modal-text">
+
+                        <p>
+                            La metodología NOVA parte de entender
+                            dónde estás, qué quieres conseguir y qué
+                            necesitas para avanzar.
+                        </p>
+
+                        <p>
+                            A partir de ahí construimos una estructura
+                            de entrenamiento que pueda evolucionar
+                            contigo.
+                        </p>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         IMÁGENES · MÉTODO NOVA
+                    ================================================== -->
+
+                    <div class="nova-method-images">
+
+                        <div class="nova-method-image">
+
+                            <img
+                                src="img/beneficio1.jpeg"
+                                alt="Entrenamiento NOVA"
+                            >
+
+                        </div>
+
+
+                        <div class="nova-method-image">
+
+                            <img
+                                src="img/beneficio1.jpeg"
+                                alt="Proceso de entrenamiento NOVA"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="nova-modal-list">
+
+                        <div class="nova-modal-list-item">
+
+                            <span>></span>
+
+                            <strong>
+                                CONOCEMOS
+                            </strong>
+
+                        </div>
+
+
+                        <div class="nova-modal-list-item">
+
+                            <span>></span>
+
+                            <strong>
+                                DISEÑAMOS
+                            </strong>
+
+                        </div>
+
+
+                        <div class="nova-modal-list-item">
+
+                            <span>></span>
+
+                            <strong>
+                                ENTRENAMOS
+                            </strong>
+
+                        </div>
+
+
+                        <div class="nova-modal-list-item">
+
+                            <span>></span>
+
+                            <strong>
+                                EVOLUCIONAMOS
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="nova-modal-text">
+
+                        <p>
+                            Cada etapa tiene un propósito: conocer tu
+                            punto de partida, diseñar el trabajo,
+                            ejecutarlo con intención y ajustar el proceso
+                            conforme evolucionas.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="nova-modal-action js-modal-go-training"
+                    >
+                        VER ENTRENAMIENTOS
+
+                        <span aria-hidden="true">
+                            →
+                        </span>
+
+                    </button>
+
+                `;
+
+
+                document
+                    .querySelectorAll(
+                        ".js-open-method"
+                    )
+                    .forEach(
+                        function (link) {
+
+                            link.addEventListener(
+                                "click",
+                                function (event) {
+
+                                    event.preventDefault();
+
+                                    closeMenu();
+
+                                    openModal(
+                                        methodHTML
+                                    );
+
+                                }
+                            );
+
+                        }
+                    );
+
+
+                document.addEventListener(
+                    "click",
+                    function (event) {
+
+                        const button =
+                            event.target.closest(
+                                ".js-modal-go-training"
+                            );
+
+
+                        if (!button) {
+                            return;
+                        }
+
+
+                        closeModal();
+
+
+                        window.setTimeout(
+                            function () {
+
+                                startPageTransition(
+                                    {
+                                        getAttribute: function (
+                                            attribute
+                                        ) {
+
+                                            if (
+                                                attribute ===
+                                                "href"
+                                            ) {
+
+                                                return "training.html";
+
+                                            }
+
+
+                                            if (
+                                                attribute ===
+                                                "data-page-title"
+                                            ) {
+
+                                                return "DISCIPLINAS";
+
+                                            }
+
+
+                                            return null;
+
+                                        }
+                                    }
+                                );
+
+                            },
+                            250
+                        );
+
+                    }
+                );
 
 
                 /* =================================================
@@ -2664,6 +2501,7 @@ document.addEventListener(
                                 gestionar un programa o mantener la
                                 comunicación relacionada con los servicios.
                             </p>
+
 
                             <ul class="nova-legal-list">
 
