@@ -17,849 +17,6 @@
         href="css/index.css"
     >
 
-    <style>
-
-        /* =====================================================
-           NOVA · LEGAL MODAL
-        ====================================================== */
-
-        .nova-legal-text {
-
-            max-height:
-                min(
-                    58vh,
-                    620px
-                );
-
-            overflow-y:
-                auto;
-
-            padding-right:
-                10px;
-
-        }
-
-
-        .nova-legal-text::-webkit-scrollbar {
-
-            width:
-                4px;
-
-        }
-
-
-        .nova-legal-text::-webkit-scrollbar-track {
-
-            background:
-                rgba(
-                    255,
-                    255,
-                    255,
-                    .04
-                );
-
-            border-radius:
-                20px;
-
-        }
-
-
-        .nova-legal-text::-webkit-scrollbar-thumb {
-
-            background:
-                rgba(
-                    255,
-                    255,
-                    255,
-                    .18
-                );
-
-            border-radius:
-                20px;
-
-        }
-
-
-        .nova-legal-text p {
-
-            margin:
-                0 0 18px;
-
-            color:
-                rgba(
-                    255,
-                    255,
-                    255,
-                    .62
-                );
-
-            font-size:
-                13px;
-
-            line-height:
-                1.75;
-
-        }
-
-
-        .nova-legal-text p:last-child {
-
-            margin-bottom:
-                0;
-
-        }
-
-
-        .nova-legal-heading {
-
-            margin:
-                26px 0 12px;
-
-            color:
-                rgba(
-                    255,
-                    255,
-                    255,
-                    .9
-                );
-
-            font-size:
-                11px;
-
-            font-weight:
-                700;
-
-            letter-spacing:
-                .12em;
-
-            text-transform:
-                uppercase;
-
-        }
-
-
-        .nova-legal-heading:first-child {
-
-            margin-top:
-                0;
-
-        }
-
-
-        .nova-legal-list {
-
-            display:
-                grid;
-
-            gap:
-                9px;
-
-            margin:
-                0 0 20px;
-
-            padding:
-                0;
-
-            list-style:
-                none;
-
-        }
-
-
-        .nova-legal-list li {
-
-            position:
-                relative;
-
-            padding-left:
-                17px;
-
-            color:
-                rgba(
-                    255,
-                    255,
-                    255,
-                    .56
-                );
-
-            font-size:
-                12px;
-
-            line-height:
-                1.65;
-
-        }
-
-
-        .nova-legal-list li::before {
-
-            content:
-                "•";
-
-            position:
-                absolute;
-
-            left:
-                0;
-
-            color:
-                rgba(
-                    255,
-                    255,
-                    255,
-                    .32
-                );
-
-        }
-
-
-        .nova-modal-legal-footer {
-
-            display:
-                flex;
-
-            align-items:
-                center;
-
-            justify-content:
-                space-between;
-
-            gap:
-                20px;
-
-            margin-top:
-                28px;
-
-            padding-top:
-                18px;
-
-            border-top:
-                1px solid
-                rgba(
-                    255,
-                    255,
-                    255,
-                    .08
-                );
-
-        }
-
-
-        .nova-modal-legal-footer span {
-
-            color:
-                rgba(
-                    255,
-                    255,
-                    255,
-                    .32
-                );
-
-            font-size:
-                9px;
-
-            font-weight:
-                700;
-
-            letter-spacing:
-                .12em;
-
-            text-transform:
-                uppercase;
-
-        }
-
-
-        /* =====================================================
-           NOVA · FAQ MODAL
-        ====================================================== */
-
-        .nova-faq-text {
-
-            max-height:
-                min(
-                    62vh,
-                    650px
-                );
-
-            overflow-y:
-                auto;
-
-            padding-right:
-                8px;
-
-        }
-
-
-        .nova-faq-text::-webkit-scrollbar {
-
-            width:
-                4px;
-
-        }
-
-
-        .nova-faq-text::-webkit-scrollbar-track {
-
-            background:
-                rgba(
-                    0,
-                    0,
-                    0,
-                    .06
-                );
-
-            border-radius:
-                20px;
-
-        }
-
-
-        .nova-faq-text::-webkit-scrollbar-thumb {
-
-            background:
-                rgba(
-                    0,
-                    0,
-                    0,
-                    .18
-                );
-
-            border-radius:
-                20px;
-
-        }
-
-
-        .nova-faq-list {
-
-            display:
-                grid;
-
-            gap:
-                8px;
-
-            margin-top:
-                24px;
-
-        }
-
-
-        .nova-faq-item {
-
-            overflow:
-                hidden;
-
-            border:
-                1px solid
-                rgba(
-                    0,
-                    0,
-                    0,
-                    .09
-                );
-
-            border-radius:
-                16px;
-
-            background:
-                rgba(
-                    0,
-                    0,
-                    0,
-                    .025
-                );
-
-        }
-
-
-        .nova-faq-question {
-
-            display:
-                flex;
-
-            align-items:
-                center;
-
-            justify-content:
-                space-between;
-
-            gap:
-                20px;
-
-            width:
-                100%;
-
-            padding:
-                17px 18px;
-
-            border:
-                0;
-
-            background:
-                transparent;
-
-            color:
-                rgba(
-                    0,
-                    0,
-                    0,
-                    .88
-                );
-
-            font-family:
-                inherit;
-
-            font-size:
-                13px;
-
-            font-weight:
-                700;
-
-            line-height:
-                1.45;
-
-            text-align:
-                left;
-
-            cursor:
-                pointer;
-
-        }
-
-
-        .nova-faq-question span {
-
-            flex:
-                1;
-
-        }
-
-
-        .nova-faq-icon {
-
-            display:
-                flex;
-
-            align-items:
-                center;
-
-            justify-content:
-                center;
-
-            flex:
-                0 0 auto;
-
-            width:
-                26px;
-
-            height:
-                26px;
-
-            border:
-                1px solid
-                rgba(
-                    0,
-                    0,
-                    0,
-                    .12
-                );
-
-            border-radius:
-                50%;
-
-            color:
-                rgba(
-                    0,
-                    0,
-                    0,
-                    .65
-                );
-
-            font-size:
-                16px;
-
-            font-weight:
-                400;
-
-            line-height:
-                1;
-
-            transition:
-                transform .25s ease,
-                background .25s ease,
-                color .25s ease;
-
-        }
-
-
-        .nova-faq-answer {
-
-            display:
-                none;
-
-            padding:
-                0 18px 18px;
-
-        }
-
-
-        .nova-faq-answer p {
-
-            margin:
-                0;
-
-            color:
-                rgba(
-                    0,
-                    0,
-                    0,
-                    .62
-                );
-
-            font-size:
-                12px;
-
-            line-height:
-                1.7;
-
-        }
-
-
-        .nova-faq-item.is-open
-        .nova-faq-answer {
-
-            display:
-                block;
-
-        }
-
-
-        .nova-faq-item.is-open
-        .nova-faq-icon {
-
-            transform:
-                rotate(45deg);
-
-            background:
-                #000;
-
-            color:
-                #fff;
-
-        }
-
-
-        .nova-faq-footer {
-
-            display:
-                flex;
-
-            align-items:
-                center;
-
-            justify-content:
-                space-between;
-
-            gap:
-                20px;
-
-            margin-top:
-                24px;
-
-            padding-top:
-                17px;
-
-            border-top:
-                1px solid
-                rgba(
-                    0,
-                    0,
-                    0,
-                    .08
-                );
-
-        }
-
-
-        .nova-faq-footer span {
-
-            color:
-                rgba(
-                    0,
-                    0,
-                    0,
-                    .38
-                );
-
-            font-size:
-                9px;
-
-            font-weight:
-                700;
-
-            letter-spacing:
-                .12em;
-
-            text-transform:
-                uppercase;
-
-        }
-
-
-        @media (max-width: 700px) {
-
-            .nova-legal-text {
-
-                max-height:
-                    55vh;
-
-                padding-right:
-                    3px;
-
-            }
-
-
-            .nova-legal-text p {
-
-                font-size:
-                    12px;
-
-                line-height:
-                    1.7;
-
-                margin-bottom:
-                    16px;
-
-            }
-
-
-            .nova-legal-heading {
-
-                margin-top:
-                    23px;
-
-            }
-
-
-            .nova-modal-legal-footer {
-
-                align-items:
-                    flex-start;
-
-                flex-direction:
-                    column;
-
-                gap:
-                    7px;
-
-            }
-
-
-            .nova-faq-text {
-
-                max-height:
-                    58vh;
-
-                padding-right:
-                    3px;
-
-            }
-
-
-            .nova-faq-list {
-
-                margin-top:
-                    20px;
-
-                gap:
-                    7px;
-
-            }
-
-
-            .nova-faq-question {
-
-                padding:
-                    15px;
-
-                font-size:
-                    12px;
-
-            }
-
-
-            .nova-faq-answer {
-
-                padding:
-                    0 15px 16px;
-
-            }
-
-
-            .nova-faq-answer p {
-
-                font-size:
-                    11.5px;
-
-                line-height:
-                    1.65;
-
-            }
-
-
-            .nova-faq-footer {
-
-                align-items:
-                    flex-start;
-
-                flex-direction:
-                    column;
-
-                gap:
-                    7px;
-
-            }
-
-        }
-
-
-        .nova-legal-text p {
-
-            margin:
-                0 0 18px;
-
-            color:
-                rgba(
-                    0,
-                    0,
-                    0,
-                    .72
-                );
-
-            font-size:
-                13px;
-
-            line-height:
-                1.75;
-
-        }
-
-
-        .nova-legal-heading {
-
-            margin:
-                26px 0 12px;
-
-            color:
-                rgba(
-                    0,
-                    0,
-                    0,
-                    .9
-                );
-
-            font-size:
-                11px;
-
-            font-weight:
-                700;
-
-            letter-spacing:
-                .12em;
-
-            text-transform:
-                uppercase;
-
-        }
-
-
-        .nova-legal-list li {
-
-            position:
-                relative;
-
-            padding-left:
-                17px;
-
-            color:
-                rgba(
-                    0,
-                    0,
-                    0,
-                    .68
-                );
-
-            font-size:
-                12px;
-
-            line-height:
-                1.65;
-
-        }
-
-
-        .nova-legal-list li::before {
-
-            content:
-                "•";
-
-            position:
-                absolute;
-
-            left:
-                0;
-
-            color:
-                rgba(
-                    0,
-                    0,
-                    0,
-                    .4
-                );
-
-        }
-
-
-        .nova-modal-legal-footer span {
-
-            color:
-                rgba(
-                    0,
-                    0,
-                    0,
-                    .4
-                );
-
-            font-size:
-                9px;
-
-            font-weight:
-                700;
-
-            letter-spacing:
-                .12em;
-
-            text-transform:
-                uppercase;
-
-        }
-
-        /* =====================================================
-   NOVA · FAQ PLUS · SIN ANIMACIÓN
-===================================================== */
-
-.nova-faq-question > span:last-child {
-    transition: none !important;
-    transform: none !important;
-}
-
-.nova-faq-item[open] .nova-faq-question > span:last-child {
-    transition: none !important;
-    transform: none !important;
-}
-    </style>
-
 </head>
 
 <body>
@@ -923,20 +80,6 @@
                     class="nova-nav-link is-active"
                 >
                     DISCIPLINAS
-                </a>
-
-                <a
-                    href="programas.html"
-                    class="nova-nav-link"
-                >
-                    MEMBRESÍAS
-                </a>
-
-                <a
-                    href="#novaPlan"
-                    class="nova-nav-link js-open-survey"
-                >
-                    PLAN
                 </a>
 
             </nav>
@@ -2039,198 +1182,228 @@
                 }
 
 
-                /* =================================================
-                   MÉTODO NOVA
-                ================================================== */
+               /* =================================================
+   MÉTODO NOVA
+================================================== */
 
-                const methodHTML = `
+const methodHTML = `
 
-                    <div class="nova-modal-eyebrow">
-                        NOVA · MÉTODO
-                    </div>
-
-
-                    <h2 id="novaModalTitle">
-                        No improvisamos.<br>
-                        Construimos.
-                    </h2>
+    <div class="nova-modal-eyebrow">
+        NOVA · MÉTODO
+    </div>
 
 
-                    <div class="nova-modal-text">
-
-                        <p>
-                            La metodología NOVA parte de entender
-                            dónde estás, qué quieres conseguir y qué
-                            necesitas para avanzar.
-                        </p>
-
-                        <p>
-                            A partir de ahí construimos una estructura
-                            de entrenamiento que pueda evolucionar
-                            contigo.
-                        </p>
-
-                    </div>
+    <h2 id="novaModalTitle">
+        No improvisamos.<br>
+        Construimos.
+    </h2>
 
 
-                    <div class="nova-modal-list">
+    <div class="nova-modal-text">
 
-                        <div class="nova-modal-list-item">
+        <p>
+            La metodología NOVA parte de entender
+            dónde estás, qué quieres conseguir y qué
+            necesitas para avanzar.
+        </p>
 
-                            <span>01</span>
+        <p>
+            A partir de ahí construimos una estructura
+            de entrenamiento que pueda evolucionar
+            contigo.
+        </p>
 
-                            <strong>
-                                CONOCEMOS
-                            </strong>
-
-                        </div>
-
-
-                        <div class="nova-modal-list-item">
-
-                            <span>02</span>
-
-                            <strong>
-                                DISEÑAMOS
-                            </strong>
-
-                        </div>
+    </div>
 
 
-                        <div class="nova-modal-list-item">
+    <!-- =================================================
+         IMÁGENES · MÉTODO NOVA
+    ================================================== -->
 
-                            <span>03</span>
+    <div class="nova-method-images">
 
-                            <strong>
-                                ENTRENAMOS
-                            </strong>
+        <div class="nova-method-image">
 
-                        </div>
+            <img
+                src="img/beneficio1.jpeg"
+                alt="Entrenamiento NOVA"
+            >
 
-
-                        <div class="nova-modal-list-item">
-
-                            <span>04</span>
-
-                            <strong>
-                                EVOLUCIONAMOS
-                            </strong>
-
-                        </div>
-
-                    </div>
+        </div>
 
 
-                    <div class="nova-modal-text">
+        <div class="nova-method-image">
 
-                        <p>
-                            Cada etapa tiene un propósito: conocer tu
-                            punto de partida, diseñar el trabajo,
-                            ejecutarlo con intención y ajustar el proceso
-                            conforme evolucionas.
-                        </p>
+            <img
+                src="img/beneficio1.jpeg"
+                alt="Proceso de entrenamiento NOVA"
+            >
 
-                    </div>
+        </div>
 
-
-                    <button
-                        type="button"
-                        class="nova-modal-action js-modal-go-training"
-                    >
-                        VER ENTRENAMIENTOS
-                        <span aria-hidden="true">
-                            →
-                        </span>
-                    </button>
-
-                `;
+    </div>
 
 
-                document
-                    .querySelectorAll(
-                        ".js-open-method"
-                    )
-                    .forEach(
-                        function (link) {
+    <div class="nova-modal-list">
 
-                            link.addEventListener(
-                                "click",
-                                function (event) {
+        <div class="nova-modal-list-item">
 
-                                    event.preventDefault();
+            <span>01</span>
 
-                                    closeMenu();
+            <strong>
+                CONOCEMOS
+            </strong>
 
-                                    openModal(
-                                        methodHTML
-                                    );
+        </div>
 
-                                }
-                            );
 
-                        }
+        <div class="nova-modal-list-item">
+
+            <span>02</span>
+
+            <strong>
+                DISEÑAMOS
+            </strong>
+
+        </div>
+
+
+        <div class="nova-modal-list-item">
+
+            <span>03</span>
+
+            <strong>
+                ENTRENAMOS
+            </strong>
+
+        </div>
+
+
+        <div class="nova-modal-list-item">
+
+            <span>04</span>
+
+            <strong>
+                EVOLUCIONAMOS
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <div class="nova-modal-text">
+
+        <p>
+            Cada etapa tiene un propósito: conocer tu
+            punto de partida, diseñar el trabajo,
+            ejecutarlo con intención y ajustar el proceso
+            conforme evolucionas.
+        </p>
+
+    </div>
+
+
+    <button
+        type="button"
+        class="nova-modal-action js-modal-go-training"
+    >
+        VER ENTRENAMIENTOS
+
+        <span aria-hidden="true">
+            →
+        </span>
+
+    </button>
+
+`;
+
+
+document
+    .querySelectorAll(
+        ".js-open-method"
+    )
+    .forEach(
+        function (link) {
+
+            link.addEventListener(
+                "click",
+                function (event) {
+
+                    event.preventDefault();
+
+                    closeMenu();
+
+                    openModal(
+                        methodHTML
                     );
 
+                }
+            );
 
-                document.addEventListener(
-                    "click",
-                    function (event) {
-
-                        const button =
-                            event.target.closest(
-                                ".js-modal-go-training"
-                            );
+        }
+    );
 
 
-                        if (!button) {
-                            return;
+document.addEventListener(
+    "click",
+    function (event) {
+
+        const button =
+            event.target.closest(
+                ".js-modal-go-training"
+            );
+
+
+        if (!button) {
+            return;
+        }
+
+
+        closeModal();
+
+
+        window.setTimeout(
+            function () {
+
+                startPageTransition(
+                    {
+                        getAttribute: function (
+                            attribute
+                        ) {
+
+                            if (
+                                attribute ===
+                                "href"
+                            ) {
+
+                                return "training.html";
+
+                            }
+
+
+                            if (
+                                attribute ===
+                                "data-page-title"
+                            ) {
+
+                                return "DISCIPLINAS";
+
+                            }
+
+
+                            return null;
+
                         }
-
-
-                        closeModal();
-
-
-                        window.setTimeout(
-                            function () {
-
-                                startPageTransition(
-                                    {
-                                        getAttribute: function (
-                                            attribute
-                                        ) {
-
-                                            if (
-                                                attribute ===
-                                                "href"
-                                            ) {
-
-                                                return "training.html";
-
-                                            }
-
-
-                                            if (
-                                                attribute ===
-                                                "data-page-title"
-                                            ) {
-
-                                                return "DISCIPLINAS";
-
-                                            }
-
-
-                                            return null;
-
-                                        }
-                                    }
-                                );
-
-                            },
-                            250
-                        );
-
                     }
                 );
+
+            },
+            250
+        );
+
+    }
+);
 
 
                 /* =================================================
@@ -2601,6 +1774,52 @@
                         whatsappMessage +=
                             "\n\nPLAN RECOMENDADO: " +
                             NOVA_SURVEY_ANSWERS.plan;
+
+
+                        /*
+                         * Si el usuario respondió las preguntas
+                         * específicas de FUERZA, también se agregan
+                         * al mensaje de WhatsApp.
+                         */
+
+                        if (
+                            NOVA_SURVEY_ANSWERS.forceAnswers
+                        ) {
+
+                            whatsappMessage +=
+                                "\n\nRESPUESTAS DE FUERZA:";
+
+
+                            whatsappMessage +=
+                                "\n• Qué falta dentro del agua: " +
+                                (
+                                    NOVA_SURVEY_ANSWERS
+                                        .forceAnswers
+                                        .force_need ||
+                                    "No especificado"
+                                );
+
+
+                            whatsappMessage +=
+                                "\n• Apoyo dentro de la natación: " +
+                                (
+                                    NOVA_SURVEY_ANSWERS
+                                        .forceAnswers
+                                        .force_support ||
+                                    "No especificado"
+                                );
+
+
+                            whatsappMessage +=
+                                "\n• Entrenamiento actual fuera del agua: " +
+                                (
+                                    NOVA_SURVEY_ANSWERS
+                                        .forceAnswers
+                                        .force_current ||
+                                    "No especificado"
+                                );
+
+                        }
 
                     }
 
@@ -3876,15 +3095,111 @@
                 ];
 
 
+                /* =================================================
+                   FORCE QUESTIONS
+                ================================================== */
+
+                const questionsForce = [
+
+                    {
+
+                        id:
+                            "force_need",
+
+                        question:
+                            "¿Qué sientes que te falta dentro del agua?",
+
+                        options: [
+
+                            "Me falta fuerza para mantener el ritmo",
+
+                            "Me cuesta sostener la técnica cuando me canso",
+
+                            "Me falta potencia",
+
+                            "Me cuesta mantener una buena posición corporal",
+
+                            "Siento que me falta condición física"
+
+                        ]
+
+                    },
+
+
+                    {
+
+                        id:
+                            "force_support",
+
+                        question:
+                            "¿En qué parte de tu natación quieres sentir más apoyo?",
+
+                        options: [
+
+                            "Brazada",
+
+                            "Patada",
+
+                            "Core y posición corporal",
+
+                            "Salidas y vueltas",
+
+                            "En general"
+
+                        ]
+
+                    },
+
+
+                    {
+
+                        id:
+                            "force_current",
+
+                        question:
+                            "¿Cómo entrenas actualmente fuera del agua?",
+
+                        options: [
+
+                            "No hago entrenamiento de fuerza",
+
+                            "Hago fuerza ocasionalmente",
+
+                            "Entreno fuerza regularmente",
+
+                            "Hago gimnasio / CrossFit",
+
+                            "Otro"
+
+                        ]
+
+                    }
+
+                ];
+
+
                 function openSurvey() {
 
                     closeMenu();
 
+
                     let currentStep =
                         0;
 
+
+                    let currentForceStep =
+                        0;
+
+
                     const answers = {};
 
+
+                    const forceAnswers = {};
+
+
+                    /* =================================================
+                       PREGUNTAS GENERALES
+                    ================================================== */
 
                     function renderQuestion() {
 
@@ -4018,6 +3333,31 @@
                                                     .surveyValue;
 
 
+                                            /*
+                                             * Si la primera respuesta
+                                             * es FUERZA, se intercalan
+                                             * las preguntas específicas
+                                             * antes de continuar con
+                                             * la encuesta general.
+                                             */
+
+                                            if (
+                                                currentStep === 0 &&
+                                                optionButton.dataset
+                                                    .surveyValue ===
+                                                    "Fuerza"
+                                            ) {
+
+                                                currentForceStep =
+                                                    0;
+
+                                                renderForceQuestion();
+
+                                                return;
+
+                                            }
+
+
                                             currentStep++;
 
 
@@ -4042,6 +3382,181 @@
 
                     }
 
+
+                    /* =================================================
+                       PREGUNTAS ESPECÍFICAS DE FUERZA
+                    ================================================== */
+
+                    function renderForceQuestion() {
+
+                        const question =
+                            questionsForce[
+                                currentForceStep
+                            ];
+
+
+                        const progress =
+                            (
+                                (
+                                    currentForceStep + 1
+                                ) /
+                                questionsForce.length
+                            ) *
+                            100;
+
+
+                        openModal(`
+
+                            <div class="nova-survey">
+
+                                <div class="nova-survey-top">
+
+                                    <div class="nova-modal-eyebrow">
+                                        NOVA · FUERZA
+                                    </div>
+
+                                    <div class="nova-survey-progress-text">
+                                        ${currentForceStep + 1}
+                                        /
+                                        ${questionsForce.length}
+                                    </div>
+
+                                </div>
+
+
+                                <div class="nova-survey-progress">
+
+                                    <span
+                                        style="width:${progress}%"
+                                    ></span>
+
+                                </div>
+
+
+                                <div class="nova-survey-question">
+
+                                    <p class="nova-survey-eyebrow">
+                                        FUERZA ·
+                                        ${String(
+                                            currentForceStep + 1
+                                        ).padStart(
+                                            2,
+                                            "0"
+                                        )}
+                                    </p>
+
+
+                                    <h2 id="novaModalTitle">
+                                        ${question.question}
+                                    </h2>
+
+
+                                    <div class="nova-survey-options">
+
+                                        ${question.options
+                                            .map(
+                                                function (
+                                                    option
+                                                ) {
+
+                                                    return `
+
+                                                        <button
+                                                            type="button"
+                                                            class="nova-survey-option"
+                                                            data-force-value="${option}"
+                                                        >
+
+                                                            <span>
+                                                                ${option}
+                                                            </span>
+
+                                                            <span
+                                                                aria-hidden="true"
+                                                            >
+                                                                →
+                                                            </span>
+
+                                                        </button>
+
+                                                    `;
+
+                                                }
+                                            )
+                                            .join("")}
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        `);
+
+
+                        modalContent
+                            .querySelectorAll(
+                                ".nova-survey-option"
+                            )
+                            .forEach(
+                                function (
+                                    optionButton
+                                ) {
+
+                                    optionButton.addEventListener(
+                                        "click",
+                                        function () {
+
+                                            forceAnswers[
+                                                question.id
+                                            ] =
+                                                optionButton.dataset
+                                                    .forceValue;
+
+
+                                            currentForceStep++;
+
+
+                                            if (
+                                                currentForceStep <
+                                                questionsForce.length
+                                            ) {
+
+                                                renderForceQuestion();
+
+                                            } else {
+
+                                                /*
+                                                 * Las preguntas específicas
+                                                 * de fuerza terminaron.
+                                                 *
+                                                 * Regresamos a la encuesta
+                                                 * general comenzando en
+                                                 * 02 · OBJETIVO.
+                                                 */
+
+                                                currentForceStep =
+                                                    0;
+
+                                                currentStep =
+                                                    1;
+
+                                                renderQuestion();
+
+                                            }
+
+                                        }
+                                    );
+
+                                }
+                            );
+
+                    }
+
+
+                    /* =================================================
+                       RESULTADO
+                    ================================================== */
 
                     function renderSurveyResult() {
 
@@ -4145,7 +3660,24 @@
                                 "No especificado",
 
                             plan:
-                                plan.title
+                                plan.title,
+
+                            forceAnswers:
+                                discipline === "Fuerza"
+                                    ? {
+                                        force_need:
+                                            forceAnswers.force_need ||
+                                            "No especificado",
+
+                                        force_support:
+                                            forceAnswers.force_support ||
+                                            "No especificado",
+
+                                        force_current:
+                                            forceAnswers.force_current ||
+                                            "No especificado"
+                                    }
+                                    : null
 
                         };
 
@@ -4269,6 +3801,9 @@
                                         null;
 
                                     currentStep =
+                                        0;
+
+                                    currentForceStep =
                                         0;
 
                                     renderQuestion();
