@@ -1,3 +1,4 @@
+
 /* =========================================================
    NOVA · TRAINING
    css/training.css
@@ -9,40 +10,29 @@
    ========================================================= */
 
 :root {
-
     --nova-bg: #f5f4ef;
     --nova-bg-alt: #e9e8e2;
-    --nova-white: #ffffff;
-
-    --nova-black: #111111;
-    --nova-black-soft: #1b1b1b;
-
+    --nova-black: #08090b;
+    --nova-white: #f5f5f3;
     --nova-yellow: #ffd60a;
 
     --nova-gray: #686868;
-    --nova-gray-light: #969696;
+    --nova-gray-light: #a4a4a0;
 
-    --nova-border:
-        rgba(17, 17, 17, .10);
-
-    --nova-border-strong:
-        rgba(17, 17, 17, .16);
+    --nova-border: rgba(8, 9, 11, .10);
+    --nova-border-light: rgba(245, 245, 243, .14);
 
     --nova-max-width: 1309px;
 
-    --nova-page-padding: 28px;
-
-    --nova-header-height: 76px;
-
-    --nova-radius-xl: 32px;
-    --nova-radius-lg: 26px;
-    --nova-radius-md: 20px;
     --nova-radius-sm: 14px;
-    --nova-radius-xs: 10px;
+    --nova-radius-md: 20px;
+    --nova-radius-lg: 26px;
+
+    --nova-shadow:
+        0 25px 70px rgba(0, 0, 0, .10);
 
     --nova-ease:
         cubic-bezier(.22, 1, .36, 1);
-
 }
 
 
@@ -53,35 +43,15 @@
 *,
 *::before,
 *::after {
-
     box-sizing: border-box;
-
 }
-
 
 html {
-
-    margin: 0;
-
-    padding: 0;
-
     scroll-behavior: smooth;
-
-    background:
-        var(--nova-bg);
-
 }
 
-
 body {
-
     margin: 0;
-
-    padding: 0;
-
-    min-width: 320px;
-
-    overflow-x: hidden;
 
     background:
         var(--nova-bg);
@@ -90,139 +60,62 @@ body {
         var(--nova-black);
 
     font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Helvetica,
         Arial,
+        Helvetica,
         sans-serif;
 
-    -webkit-font-smoothing:
-        antialiased;
-
-    text-rendering:
-        optimizeLegibility;
-
-    -webkit-text-size-adjust:
-        100%;
-
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
-
 
 body.nova-menu-open,
 body.nova-routine-modal-open,
 body.nova-info-modal-open {
-
     overflow: hidden;
-
 }
 
-
 button,
+a,
 input,
 textarea,
 select {
-
     font: inherit;
-
 }
-
 
 button {
-
-    appearance: none;
-
-    -webkit-appearance: none;
-
+    border: 0;
 }
-
 
 a {
-
     color: inherit;
-
     text-decoration: none;
-
 }
-
 
 img {
-
     max-width: 100%;
-
 }
 
-
 ::selection {
-
     background:
         var(--nova-yellow);
 
     color:
         var(--nova-black);
-
 }
 
 
 /* =========================================================
-   03 · GLOBAL CONTAINER
-   ========================================================= */
-
-.nova-page {
-
-    width:
-        100%;
-
-    padding-top:
-        var(--nova-header-height);
-
-}
-
-
-.nova-training-page {
-
-    width:
-        100%;
-
-}
-
-
-.nova-eyebrow {
-
-    margin: 0;
-
-    font-size: 10px;
-
-    font-weight: 800;
-
-    line-height: 1.2;
-
-    letter-spacing: .14em;
-
-    text-transform: uppercase;
-
-    color:
-        var(--nova-gray);
-
-}
-
-
-/* =========================================================
-   04 · PAGE TRANSITION
+   03 · PAGE TRANSITION
    ========================================================= */
 
 .nova-page-transition {
-
     position: fixed;
-
     inset: 0;
 
-    z-index: 10000;
+    z-index: 9999;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     background:
@@ -232,159 +125,109 @@ img {
         var(--nova-white);
 
     opacity: 0;
-
     visibility: hidden;
-
     pointer-events: none;
 
     transition:
         opacity .45s ease,
         visibility .45s ease;
-
 }
-
 
 .nova-page-transition.is-active {
-
     opacity: 1;
-
     visibility: visible;
-
-    pointer-events: auto;
-
 }
-
 
 .nova-page-transition-inner {
-
     width:
         min(420px, calc(100% - 48px));
-
-    text-align: center;
-
 }
-
 
 .nova-page-transition-brand {
-
-    margin-bottom: 22px;
-
-    font-size: 30px;
-
-    font-weight: 850;
-
-    line-height: 1;
-
+    font-size: 22px;
+    font-weight: 900;
     letter-spacing: -.06em;
-
 }
-
 
 .nova-page-transition-line {
-
     width: 100%;
-
     height: 1px;
 
-    overflow: hidden;
+    margin:
+        18px 0 12px;
 
     background:
-        rgba(255,255,255,.18);
+        rgba(245, 245, 243, .20);
 
+    overflow: hidden;
 }
 
-
 .nova-page-transition-line::after {
-
     content: "";
 
     display: block;
 
-    width: 100%;
-
+    width: 45%;
     height: 100%;
 
     background:
         var(--nova-yellow);
 
     transform:
-        translateX(-100%);
+        translateX(-110%);
 
     animation:
-        novaTransitionLine .65s
-        var(--nova-ease)
-        forwards;
-
+        novaTransitionLine 1s ease infinite;
 }
 
-
 .nova-page-transition-label {
-
-    margin-top: 14px;
-
     font-size: 9px;
-
     font-weight: 800;
-
-    letter-spacing: .14em;
-
+    letter-spacing: .16em;
     text-transform: uppercase;
 
     color:
-        rgba(255,255,255,.58);
-
+        rgba(245, 245, 243, .55);
 }
 
-
 @keyframes novaTransitionLine {
-
     to {
-
         transform:
-            translateX(0);
-
+            translateX(330%);
     }
-
 }
 
 
 /* =========================================================
-   05 · HEADER
+   04 · HEADER
    ========================================================= */
 
 .nova-top {
-
     position: fixed;
 
     top: 0;
-
     left: 0;
-
     right: 0;
 
     z-index: 5000;
 
-    height:
-        var(--nova-header-height);
+    height: 76px;
+
+    background:
+        rgba(245, 244, 239, .94);
 
     border-bottom:
         1px solid
-        rgba(17,17,17,.08);
-
-    background:
-        rgba(245,244,239,.88);
+        rgba(8, 9, 11, .07);
 
     backdrop-filter:
-        blur(18px);
+        blur(16px);
 
     -webkit-backdrop-filter:
-        blur(18px);
-
+        blur(16px);
 }
 
-
 .nova-top-inner {
-
     width:
         min(
             var(--nova-max-width),
@@ -396,259 +239,189 @@ img {
     margin: 0 auto;
 
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
-
 }
 
-
 .nova-brand {
-
     display: inline-flex;
-
     align-items: center;
 
     font-size: 21px;
-
-    font-weight: 850;
-
     line-height: 1;
 
-    letter-spacing: -.055em;
+    font-weight: 900;
 
+    letter-spacing: -.07em;
 }
 
-
 .nova-desktop-nav {
-
     display: flex;
-
     align-items: center;
 
     gap: 34px;
-
 }
-
 
 .nova-nav-link {
-
     position: relative;
 
-    display: inline-flex;
-
-    align-items: center;
-
-    height: 76px;
+    padding: 8px 0;
 
     font-size: 10px;
-
     font-weight: 800;
 
-    letter-spacing: .10em;
+    letter-spacing: .12em;
 
-    color:
-        rgba(17,17,17,.56);
-
-    transition:
-        color .25s ease;
-
+    text-transform: uppercase;
 }
 
-
-.nova-nav-link:hover {
-
-    color:
-        var(--nova-black);
-
-}
-
-
-.nova-nav-link.is-active {
-
-    color:
-        var(--nova-black);
-
-}
-
-
-.nova-nav-link.is-active::after {
-
+.nova-nav-link::after {
     content: "";
 
     position: absolute;
 
     left: 0;
+    bottom: 2px;
 
-    right: 0;
-
-    bottom: 20px;
-
-    height: 2px;
-
-    border-radius: 999px;
+    width: 100%;
+    height: 1px;
 
     background:
         var(--nova-black);
 
+    transform:
+        scaleX(0);
+
+    transform-origin:
+        right;
+
+    transition:
+        transform .35s var(--nova-ease);
+}
+
+.nova-nav-link:hover::after {
+    transform:
+        scaleX(1);
+
+    transform-origin:
+        left;
 }
 
 
 /* =========================================================
-   06 · MENU BUTTON
+   05 · HAMBURGER
    ========================================================= */
 
 .nova-menu-button {
-
-    display: none;
-
     position: relative;
 
     width: 44px;
-
     height: 44px;
 
-    padding: 0;
+    display: none;
 
-    border: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    padding: 0;
 
     border-radius: 50%;
 
     background:
         var(--nova-black);
 
-    cursor: pointer;
-
-    flex-shrink: 0;
-
-}
-
-
-.nova-menu-button span {
-
-    position: absolute;
-
-    left: 13px;
-
-    width: 18px;
-
-    height: 1.5px;
-
-    border-radius: 999px;
-
-    background:
+    color:
         var(--nova-white);
 
+    cursor: pointer;
+
     transition:
-        transform .35s var(--nova-ease);
-
+        transform .35s var(--nova-ease),
+        background .3s ease;
 }
 
-
-.nova-menu-button span:first-child {
-
-    top: 17px;
-
+.nova-menu-button:hover {
+    transform:
+        scale(1.06);
 }
 
+.nova-menu-button span {
+    width: 15px;
+    height: 1px;
 
-.nova-menu-button span:last-child {
+    background:
+        currentColor;
 
-    top: 25px;
-
+    transition:
+        transform .35s var(--nova-ease),
+        opacity .25s ease;
 }
-
 
 .nova-menu-button.is-open span:first-child {
-
     transform:
-        translateY(4px)
+        translateY(3px)
         rotate(45deg);
-
 }
 
-
 .nova-menu-button.is-open span:last-child {
-
     transform:
-        translateY(-4px)
+        translateY(-3px)
         rotate(-45deg);
-
 }
 
 
 /* =========================================================
-   07 · MOBILE MENU
+   06 · MOBILE MENU
    ========================================================= */
 
 .nova-menu {
-
     position: fixed;
-
     inset: 0;
 
-    z-index: 4998;
+    z-index: 4900;
 
     visibility: hidden;
-
     pointer-events: none;
-
 }
-
 
 .nova-menu.is-open {
-
     visibility: visible;
-
     pointer-events: auto;
-
 }
 
-
 .nova-menu-overlay {
-
     position: absolute;
-
     inset: 0;
 
     background:
-        rgba(0,0,0,.42);
+        rgba(8, 9, 11, .68);
 
     opacity: 0;
 
     transition:
         opacity .4s ease;
-
 }
-
 
 .nova-menu.is-open
 .nova-menu-overlay {
-
     opacity: 1;
-
 }
 
-
 .nova-menu-inner {
-
     position: absolute;
 
     top: 0;
-
     right: 0;
+    bottom: 0;
 
-    width: min(470px, 88vw);
-
-    height: 100%;
+    width:
+        min(520px, 100%);
 
     padding:
-        96px 30px 28px;
-
-    display: flex;
-
-    flex-direction: column;
+        100px 34px 34px;
 
     background:
         var(--nova-black);
@@ -661,325 +434,206 @@ img {
 
     transition:
         transform .55s var(--nova-ease);
-
-    box-shadow:
-        -25px 0 70px rgba(0,0,0,.18);
-
 }
-
 
 .nova-menu.is-open
 .nova-menu-inner {
-
     transform:
         translateX(0);
-
 }
 
-
 .nova-menu-close {
-
     position: absolute;
 
-    top: 20px;
-
-    right: 22px;
+    top: 25px;
+    right: 25px;
 
     width: 42px;
-
     height: 42px;
-
-    padding: 0;
-
-    border: 0;
 
     border-radius: 50%;
 
     background:
-        rgba(255,255,255,.10);
+        rgba(245, 245, 243, .10);
 
     color:
         var(--nova-white);
 
-    font-size: 28px;
-
+    font-size: 25px;
     line-height: 1;
 
     cursor: pointer;
-
 }
-
 
 .nova-menu-nav {
-
     display: flex;
-
     flex-direction: column;
-
 }
 
-
 .nova-menu-link {
-
     display: grid;
 
     grid-template-columns:
-        34px
-        minmax(0, 1fr)
-        30px;
+        45px
+        1fr
+        auto;
 
     align-items: center;
 
-    gap: 14px;
+    gap: 15px;
 
-    min-height: 76px;
+    min-height: 100px;
 
     border-bottom:
         1px solid
-        rgba(255,255,255,.10);
-
+        var(--nova-border-light);
 }
-
 
 .nova-menu-number {
-
     font-size: 9px;
-
     font-weight: 800;
 
-    letter-spacing: .08em;
+    letter-spacing: .12em;
 
     color:
-        rgba(255,255,255,.35);
-
+        rgba(245, 245, 243, .40);
 }
-
 
 .nova-menu-link strong {
+    font-size:
+        clamp(34px, 7vw, 58px);
 
-    font-size: 24px;
+    line-height: .9;
+
+    letter-spacing: -.055em;
 
     font-weight: 800;
-
-    letter-spacing: -.035em;
-
 }
-
 
 .nova-menu-arrow {
+    font-size: 25px;
 
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    width: 30px;
-
-    height: 30px;
-
-    border-radius: 50%;
-
-    background:
-        rgba(255,255,255,.10);
-
-    font-size: 15px;
+    color:
+        var(--nova-yellow);
 
     transition:
-        transform .3s ease,
-        background .3s ease;
-
+        transform .3s ease;
 }
-
 
 .nova-menu-link:hover
 .nova-menu-arrow {
-
     transform:
-        translateX(4px);
-
-    background:
-        var(--nova-yellow);
-
-    color:
-        var(--nova-black);
-
+        translateX(6px);
 }
-
-
-.nova-menu-link.is-active strong {
-
-    color:
-        var(--nova-yellow);
-
-}
-
 
 .nova-menu-footer {
+    position: absolute;
 
-    margin-top: auto;
+    left: 34px;
+    right: 34px;
+    bottom: 34px;
 
-    padding-top: 24px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 20px;
-
-    font-size: 9px;
-
-    font-weight: 800;
-
-    letter-spacing: .10em;
-
-    color:
-        rgba(255,255,255,.38);
-
-}
-
-
-/* =========================================================
-   08 · TRAINING PAGE
-   ========================================================= */
-
-.nova-training-page {
+    height: 1px;
 
     background:
-        var(--nova-bg);
-
-}
-
-
-.nova-training-section {
-
-    width:
-        min(
-            var(--nova-max-width),
-            calc(100% - 56px)
-        );
-
-    margin: 0 auto;
-
-    padding:
-        0 0 110px;
-
-}
-
-
-.nova-training-section + .nova-training-section {
-
-    padding-top: 10px;
-
+        var(--nova-border-light);
 }
 
 
 /* =========================================================
-   09 · TRAINING HERO
+   07 · PAGE
    ========================================================= */
 
-.nova-training-hero {
+.nova-page {
+    padding-top:
+        76px;
+}
 
+.nova-training-page {
+    min-height:
+        100vh;
+}
+
+
+/* =========================================================
+   08 · SECTION
+   ========================================================= */
+
+.nova-training-section,
+.nova-training-extra-section {
     width:
         min(
             var(--nova-max-width),
             calc(100% - 56px)
         );
-
-    margin: 0 auto;
-
-    padding:
-        105px 0 110px;
-
-}
-
-
-.nova-training-hero-inner {
-
-    max-width: 980px;
-
-}
-
-
-.nova-training-hero h1 {
 
     margin:
-        18px 0 25px;
-
-    max-width: 1000px;
-
-    font-size:
-        clamp(54px, 8vw, 108px);
-
-    font-weight: 850;
-
-    line-height: .90;
-
-    letter-spacing: -.065em;
-
+        0 auto;
 }
 
-
-.nova-training-hero p {
-
-    max-width: 560px;
-
-    margin: 0;
-
-    font-size: 16px;
-
-    line-height: 1.65;
-
-    color:
-        var(--nova-gray);
-
+.nova-training-section {
+    padding:
+        92px 0 20px;
 }
 
+.nova-training-section:last-child {
+    padding-bottom:
+        105px;
+}
 
-/* =========================================================
-   10 · TRAINING NAVIGATION / SECTION HEADER
-   ========================================================= */
+.nova-training-extra-section {
+    padding:
+        92px 0 28px;
+}
 
 .nova-training-section-header {
-
     display: grid;
 
     grid-template-columns:
         minmax(0, 1fr)
-        minmax(260px, .55fr);
-
-    gap: 40px;
+        minmax(260px, 430px);
 
     align-items: end;
 
-    margin-bottom: 30px;
+    gap: 60px;
 
+    margin-bottom:
+        30px;
 }
-
 
 .nova-training-section-header h2 {
-
-    margin: 13px 0 0;
+    margin: 0;
 
     font-size:
-        clamp(34px, 5vw, 64px);
+        clamp(44px, 6vw, 76px);
 
-    font-weight: 850;
+    line-height: .86;
 
-    line-height: .92;
+    letter-spacing: -.065em;
 
-    letter-spacing: -.055em;
-
+    font-weight: 900;
 }
 
+.nova-eyebrow {
+    margin-bottom:
+        11px;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: .14em;
+
+    text-transform: uppercase;
+
+    color:
+        var(--nova-gray);
+}
 
 .nova-training-section-header > p {
+    margin: 0;
 
     max-width: 430px;
-
-    margin: 0;
 
     font-size: 13px;
 
@@ -987,31 +641,271 @@ img {
 
     color:
         var(--nova-gray);
-
 }
 
 
 /* =========================================================
-   11 · TRAINING CARDS
+   09 · COACH / DISCIPLINAS GRID
    ========================================================= */
 
-.nova-training-grid {
-
+.nova-training-extra-grid {
     display: grid;
 
     grid-template-columns:
-        repeat(2, minmax(0, 1fr));
+        repeat(3, minmax(0, 1fr));
 
-    gap: 20px;
-
+    gap: 18px;
 }
 
 
-.nova-training-card {
+/* =========================================================
+   10 · COACH CARD
+   ========================================================= */
 
+.nova-coach-pill {
     position: relative;
 
-    min-height: 520px;
+    min-height: 100px;
+
+    overflow: hidden;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    padding: 26px;
+
+    border-radius:
+        var(--nova-radius-lg);
+
+    background:
+        var(--nova-bg-alt);
+
+    color:
+        var(--nova-black);
+
+    cursor: pointer;
+
+    isolation: isolate;
+
+    transition:
+        transform .45s var(--nova-ease),
+        background .3s ease,
+        box-shadow .45s ease;
+}
+
+.nova-coach-pill:hover {
+    transform:
+        translateY(-4px);
+
+    background:
+        #dfded8;
+
+    box-shadow:
+        0 24px 60px rgba(0,0,0,.10);
+}
+
+.nova-coach-pill::after {
+    content: "";
+
+    position: absolute;
+
+    right: -100px;
+    bottom: -120px;
+
+    width: 330px;
+    height: 330px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,.22);
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+.nova-coach-pill-top {
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.nova-coach-pill-label {
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: .13em;
+
+    text-transform: uppercase;
+
+    color:
+        var(--nova-gray);
+}
+
+.nova-coach-photo-button {
+    width: 70px;
+    height: 70px;
+
+    padding: 0;
+
+    flex: 0 0 70px;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    background:
+        var(--nova-black);
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.13);
+
+    transition:
+        transform .4s var(--nova-ease);
+}
+
+.nova-coach-pill:hover
+.nova-coach-photo-button {
+    transform:
+        scale(1.05);
+}
+
+.nova-coach-photo-button img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+.nova-coach-pill-content {
+    margin-top: auto;
+
+    padding-top:
+        42px;
+}
+
+.nova-coach-pill-content h3 {
+    margin:
+        7px 0 12px;
+
+    font-size:
+        clamp(30px, 3vw, 43px);
+
+    line-height: .90;
+
+    letter-spacing: -.055em;
+
+    font-weight: 900;
+}
+
+.nova-coach-pill-content p {
+    max-width: 330px;
+
+    margin: 0;
+
+    font-size: 12px;
+
+    line-height: 1.55;
+
+    color:
+        var(--nova-gray);
+}
+
+.nova-coach-pill-action {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top:
+        18px;
+
+    padding: 0;
+
+    background:
+        transparent;
+
+    color:
+        var(--nova-black);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: .10em;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+}
+
+.nova-coach-pill-action span:last-child {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 29px;
+    height: 29px;
+
+    border-radius: 50%;
+
+    background:
+        var(--nova-black);
+
+    color:
+        var(--nova-white);
+
+    transition:
+        transform .3s var(--nova-ease);
+}
+
+.nova-coach-pill:hover
+.nova-coach-pill-action span:last-child {
+    transform:
+        translateX(4px);
+}
+
+
+/* =========================================================
+   11 · ROUTINE GRID
+   ========================================================= */
+
+.nova-training-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+
+/* =========================================================
+   12 · ROUTINE CARDS
+   ========================================================= */
+
+.nova-training-card {
+    position: relative;
+
+    min-height:
+        420px;
 
     overflow: hidden;
 
@@ -1026,169 +920,97 @@ img {
 
     isolation: isolate;
 
+    cursor: pointer;
 }
 
-
-.nova-training-card::after {
-
-    content: "";
-
+.nova-training-card-image {
     position: absolute;
 
     inset: 0;
 
-    z-index: -1;
+    z-index: -3;
 
-    background:
-        linear-gradient(
-            180deg,
-            rgba(0,0,0,.04) 0%,
-            rgba(0,0,0,.08) 30%,
-            rgba(0,0,0,.90) 100%
-        );
+    background-position:
+        center;
 
-    pointer-events: none;
+    background-size:
+        cover;
 
+    background-repeat:
+        no-repeat;
+
+    transform:
+        scale(1.001);
+
+    transition:
+        transform .7s var(--nova-ease);
 }
 
-
-.nova-routine-card {
-
-    cursor: default;
-
-}
-
-
-.nova-training-card:hover {
-
-    box-shadow:
-        0 28px 70px rgba(0,0,0,.15);
-
-}
-
-
-/* =========================================================
-   12 · TRAINING CARD IMAGE
-   ========================================================= */
-
+.nova-training-card:hover
 .nova-training-card-image {
+    transform:
+        scale(1.055);
+}
 
+.nova-training-card-overlay {
     position: absolute;
 
     inset: 0;
 
     z-index: -2;
 
-    background-position: center;
-
-    background-size: cover;
-
-    background-repeat: no-repeat;
-
-    transition:
-        transform .8s var(--nova-ease);
-
-}
-
-
-.nova-training-card:hover
-.nova-training-card-image {
-
-    transform:
-        scale(1.035);
-
-}
-
-
-.nova-training-card-overlay {
-
-    position: absolute;
-
-    inset: 0;
-
     background:
         linear-gradient(
             180deg,
             rgba(0,0,0,.08) 0%,
-            rgba(0,0,0,.18) 35%,
-            rgba(0,0,0,.90) 100%
+            rgba(0,0,0,.22) 32%,
+            rgba(0,0,0,.84) 100%
         );
-
 }
 
-
-/* =========================================================
-   13 · TRAINING CARD TOP
-   ========================================================= */
-
 .nova-training-card-top {
-
     position: absolute;
 
-    top: 24px;
-
-    left: 26px;
-
-    right: 26px;
+    top: 20px;
+    left: 20px;
+    right: 20px;
 
     display: flex;
 
     align-items: center;
-
     justify-content: space-between;
 
-}
-
-
-.nova-training-card-top span:first-child {
-
-    font-size: 10px;
+    font-size: 9px;
 
     font-weight: 800;
 
     letter-spacing: .12em;
-
-    color:
-        rgba(255,255,255,.72);
-
 }
 
-
 .nova-training-card-top span:last-child {
-
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
-    width: 38px;
-
-    height: 38px;
+    width: 32px;
+    height: 32px;
 
     border-radius: 50%;
 
     background:
-        rgba(255,255,255,.12);
+        rgba(245,245,243,.14);
 
     backdrop-filter:
-        blur(12px);
-
-    -webkit-backdrop-filter:
-        blur(12px);
-
-    font-size: 16px;
+        blur(8px);
 
     transition:
-        transform .35s ease,
-        background .35s ease;
-
+        transform .35s var(--nova-ease),
+        background .3s ease;
 }
-
 
 .nova-training-card:hover
 .nova-training-card-top span:last-child {
-
     transform:
         translateX(4px);
 
@@ -1197,109 +1019,73 @@ img {
 
     color:
         var(--nova-black);
-
 }
-
-
-/* =========================================================
-   14 · TRAINING CARD CONTENT
-   ========================================================= */
 
 .nova-training-card-content {
-
     position: absolute;
 
-    left: 26px;
-
-    right: 26px;
-
-    bottom: 26px;
-
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
 }
 
-
 .nova-training-card-label {
-
-    margin-bottom: 9px;
+    margin-bottom:
+        7px;
 
     font-size: 9px;
 
     font-weight: 800;
 
-    letter-spacing: .14em;
+    letter-spacing: .13em;
 
     text-transform: uppercase;
 
     color:
-        rgba(255,255,255,.62);
-
+        rgba(245,245,243,.66);
 }
-
 
 .nova-training-card-content h3 {
-
-    max-width: 700px;
-
-    margin:
-        0 0 10px;
-
-    font-size:
-        clamp(28px, 3.5vw, 48px);
-
-    font-weight: 850;
-
-    line-height: .94;
-
-    letter-spacing: -.05em;
-
-}
-
-
-.nova-training-card-content p {
-
-    max-width: 600px;
-
     margin: 0;
 
-    font-size: 13px;
+    font-size:
+        clamp(27px, 3vw, 42px);
+
+    line-height: .90;
+
+    letter-spacing: -.055em;
+
+    font-weight: 900;
+}
+
+.nova-training-card-content p {
+    max-width: 390px;
+
+    margin:
+        12px 0 0;
+
+    font-size: 12px;
 
     line-height: 1.55;
 
     color:
-        rgba(255,255,255,.72);
-
+        rgba(245,245,243,.72);
 }
 
-
-/* =========================================================
-   15 · TRAINING CARD BUTTON
-   ========================================================= */
-
 .nova-training-card-button {
-
     display: inline-flex;
 
     align-items: center;
 
-    justify-content: center;
+    gap: 10px;
 
-    gap: 12px;
+    margin-top:
+        17px;
 
-    margin-top: 20px;
-
-    min-height: 42px;
-
-    padding:
-        0 16px;
-
-    border:
-        1px solid
-        rgba(255,255,255,.18);
-
-    border-radius: 999px;
+    padding: 0;
 
     background:
-        rgba(255,255,255,.10);
+        transparent;
 
     color:
         var(--nova-white);
@@ -1308,216 +1094,234 @@ img {
 
     font-weight: 800;
 
-    letter-spacing: .09em;
+    letter-spacing: .10em;
 
     text-transform: uppercase;
 
     cursor: pointer;
-
-    backdrop-filter:
-        blur(12px);
-
-    -webkit-backdrop-filter:
-        blur(12px);
-
-    transition:
-        background .25s ease,
-        color .25s ease,
-        border-color .25s ease,
-        transform .25s ease;
-
 }
 
+.nova-training-card-button span:last-child {
+    display: flex;
 
-.nova-training-card-button:hover {
+    align-items: center;
+    justify-content: center;
+
+    width: 29px;
+    height: 29px;
+
+    border-radius: 50%;
 
     background:
-        var(--nova-yellow);
-
-    border-color:
-        var(--nova-yellow);
+        var(--nova-white);
 
     color:
         var(--nova-black);
 
-}
-
-
-.nova-training-card-button span:last-child {
-
-    font-size: 14px;
-
-    line-height: 1;
-
     transition:
-        transform .25s ease;
-
+        transform .3s var(--nova-ease);
 }
-
 
 .nova-training-card-button:hover
 span:last-child {
-
     transform:
-        translateX(3px);
-
+        translateX(4px);
 }
 
 
 /* =========================================================
-   16 · FEATURED TRAINING CARD
+   13 · DISCIPLINE CARDS
    ========================================================= */
 
-.nova-training-card.featured {
-
-    grid-column:
-        1 / -1;
-
-    min-height: 580px;
-
-}
-
-
-/* =========================================================
-   17 · LEGACY TRAINING BLOCKS
-   ========================================================= */
-
-.nova-training {
-
-    width:
-        min(
-            var(--nova-max-width),
-            calc(100% - 56px)
-        );
-
-    margin:
-        0 auto;
-
-}
-
-
-.nova-training-grid {
-
-    width: 100%;
-
-}
-
-
-.nova-training-item {
-
+.nova-discipline-pill {
     position: relative;
+
+    min-height:
+        390px;
 
     overflow: hidden;
 
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    padding: 26px;
+
+    border-radius:
+        var(--nova-radius-lg);
+
+    color:
+        var(--nova-white);
+
+    background:
+        var(--nova-black);
+
+    isolation: isolate;
 }
 
-
-.nova-training-image {
-
+.nova-discipline-pill-image {
     position: absolute;
 
     inset: 0;
 
-    background-position: center;
+    z-index: -3;
 
-    background-size: cover;
+    background-position:
+        center;
 
+    background-size:
+        cover;
+
+    background-repeat:
+        no-repeat;
+
+    transition:
+        transform .7s var(--nova-ease);
 }
 
-
-.nova-training-overlay {
-
+.nova-discipline-pill-overlay {
     position: absolute;
 
     inset: 0;
+
+    z-index: -2;
 
     background:
         linear-gradient(
             180deg,
-            transparent,
-            rgba(0,0,0,.88)
+            rgba(0,0,0,.08) 0%,
+            rgba(0,0,0,.24) 32%,
+            rgba(0,0,0,.86) 100%
         );
-
 }
 
+.nova-discipline-pill:hover
+.nova-discipline-pill-image {
+    transform:
+        scale(1.055);
+}
 
-.nova-training-content {
+.nova-discipline-pill
+.nova-training-card-top {
+    position: absolute;
 
-    position: relative;
+    top: 20px;
+    left: 20px;
+    right: 20px;
 
     z-index: 2;
-
-}
-
-
-/* =========================================================
-   18 · ROUTINE MODAL
-   ========================================================= */
-
-.nova-routine-modal {
-
-    position: fixed;
-
-    inset: 0;
-
-    z-index: 8000;
 
     display: flex;
 
     align-items: center;
+    justify-content: space-between;
+}
 
+.nova-discipline-pill-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+}
+
+.nova-discipline-pill-label {
+    margin-bottom:
+        8px;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: .13em;
+
+    text-transform: uppercase;
+
+    color:
+        rgba(245,245,243,.68);
+}
+
+.nova-discipline-pill-content h3 {
+    margin: 0;
+
+    font-size:
+        clamp(30px, 3vw, 45px);
+
+    line-height: .90;
+
+    letter-spacing: -.055em;
+
+    font-weight: 900;
+}
+
+.nova-discipline-pill-content p {
+    max-width: 330px;
+
+    margin:
+        12px 0 0;
+
+    font-size: 12px;
+
+    line-height: 1.55;
+
+    color:
+        rgba(245,245,243,.76);
+}
+
+
+/* =========================================================
+   14 · ROUTINE MODAL
+   ========================================================= */
+
+.nova-routine-modal {
+    position: fixed;
+    inset: 0;
+
+    z-index: 7000;
+
+    display: flex;
+
+    align-items: center;
     justify-content: center;
 
     padding: 24px;
 
-    opacity: 0;
-
     visibility: hidden;
-
+    opacity: 0;
     pointer-events: none;
 
     transition:
         opacity .35s ease,
         visibility .35s ease;
-
 }
-
 
 .nova-routine-modal.is-open {
-
-    opacity: 1;
-
     visibility: visible;
-
+    opacity: 1;
     pointer-events: auto;
-
 }
 
-
 .nova-routine-modal-overlay {
-
     position: absolute;
-
     inset: 0;
 
     background:
-        rgba(0,0,0,.60);
+        rgba(8,9,11,.70);
 
     backdrop-filter:
         blur(12px);
 
     -webkit-backdrop-filter:
         blur(12px);
-
 }
 
-
 .nova-routine-modal-panel {
-
     position: relative;
 
     width:
-        min(760px, 100%);
+        min(980px, 100%);
 
     max-height:
         calc(100vh - 48px);
@@ -1542,104 +1346,80 @@ span:last-child {
     transition:
         transform .5s var(--nova-ease),
         opacity .35s ease;
-
-    box-shadow:
-        0 35px 100px rgba(0,0,0,.25);
-
 }
-
 
 .nova-routine-modal.is-open
 .nova-routine-modal-panel {
-
     transform:
         translateY(0)
         scale(1);
 
     opacity: 1;
-
 }
 
-
 .nova-routine-modal-close {
-
     position: absolute;
 
-    top: 18px;
+    top: 20px;
+    right: 20px;
 
-    right: 18px;
-
-    z-index: 5;
+    z-index: 3;
 
     width: 42px;
-
     height: 42px;
-
-    padding: 0;
-
-    border: 0;
 
     border-radius: 50%;
 
     background:
-        rgba(17,17,17,.08);
+        rgba(8,9,11,.08);
 
     color:
         var(--nova-black);
 
-    font-size: 27px;
-
-    line-height: 1;
+    font-size: 25px;
 
     cursor: pointer;
 
     transition:
         transform .3s ease,
         background .3s ease;
-
 }
 
-
 .nova-routine-modal-close:hover {
-
     transform:
         rotate(90deg);
 
     background:
-        rgba(17,17,17,.14);
-
+        rgba(8,9,11,.14);
 }
 
-
 .nova-routine-modal-header {
-
     display: grid;
 
     grid-template-columns:
-        72px
+        80px
         minmax(0, 1fr);
 
-    gap: 20px;
+    align-items: center;
 
-    align-items: start;
+    gap: 24px;
 
     padding:
         44px 44px 28px;
 
+    border-bottom:
+        1px solid
+        var(--nova-border);
 }
 
-
 .nova-routine-modal-number {
-
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
-    width: 62px;
-
-    height: 62px;
+    width: 70px;
+    height: 70px;
 
     border-radius: 50%;
 
@@ -1649,269 +1429,82 @@ span:last-child {
     color:
         var(--nova-white);
 
-    font-size: 11px;
+    font-size: 17px;
 
-    font-weight: 800;
-
-    letter-spacing: .08em;
-
+    font-weight: 900;
 }
-
 
 .nova-routine-modal-header h2 {
-
-    margin:
-        10px 0 0;
-
-    max-width: 600px;
+    margin: 0;
 
     font-size:
-        clamp(34px, 5vw, 58px);
+        clamp(36px, 5vw, 64px);
 
-    font-weight: 850;
+    line-height: .88;
 
-    line-height: .92;
+    letter-spacing: -.06em;
 
-    letter-spacing: -.055em;
-
+    font-weight: 900;
 }
 
-
 .nova-routine-modal-meta {
-
     display: grid;
 
     grid-template-columns:
-        repeat(3, minmax(0, 1fr));
-
-    margin:
-        0 44px;
-
-    border-top:
-        1px solid
-        var(--nova-border);
+        repeat(3, 1fr);
 
     border-bottom:
         1px solid
         var(--nova-border);
-
 }
-
 
 .nova-routine-modal-meta > div {
-
-    min-height: 82px;
-
     padding:
-        18px 16px 18px 0;
+        19px 22px;
 
-}
-
-
-.nova-routine-modal-meta > div + div {
-
-    padding-left: 16px;
-
-    border-left:
+    border-right:
         1px solid
         var(--nova-border);
-
 }
 
+.nova-routine-modal-meta > div:last-child {
+    border-right: 0;
+}
 
 .nova-routine-modal-meta span {
-
     display: block;
 
-    margin-bottom: 7px;
+    margin-bottom:
+        6px;
 
     font-size: 8px;
 
     font-weight: 800;
 
-    letter-spacing: .12em;
-
-    color:
-        var(--nova-gray);
-
-}
-
-
-.nova-routine-modal-meta strong {
-
-    display: block;
-
-    font-size: 13px;
-
-    line-height: 1.35;
-
-}
-
-
-.nova-routine-modal-content {
-
-    padding:
-        30px 44px 44px;
-
-}
-
-
-.nova-routine-description {
-
-    max-width: 650px;
-
-    margin-bottom: 30px;
-
-    font-size: 14px;
-
-    line-height: 1.7;
-
-    color:
-        var(--nova-gray);
-
-}
-
-
-.nova-routine-blocks {
-
-    display: grid;
-
-    gap: 10px;
-
-}
-
-
-.nova-routine-block {
-
-    padding:
-        20px;
-
-    border:
-        1px solid
-        var(--nova-border);
-
-    border-radius:
-        var(--nova-radius-sm);
-
-    background:
-        rgba(255,255,255,.42);
-
-}
-
-
-.nova-routine-block-title {
-
-    margin-bottom: 14px;
-
-    font-size: 9px;
-
-    font-weight: 800;
-
     letter-spacing: .13em;
 
+    text-transform: uppercase;
+
     color:
         var(--nova-gray);
-
 }
 
+.nova-routine-modal-meta strong {
+    font-size: 13px;
 
-/* =========================================================
-   19 · ROUTINE LIST
-   ========================================================= */
-
-.nova-routine-list {
-
-    display: grid;
-
-    gap: 0;
-
+    font-weight: 800;
 }
 
-
-.nova-routine-session-item {
-
+.nova-routine-modal-content {
     padding:
-        12px 0;
-
-    border-top:
-        1px solid
-        rgba(17,17,17,.08);
-
-    font-size: 13px;
-
-    line-height: 1.5;
-
+        32px 44px 44px;
 }
 
+.nova-routine-description {
+    max-width: 730px;
 
-.nova-routine-session-item:first-child {
-
-    padding-top: 0;
-
-    border-top: 0;
-
-}
-
-
-.nova-routine-material,
-.nova-routine-focus {
-
-    font-size: 13px;
-
-    line-height: 1.65;
-
-    color:
-        var(--nova-gray);
-
-}
-
-
-/* =========================================================
-   20 · TRAINING DETAIL
-   ========================================================= */
-
-.nova-training-detail {
-
-    width:
-        min(
-            var(--nova-max-width),
-            calc(100% - 56px)
-        );
-
-    margin: 0 auto;
-
-}
-
-
-.nova-training-detail-header {
-
-    margin-bottom: 40px;
-
-}
-
-
-.nova-training-detail-title {
-
-    margin: 12px 0 0;
-
-    font-size:
-        clamp(42px, 6vw, 76px);
-
-    font-weight: 850;
-
-    line-height: .92;
-
-    letter-spacing: -.06em;
-
-}
-
-
-.nova-training-detail-intro {
-
-    max-width: 650px;
-
-    margin:
-        18px 0 0;
+    margin-bottom:
+        32px;
 
     font-size: 15px;
 
@@ -1919,1025 +1512,131 @@ span:last-child {
 
     color:
         var(--nova-gray);
-
 }
 
+.nova-routine-blocks {
+    display: grid;
 
-/* =========================================================
-   21 · TRAINING GROUPS
-   ========================================================= */
+    grid-template-columns:
+        minmax(0, 1.6fr)
+        minmax(180px, .8fr);
 
-.nova-training-group {
-
-    margin-bottom: 50px;
-
+    gap: 28px;
 }
 
-
-.nova-training-group-header {
-
-    display: flex;
-
-    align-items: flex-end;
-
-    justify-content: space-between;
-
-    gap: 30px;
-
-    margin-bottom: 18px;
-
-}
-
-
-.nova-training-group-label {
-
-    margin-bottom: 8px;
-
-    font-size: 9px;
-
-    font-weight: 800;
-
-    letter-spacing: .14em;
-
-    color:
-        var(--nova-gray);
-
-}
-
-
-.nova-training-group-title {
-
-    margin: 0;
-
-    font-size:
-        clamp(26px, 4vw, 44px);
-
-    font-weight: 850;
-
-    line-height: .95;
-
-    letter-spacing: -.05em;
-
-}
-
-
-/* =========================================================
-   22 · TRAINING ITEMS
-   ========================================================= */
-
-.nova-training-list {
+.nova-routine-block {
+    padding-top:
+        17px;
 
     border-top:
         1px solid
         var(--nova-border);
-
 }
 
-
-.nova-training-list-item {
-
-    display: grid;
-
-    grid-template-columns:
-        64px
-        minmax(0, 1fr)
-        auto;
-
-    gap: 20px;
-
-    align-items: center;
-
-    padding:
-        20px 0;
-
-    border-bottom:
-        1px solid
-        var(--nova-border);
-
+.nova-routine-block:first-child {
+    grid-row:
+        span 2;
 }
 
+.nova-routine-block-title {
+    margin-bottom:
+        14px;
 
-.nova-training-list-number {
+    font-size: 9px;
 
-    font-size: 10px;
-
-    font-weight: 800;
-
-    letter-spacing: .10em;
-
-    color:
-        var(--nova-gray-light);
-
-}
-
-
-.nova-training-list-main {
-
-    min-width: 0;
-
-}
-
-
-.nova-training-list-category {
-
-    margin-bottom: 6px;
-
-    font-size: 8px;
-
-    font-weight: 800;
+    font-weight: 900;
 
     letter-spacing: .13em;
 
     text-transform: uppercase;
-
-    color:
-        var(--nova-gray);
-
 }
 
+.nova-routine-list {
+    display: grid;
 
-.nova-training-list-title {
-
-    margin: 0 0 5px;
-
-    font-size: 17px;
-
-    font-weight: 800;
-
-    letter-spacing: -.025em;
-
+    gap: 7px;
 }
 
+.nova-routine-session-item {
+    padding:
+        12px 14px;
 
-.nova-training-list-description {
+    border-radius:
+        11px;
 
-    max-width: 650px;
-
-    margin: 0;
+    background:
+        rgba(8,9,11,.045);
 
     font-size: 12px;
 
-    line-height: 1.55;
+    line-height: 1.45;
+}
+
+.nova-routine-material,
+.nova-routine-focus {
+    font-size: 12px;
+
+    line-height: 1.65;
 
     color:
         var(--nova-gray);
-
-}
-
-
-.nova-training-list-button {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    min-width: 40px;
-
-    height: 40px;
-
-    padding: 0;
-
-    border: 0;
-
-    border-radius: 50%;
-
-    background:
-        var(--nova-black);
-
-    color:
-        var(--nova-white);
-
-    cursor: pointer;
-
-    transition:
-        transform .25s ease,
-        background .25s ease;
-
-}
-
-
-.nova-training-list-button:hover {
-
-    transform:
-        translateX(3px);
-
-    background:
-        var(--nova-yellow);
-
-    color:
-        var(--nova-black);
-
 }
 
 
 /* =========================================================
-   23 · TRAINING SESSION MODAL
-   ========================================================= */
-
-.nova-session {
-
-    width: 100%;
-
-}
-
-
-.nova-session-header {
-
-    margin-bottom: 25px;
-
-}
-
-
-.nova-session-meta {
-
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 8px;
-
-    margin-bottom: 14px;
-
-}
-
-
-.nova-session-meta span {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    min-height: 30px;
-
-    padding:
-        0 11px;
-
-    border-radius: 999px;
-
-    background:
-        var(--nova-black);
-
-    color:
-        var(--nova-white);
-
-    font-size: 8px;
-
-    font-weight: 800;
-
-    letter-spacing: .08em;
-
-    text-transform: uppercase;
-
-}
-
-
-.nova-session-title {
-
-    margin: 0;
-
-    font-size:
-        clamp(32px, 5vw, 56px);
-
-    font-weight: 850;
-
-    line-height: .92;
-
-    letter-spacing: -.055em;
-
-}
-
-
-.nova-session-content {
-
-    display: grid;
-
-    gap: 10px;
-
-}
-
-
-.nova-session-block {
-
-    padding:
-        20px;
-
-    border:
-        1px solid
-        var(--nova-border);
-
-    border-radius:
-        var(--nova-radius-sm);
-
-}
-
-
-.nova-session-block-title {
-
-    margin-bottom: 12px;
-
-    font-size: 9px;
-
-    font-weight: 800;
-
-    letter-spacing: .13em;
-
-    color:
-        var(--nova-gray);
-
-}
-
-
-/* =========================================================
-   24 · FOOTER
-   ========================================================= */
-
-.nova-footer {
-
-    width:
-        min(
-            var(--nova-max-width),
-            calc(100% - 56px)
-        );
-
-    margin: 0 auto;
-
-    padding:
-        0 14px 24px;
-
-}
-
-
-.nova-footer-grid {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(5, minmax(0, 1fr));
-
-    gap: 28px;
-
-    padding:
-        48px 0 42px;
-
-    border-top:
-        1px solid
-        var(--nova-border);
-
-}
-
-
-.nova-footer-column {
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: flex-start;
-
-    gap: 9px;
-
-}
-
-
-.nova-footer-title {
-
-    margin-bottom: 7px;
-
-    font-size: 8px;
-
-    font-weight: 800;
-
-    letter-spacing: .13em;
-
-    color:
-        var(--nova-gray-light);
-
-}
-
-
-.nova-footer-column a {
-
-    font-size: 11px;
-
-    line-height: 1.4;
-
-    color:
-        rgba(17,17,17,.68);
-
-    transition:
-        color .2s ease;
-
-}
-
-
-.nova-footer-column a:hover {
-
-    color:
-        var(--nova-black);
-
-}
-
-
-.nova-footer-bottom {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 20px;
-
-    padding-top: 20px;
-
-    border-top:
-        1px solid
-        var(--nova-border);
-
-}
-
-
-.nova-footer-bottom span {
-
-    font-size: 8px;
-
-    font-weight: 800;
-
-    letter-spacing: .10em;
-
-    color:
-        var(--nova-gray-light);
-
-}
-
-
-/* =========================================================
-   25 · METODOLOGÍA + COACH
-   ========================================================= */
-
-.nova-training-extra-section {
-
-    width:
-        min(
-            var(--nova-max-width),
-            calc(100% - 56px)
-        );
-
-    margin: 0 auto;
-
-    padding:
-        0 0 100px;
-
-}
-
-
-.nova-training-extra-grid {
-
-    display: grid;
-
-    grid-template-columns:
-        minmax(0, 1.45fr)
-        minmax(280px, .55fr);
-
-    gap: 20px;
-
-}
-
-
-.nova-training-extra-card {
-
-    position: relative;
-
-    min-height: 360px;
-
-    overflow: hidden;
-
-    border-radius:
-        var(--nova-radius-lg);
-
-    background:
-        var(--nova-black);
-
-    color:
-        var(--nova-white);
-
-    cursor: pointer;
-
-    isolation: isolate;
-
-    transition:
-        transform .45s var(--nova-ease),
-        box-shadow .45s ease;
-
-}
-
-
-.nova-training-extra-card:hover {
-
-    transform:
-        translateY(-5px);
-
-    box-shadow:
-        0 24px 60px rgba(0,0,0,.14);
-
-}
-
-
-.nova-training-extra-image {
-
-    position: absolute;
-
-    inset: 0;
-
-    z-index: -2;
-
-    background-position: center;
-
-    background-size: cover;
-
-    background-repeat: no-repeat;
-
-    transition:
-        transform .8s var(--nova-ease);
-
-}
-
-
-.nova-training-extra-card:hover
-.nova-training-extra-image {
-
-    transform:
-        scale(1.045);
-
-}
-
-
-.nova-training-extra-overlay {
-
-    position: absolute;
-
-    inset: 0;
-
-    z-index: -1;
-
-    background:
-        linear-gradient(
-            180deg,
-            rgba(0,0,0,.08) 0%,
-            rgba(0,0,0,.22) 38%,
-            rgba(0,0,0,.88) 100%
-        );
-
-}
-
-
-.nova-training-extra-top {
-
-    position: absolute;
-
-    top: 24px;
-
-    left: 26px;
-
-    right: 26px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    font-size: 11px;
-
-    font-weight: 800;
-
-    letter-spacing: .12em;
-
-}
-
-
-.nova-training-extra-content {
-
-    position: absolute;
-
-    left: 26px;
-
-    right: 26px;
-
-    bottom: 26px;
-
-}
-
-
-.nova-training-extra-label {
-
-    margin-bottom: 9px;
-
-    font-size: 10px;
-
-    font-weight: 800;
-
-    letter-spacing: .14em;
-
-    text-transform: uppercase;
-
-    opacity: .72;
-
-}
-
-
-.nova-training-extra-content h3 {
-
-    margin:
-        0 0 9px;
-
-    font-size:
-        clamp(28px, 3vw, 46px);
-
-    line-height: .95;
-
-    letter-spacing: -.045em;
-
-}
-
-
-.nova-training-extra-content p {
-
-    max-width: 570px;
-
-    margin: 0;
-
-    font-size: 14px;
-
-    line-height: 1.55;
-
-    color:
-        rgba(255,255,255,.74);
-
-}
-
-
-.nova-training-extra-button {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 12px;
-
-    margin-top: 20px;
-
-    min-height: 42px;
-
-    padding:
-        0 17px;
-
-    border:
-        1px solid
-        rgba(255,255,255,.18);
-
-    border-radius: 999px;
-
-    background:
-        rgba(255,255,255,.10);
-
-    color:
-        #fff;
-
-    font-size: 10px;
-
-    font-weight: 800;
-
-    letter-spacing: .08em;
-
-    text-transform: uppercase;
-
-    cursor: pointer;
-
-    backdrop-filter:
-        blur(12px);
-
-    -webkit-backdrop-filter:
-        blur(12px);
-
-    transition:
-        background .25s ease,
-        color .25s ease,
-        border-color .25s ease;
-
-}
-
-
-.nova-training-extra-button:hover {
-
-    background:
-        var(--nova-yellow);
-
-    border-color:
-        var(--nova-yellow);
-
-    color:
-        var(--nova-black);
-
-}
-
-
-/* =========================================================
-   26 · COACH CARD
-   ========================================================= */
-
-.nova-coach-pill {
-
-    min-height: 360px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: space-between;
-
-    padding: 26px;
-
-    background:
-        var(--nova-bg-alt);
-
-    color:
-        var(--nova-black);
-
-}
-
-
-.nova-coach-pill:hover {
-
-    background:
-        #dfded8;
-
-}
-
-
-.nova-coach-pill-top {
-
-    display: flex;
-
-    align-items: flex-start;
-
-    justify-content: space-between;
-
-    gap: 20px;
-
-}
-
-
-.nova-coach-pill-label {
-
-    font-size: 10px;
-
-    font-weight: 800;
-
-    letter-spacing: .13em;
-
-    text-transform: uppercase;
-
-    color:
-        var(--nova-gray);
-
-}
-
-
-.nova-coach-photo-button {
-
-    width: 78px;
-
-    height: 78px;
-
-    padding: 0;
-
-    border: 0;
-
-    border-radius: 50%;
-
-    overflow: hidden;
-
-    background:
-        var(--nova-black);
-
-    cursor: pointer;
-
-    flex-shrink: 0;
-
-    box-shadow:
-        0 10px 25px rgba(0,0,0,.13);
-
-    transition:
-        transform .4s var(--nova-ease);
-
-}
-
-
-.nova-coach-pill:hover
-.nova-coach-photo-button {
-
-    transform:
-        scale(1.05);
-
-}
-
-
-.nova-coach-photo-button img {
-
-    width: 100%;
-
-    height: 100%;
-
-    display: block;
-
-    object-fit: cover;
-
-}
-
-
-.nova-coach-pill-content {
-
-    margin-top: auto;
-
-    padding-top: 45px;
-
-}
-
-
-.nova-coach-pill-content h3 {
-
-    margin:
-        0 0 9px;
-
-    font-size:
-        clamp(28px, 3vw, 42px);
-
-    line-height: .95;
-
-    letter-spacing: -.045em;
-
-}
-
-
-.nova-coach-pill-content p {
-
-    max-width: 360px;
-
-    margin: 0;
-
-    font-size: 13px;
-
-    line-height: 1.55;
-
-    color:
-        var(--nova-gray);
-
-}
-
-
-.nova-coach-pill-action {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 10px;
-
-    margin-top: 20px;
-
-    padding: 0;
-
-    border: 0;
-
-    background: transparent;
-
-    color:
-        var(--nova-black);
-
-    font-size: 10px;
-
-    font-weight: 800;
-
-    letter-spacing: .08em;
-
-    text-transform: uppercase;
-
-    cursor: pointer;
-
-}
-
-
-.nova-coach-pill-action span:last-child {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    width: 28px;
-
-    height: 28px;
-
-    border-radius: 50%;
-
-    background:
-        var(--nova-black);
-
-    color:
-        #fff;
-
-    transition:
-        transform .3s ease;
-
-}
-
-
-.nova-coach-pill:hover
-.nova-coach-pill-action span:last-child {
-
-    transform:
-        translateX(4px);
-
-}
-
-
-/* =========================================================
-   27 · INFORMATION MODALS
+   15 · INFO MODAL
    ========================================================= */
 
 .nova-info-modal {
-
     position: fixed;
-
     inset: 0;
 
-    z-index: 6000;
+    z-index: 7100;
 
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     padding: 24px;
 
-    opacity: 0;
-
     visibility: hidden;
-
+    opacity: 0;
     pointer-events: none;
 
     transition:
         opacity .35s ease,
         visibility .35s ease;
-
 }
-
 
 .nova-info-modal.is-open {
-
-    opacity: 1;
-
     visibility: visible;
-
+    opacity: 1;
     pointer-events: auto;
-
 }
 
-
 .nova-info-modal-overlay {
-
     position: absolute;
-
     inset: 0;
 
     background:
-        rgba(0,0,0,.58);
+        rgba(8,9,11,.70);
 
     backdrop-filter:
         blur(12px);
 
     -webkit-backdrop-filter:
         blur(12px);
-
 }
 
-
 .nova-info-modal-panel {
-
     position: relative;
 
     width:
         min(900px, 100%);
 
     max-height:
-        min(850px, calc(100vh - 48px));
+        calc(100vh - 48px);
 
     overflow-y: auto;
 
@@ -2959,265 +1658,94 @@ span:last-child {
     transition:
         transform .5s var(--nova-ease),
         opacity .35s ease;
-
-    box-shadow:
-        0 35px 100px rgba(0,0,0,.25);
-
 }
-
 
 .nova-info-modal.is-open
 .nova-info-modal-panel {
-
     transform:
         translateY(0)
         scale(1);
 
     opacity: 1;
-
 }
 
-
 .nova-info-modal-close {
-
     position: absolute;
 
     top: 18px;
-
     right: 18px;
 
-    z-index: 5;
+    z-index: 3;
 
     width: 42px;
-
     height: 42px;
-
-    border: 0;
 
     border-radius: 50%;
 
     background:
-        rgba(17,17,17,.08);
+        rgba(8,9,11,.08);
 
     color:
         var(--nova-black);
 
-    font-size: 26px;
-
-    line-height: 1;
+    font-size: 25px;
 
     cursor: pointer;
 
     transition:
         transform .3s ease,
         background .3s ease;
-
 }
 
-
 .nova-info-modal-close:hover {
-
     transform:
         rotate(90deg);
 
     background:
-        rgba(17,17,17,.14);
-
+        rgba(8,9,11,.14);
 }
-
 
 .nova-info-modal-content {
-
-    padding: 46px;
-
+    padding:
+        46px;
 }
 
-
 .nova-info-modal-eyebrow {
+    margin-bottom:
+        11px;
 
-    margin-bottom: 12px;
-
-    font-size: 10px;
+    font-size: 9px;
 
     font-weight: 800;
 
     letter-spacing: .14em;
 
+    text-transform: uppercase;
+
     color:
         var(--nova-gray);
-
 }
-
 
 .nova-info-modal-content h2 {
-
     margin:
-        0 0 18px;
-
-    max-width: 720px;
+        0 0 20px;
 
     font-size:
-        clamp(38px, 6vw, 72px);
+        clamp(40px, 6vw, 72px);
 
-    line-height: .92;
+    line-height: .86;
 
-    letter-spacing: -.055em;
+    letter-spacing: -.065em;
 
-}
-
-
-.nova-info-modal-intro {
-
-    max-width: 680px;
-
-    margin:
-        0 0 34px;
-
-    font-size: 16px;
-
-    line-height: 1.65;
-
-    color:
-        var(--nova-gray);
-
+    font-weight: 900;
 }
 
 
 /* =========================================================
-   28 · METODOLOGÍA IMAGES
-   ========================================================= */
-
-.nova-methodology-images {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(2, minmax(0, 1fr));
-
-    gap: 12px;
-
-    margin-bottom: 34px;
-
-}
-
-
-.nova-methodology-image {
-
-    height: 270px;
-
-    overflow: hidden;
-
-    border-radius: 18px;
-
-    background:
-        #ddd;
-
-}
-
-
-.nova-methodology-image img {
-
-    width: 100%;
-
-    height: 100%;
-
-    display: block;
-
-    object-fit: cover;
-
-    transition:
-        transform .7s var(--nova-ease);
-
-}
-
-
-.nova-methodology-image:hover img {
-
-    transform:
-        scale(1.04);
-
-}
-
-
-.nova-methodology-steps {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(4, minmax(0, 1fr));
-
-    gap: 10px;
-
-}
-
-
-.nova-methodology-step {
-
-    min-height: 150px;
-
-    padding: 18px;
-
-    border:
-        1px solid
-        rgba(17,17,17,.10);
-
-    border-radius: 16px;
-
-    background:
-        rgba(255,255,255,.45);
-
-}
-
-
-.nova-methodology-step-number {
-
-    display: block;
-
-    margin-bottom: 28px;
-
-    font-size: 10px;
-
-    font-weight: 800;
-
-    color:
-        var(--nova-gray-light);
-
-}
-
-
-.nova-methodology-step strong {
-
-    display: block;
-
-    margin-bottom: 7px;
-
-    font-size: 13px;
-
-    letter-spacing: .02em;
-
-}
-
-
-.nova-methodology-step p {
-
-    margin: 0;
-
-    font-size: 12px;
-
-    line-height: 1.5;
-
-    color:
-        var(--nova-gray);
-
-}
-
-
-/* =========================================================
-   29 · COACH MODAL
+   16 · COACH MODAL
    ========================================================= */
 
 .nova-coach-modal-grid {
-
     display: grid;
 
     grid-template-columns:
@@ -3227,992 +1755,778 @@ span:last-child {
     gap: 34px;
 
     align-items: start;
-
 }
 
-
 .nova-coach-modal-photo {
-
-    height: 390px;
+    height:
+        390px;
 
     overflow: hidden;
 
-    border-radius: 22px;
+    border-radius:
+        20px;
 
     background:
         #ddd;
-
 }
 
-
 .nova-coach-modal-photo img {
-
     width: 100%;
-
     height: 100%;
 
     display: block;
 
     object-fit: cover;
-
 }
-
-
-.nova-coach-modal-copy p {
-
-    margin:
-        0 0 18px;
-
-    font-size: 14px;
-
-    line-height: 1.7;
-
-    color:
-        var(--nova-gray);
-
-}
-
 
 .nova-coach-modal-role {
-
     display: inline-flex;
 
     padding:
         8px 12px;
 
-    border-radius: 999px;
+    margin-bottom:
+        18px;
+
+    border-radius:
+        999px;
 
     background:
         var(--nova-black);
 
     color:
-        #fff;
+        var(--nova-white);
 
-    font-size: 9px;
+    font-size: 8px;
 
     font-weight: 800;
 
-    letter-spacing: .08em;
+    letter-spacing: .12em;
 
     text-transform: uppercase;
-
-    margin-bottom: 22px;
-
 }
 
+.nova-coach-modal-copy p {
+    margin:
+        0 0 17px;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    color:
+        var(--nova-gray);
+}
 
 .nova-coach-modal-list {
-
     display: grid;
 
-    gap: 10px;
+    gap: 0;
 
-    margin-top: 24px;
-
+    margin-top:
+        25px;
 }
 
-
 .nova-coach-modal-list div {
-
     padding:
         14px 0;
 
     border-top:
         1px solid
-        rgba(17,17,17,.10);
+        var(--nova-border);
+
+    font-size: 12px;
+
+    line-height: 1.55;
+
+    color:
+        var(--nova-gray);
+}
+
+.nova-coach-modal-list strong {
+    display: block;
+
+    margin-bottom:
+        4px;
+
+    color:
+        var(--nova-black);
+
+    font-size: 9px;
+
+    letter-spacing: .12em;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   17 · SECONDARY CARD INFO
+   ========================================================= */
+
+.nova-card-secondary {
+    display: block;
+
+    margin-top:
+        17px;
+
+    padding-top:
+        16px;
+
+    border-top:
+        1px solid
+        rgba(8,9,11,.12);
+}
+
+.nova-training-card
+.nova-card-secondary {
+    border-color:
+        rgba(245,245,243,.18);
+}
+
+.nova-card-secondary-title {
+    margin-bottom:
+        7px;
+
+    font-size: 8px;
+
+    font-weight: 900;
+
+    letter-spacing: .12em;
+
+    text-transform: uppercase;
+}
+
+.nova-card-secondary p {
+    margin: 0;
+
+    font-size: 11px;
+
+    line-height: 1.55;
+}
+
+.nova-training-card
+.nova-card-secondary p {
+    color:
+        rgba(245,245,243,.68);
+}
+
+.nova-coach-pill
+.nova-card-secondary p {
+    color:
+        var(--nova-gray);
+}
+
+
+/* =========================================================
+   18 · FOOTER
+   ========================================================= */
+
+.nova-footer {
+    width:
+        min(
+            var(--nova-max-width),
+            calc(100% - 56px)
+        );
+
+    margin:
+        0 auto;
+
+    padding:
+        80px 0 30px;
+}
+
+.nova-footer-main {
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+}
+
+.nova-footer-brand {
+    display: grid;
+
+    gap: 5px;
+}
+
+.nova-footer-brand strong {
+    font-size: 19px;
+
+    font-weight: 900;
+
+    letter-spacing: -.06em;
+}
+
+.nova-footer-brand span {
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: .12em;
+}
+
+.nova-footer-brand p {
+    margin:
+        9px 0 0;
 
     font-size: 12px;
 
     line-height: 1.5;
 
+    color:
+        var(--nova-gray);
 }
 
+.nova-footer-bottom {
+    margin-top:
+        60px;
 
-.nova-coach-modal-list strong {
+    padding-top:
+        17px;
 
-    display: block;
-
-    margin-bottom: 3px;
-
-    font-size: 10px;
-
-    letter-spacing: .08em;
-
-    text-transform: uppercase;
-
+    border-top:
+        1px solid
+        var(--nova-border);
 }
 
+.nova-footer-bottom span {
+    font-size: 9px;
 
-/* =========================================================
-   30 · BODY LOCK
-   ========================================================= */
+    font-weight: 800;
 
-body.nova-info-modal-open {
+    letter-spacing: .10em;
 
-    overflow: hidden;
-
-}
-
-
-/* =========================================================
-   31 · FOCUS
-   ========================================================= */
-
-button:focus-visible,
-a:focus-visible,
-[tabindex]:focus-visible {
-
-    outline:
-        2px solid
-        var(--nova-yellow);
-
-    outline-offset: 3px;
-
+    color:
+        var(--nova-gray);
 }
 
 
 /* =========================================================
-   32 · RESPONSIVE · 1050
+   19 · TABLET
    ========================================================= */
 
 @media (max-width: 1050px) {
 
-    :root {
-
-        --nova-page-padding: 22px;
-
-    }
-
-
-    .nova-training-hero,
-    .nova-training-section,
-    .nova-training-extra-section,
-    .nova-training-detail,
-    .nova-training,
-    .nova-footer {
-
-        width:
-            calc(100% - 44px);
-
-    }
-
-
-    .nova-footer-grid {
-
+    .nova-training-grid {
         grid-template-columns:
-            repeat(4, minmax(0, 1fr));
+            repeat(2, minmax(0, 1fr));
+    }
 
+    .nova-training-card {
+        min-height:
+            405px;
+    }
+
+    .nova-training-section-header {
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(220px, 350px);
+
+        gap:
+            35px;
+    }
+
+    .nova-training-extra-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
     }
 
 }
 
 
 /* =========================================================
-   33 · RESPONSIVE · 900
+   20 · MOBILE
    ========================================================= */
 
 @media (max-width: 900px) {
 
-    :root {
-
-        --nova-header-height: 68px;
-
-    }
-
-
     .nova-top-inner {
-
         width:
             calc(100% - 32px);
-
     }
-
-
-    .nova-top {
-
-        height:
-            68px;
-
-    }
-
 
     .nova-desktop-nav {
-
         display: none;
-
     }
-
 
     .nova-menu-button {
-
-        display: block;
-
+        display: flex;
     }
 
-
-    .nova-nav-link {
-
-        height: 68px;
-
-    }
-
-
-    .nova-nav-link.is-active::after {
-
-        bottom: 16px;
-
-    }
-
-
-    .nova-page {
+    .nova-training-section,
+    .nova-training-extra-section {
+        width:
+            calc(100% - 32px);
 
         padding-top:
-            68px;
-
+            78px;
     }
-
-
-    .nova-training-hero,
-    .nova-training-section,
-    .nova-training-extra-section,
-    .nova-training-detail,
-    .nova-training {
-
-        width:
-            calc(100% - 32px);
-
-    }
-
-
-    .nova-training-hero {
-
-        padding:
-            78px 0 82px;
-
-    }
-
-
-    .nova-training-hero h1 {
-
-        font-size:
-            clamp(50px, 10vw, 82px);
-
-    }
-
 
     .nova-training-section-header {
+        display: block;
 
-        grid-template-columns:
-            1fr;
-
-        gap: 18px;
-
+        margin-bottom:
+            26px;
     }
-
-
-    .nova-training-grid {
-
-        grid-template-columns:
-            1fr;
-
-    }
-
-
-    .nova-training-card {
-
-        min-height: 480px;
-
-    }
-
-
-    .nova-training-card.featured {
-
-        grid-column: auto;
-
-    }
-
-
-    .nova-training-extra-section {
-
-        padding-bottom: 76px;
-
-    }
-
-
-    .nova-training-extra-grid {
-
-        grid-template-columns:
-            1fr;
-
-    }
-
-
-    .nova-training-extra-card,
-    .nova-coach-pill {
-
-        min-height: 390px;
-
-    }
-
-
-    .nova-methodology-steps {
-
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-
-    }
-
-
-    .nova-coach-modal-grid {
-
-        grid-template-columns:
-            220px
-            minmax(0, 1fr);
-
-    }
-
-
-    .nova-coach-modal-photo {
-
-        height: 330px;
-
-    }
-
-
-    .nova-info-modal-content {
-
-        padding: 40px;
-
-    }
-
-
-    .nova-footer-grid {
-
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-
-    }
-
-
-    .nova-routine-modal-header,
-    .nova-routine-modal-content {
-
-        padding-left: 34px;
-
-        padding-right: 34px;
-
-    }
-
-
-    .nova-routine-modal-meta {
-
-        margin-left: 34px;
-
-        margin-right: 34px;
-
-    }
-
-}
-
-
-/* =========================================================
-   34 · RESPONSIVE · 640
-   ========================================================= */
-
-@media (max-width: 640px) {
-
-    .nova-top-inner {
-
-        width:
-            calc(100% - 32px);
-
-    }
-
-
-    .nova-menu-inner {
-
-        width: 100%;
-
-        padding:
-            88px 21px 22px;
-
-    }
-
-
-    .nova-menu-link {
-
-        min-height: 70px;
-
-    }
-
-
-    .nova-menu-link strong {
-
-        font-size: 22px;
-
-    }
-
-
-    .nova-training-hero {
-
-        padding:
-            64px 0 70px;
-
-    }
-
-
-    .nova-training-hero h1 {
-
-        margin-top: 16px;
-
-        font-size:
-            clamp(45px, 14vw, 68px);
-
-    }
-
-
-    .nova-training-hero p {
-
-        font-size: 14px;
-
-    }
-
-
-    .nova-training-section {
-
-        padding-bottom: 78px;
-
-    }
-
-
-    .nova-training-section-header {
-
-        margin-bottom: 22px;
-
-    }
-
 
     .nova-training-section-header h2 {
-
-        font-size: 38px;
-
+        margin-bottom:
+            16px;
     }
 
+    .nova-training-section-header > p {
+        max-width:
+            600px;
+    }
+
+    .nova-training-grid {
+        gap:
+            14px;
+    }
 
     .nova-training-card {
-
-        min-height: 410px;
-
-        border-radius:
-            20px;
-
+        min-height:
+            385px;
     }
 
-
-    .nova-training-card-top {
-
-        top: 20px;
-
-        left: 21px;
-
-        right: 21px;
-
-    }
-
-
-    .nova-training-card-content {
-
-        left: 21px;
-
-        right: 21px;
-
-        bottom: 21px;
-
-    }
-
-
-    .nova-training-card-content h3 {
-
-        font-size: 34px;
-
-    }
-
-
-    .nova-training-extra-section {
-
-        width:
-            calc(100% - 32px);
-
-        padding-bottom: 60px;
-
-    }
-
-
-    .nova-training-extra-card,
-    .nova-coach-pill {
-
-        min-height: 340px;
-
-        border-radius:
-            20px;
-
-    }
-
-
-    .nova-training-extra-content {
-
-        left: 21px;
-
-        right: 21px;
-
-        bottom: 21px;
-
-    }
-
-
-    .nova-training-extra-top {
-
-        top: 20px;
-
-        left: 21px;
-
-        right: 21px;
-
-    }
-
-
-    .nova-training-extra-content h3 {
-
-        font-size: 34px;
-
-    }
-
-
-    .nova-coach-pill {
-
-        padding: 21px;
-
-    }
-
-
-    .nova-coach-pill-content {
-
-        padding-top: 30px;
-
-    }
-
-
-    .nova-info-modal {
-
-        align-items: flex-end;
-
-        padding: 12px;
-
-    }
-
-
-    .nova-info-modal-panel {
-
-        width: 100%;
-
-        max-height:
-            calc(100vh - 24px);
-
-        border-radius:
-            22px;
-
-    }
-
-
-    .nova-info-modal-content {
-
-        padding:
-            42px 22px 26px;
-
-    }
-
-
-    .nova-info-modal-content h2 {
-
-        font-size: 42px;
-
-    }
-
-
-    .nova-info-modal-intro {
-
-        font-size: 14px;
-
-    }
-
-
-    .nova-methodology-images {
-
+    .nova-training-extra-grid {
         grid-template-columns:
             1fr;
-
-    }
-
-
-    .nova-methodology-image {
-
-        height: 220px;
-
-    }
-
-
-    .nova-methodology-steps {
-
-        grid-template-columns:
-            1fr 1fr;
-
-    }
-
-
-    .nova-coach-modal-grid {
-
-        grid-template-columns:
-            1fr;
-
-        gap: 22px;
-
-    }
-
-
-    .nova-coach-modal-photo {
-
-        height: 300px;
-
-    }
-
-
-    .nova-routine-modal {
-
-        align-items: flex-end;
-
-        padding: 12px;
-
-    }
-
-
-    .nova-routine-modal-panel {
-
-        width: 100%;
-
-        max-height:
-            calc(100vh - 24px);
-
-        border-radius:
-            22px;
-
-    }
-
-
-    .nova-routine-modal-header {
-
-        grid-template-columns:
-            54px
-            minmax(0, 1fr);
-
-        gap: 14px;
-
-        padding:
-            38px 22px 24px;
-
-    }
-
-
-    .nova-routine-modal-number {
-
-        width: 48px;
-
-        height: 48px;
-
-    }
-
-
-    .nova-routine-modal-header h2 {
-
-        font-size: 34px;
-
-    }
-
-
-    .nova-routine-modal-meta {
-
-        margin:
-            0 22px;
-
-    }
-
-
-    .nova-routine-modal-meta > div {
-
-        min-height: 74px;
-
-        padding-right: 10px;
-
-    }
-
-
-    .nova-routine-modal-meta > div + div {
-
-        padding-left: 10px;
-
-    }
-
-
-    .nova-routine-modal-meta strong {
-
-        font-size: 11px;
-
-    }
-
-
-    .nova-routine-modal-content {
-
-        padding:
-            26px 22px 28px;
-
-    }
-
-
-    .nova-routine-description {
-
-        font-size: 13px;
-
-    }
-
-
-    .nova-routine-block {
-
-        padding: 17px;
-
-    }
-
-
-    .nova-training-list-item {
-
-        grid-template-columns:
-            40px
-            minmax(0, 1fr);
-
-        gap: 12px;
-
-    }
-
-
-    .nova-training-list-button {
-
-        grid-column: 2;
-
-        justify-self: start;
-
-        margin-top: 4px;
-
-    }
-
-
-    .nova-footer {
-
-        width:
-            calc(100% - 32px);
-
-        padding:
-            0 0 20px;
-
-    }
-
-
-    .nova-footer-grid {
-
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
 
         gap:
-            36px 20px;
-
-        padding:
-            38px 0 32px;
-
+            14px;
     }
 
+    .nova-coach-pill,
+    .nova-discipline-pill {
+        min-height:
+            385px;
+    }
 
-    .nova-footer-bottom {
+    .nova-coach-modal-grid {
+        grid-template-columns:
+            230px
+            minmax(0, 1fr);
+    }
 
-        align-items: flex-start;
-
-        flex-direction: column;
-
-        gap: 8px;
-
+    .nova-coach-modal-photo {
+        height:
+            320px;
     }
 
 }
 
 
 /* =========================================================
-   35 · RESPONSIVE · 390
+   21 · MOBILE PEQUEÑO
    ========================================================= */
 
-@media (max-width: 390px) {
+@media (max-width: 680px) {
 
-    .nova-menu-inner {
-
-        padding-left: 18px;
-
-        padding-right: 18px;
-
-    }
-
-
-    .nova-menu-link {
-
+    .nova-training-grid {
         grid-template-columns:
-            28px
-            minmax(0, 1fr)
-            28px;
-
-        min-height: 64px;
-
+            1fr;
     }
-
-
-    .nova-menu-link strong {
-
-        font-size: 19px;
-
-    }
-
-
-    .nova-training-hero h1 {
-
-        font-size: 43px;
-
-    }
-
 
     .nova-training-card {
-
-        min-height: 380px;
-
+        min-height:
+            400px;
     }
 
-
-    .nova-training-card-content h3 {
-
-        font-size: 30px;
-
+    .nova-training-section-header h2 {
+        font-size:
+            clamp(42px, 13vw, 66px);
     }
 
+    .nova-training-extra-grid {
+        display:
+            flex;
 
-    .nova-training-extra-card,
-    .nova-coach-pill {
+        flex-direction:
+            column;
 
-        min-height: 320px;
-
+        gap:
+            14px;
     }
 
+    .nova-training-extra-grid > article {
+        width:
+            100%;
 
-    .nova-training-extra-content h3 {
+        min-height:
+            385px;
 
-        font-size: 30px;
+        height:
+            385px;
 
+        flex:
+            none;
+
+        border-radius:
+            22px;
     }
 
-
-    .nova-methodology-steps {
-
-        grid-template-columns:
-            1fr;
-
+    .nova-coach-pill,
+    .nova-discipline-pill {
+        padding:
+            24px;
     }
 
+    .nova-coach-photo-button {
+        width:
+            62px;
 
-    .nova-routine-modal-meta {
+        height:
+            62px;
 
-        grid-template-columns:
-            1fr;
-
+        flex-basis:
+            62px;
     }
 
+    .nova-coach-pill-content {
+        padding-top:
+            35px;
+    }
 
-    .nova-routine-modal-meta > div {
+    .nova-coach-pill-content h3,
+    .nova-discipline-pill-content h3 {
+        font-size:
+            39px;
+    }
 
-        min-height: auto;
+    .nova-discipline-pill-content {
+        padding:
+            0;
+    }
+
+    .nova-discipline-pill-content p,
+    .nova-coach-pill-content p {
+        font-size:
+            12px;
+    }
+
+    .nova-routine-modal,
+    .nova-info-modal {
+        align-items:
+            flex-end;
 
         padding:
-            13px 0;
-
+            10px;
     }
 
+    .nova-routine-modal-panel,
+    .nova-info-modal-panel {
+        width:
+            100%;
 
-    .nova-routine-modal-meta > div + div {
+        max-height:
+            calc(100vh - 20px);
 
-        padding-left: 0;
+        border-radius:
+            22px 22px 0 0;
+    }
 
-        border-left: 0;
+    .nova-routine-modal-header {
+        grid-template-columns:
+            60px
+            minmax(0, 1fr);
 
-        border-top:
+        gap:
+            14px;
+
+        padding:
+            36px 22px 24px;
+    }
+
+    .nova-routine-modal-number {
+        width:
+            56px;
+
+        height:
+            56px;
+
+        font-size:
+            14px;
+    }
+
+    .nova-routine-modal-header h2 {
+        font-size:
+            36px;
+    }
+
+    .nova-routine-modal-meta {
+        grid-template-columns:
+            1fr;
+    }
+
+    .nova-routine-modal-meta > div {
+        border-right:
+            0;
+
+        border-bottom:
             1px solid
             var(--nova-border);
-
     }
 
+    .nova-routine-modal-meta > div:last-child {
+        border-bottom:
+            0;
+    }
 
-    .nova-footer-grid {
+    .nova-routine-modal-content {
+        padding:
+            26px 22px 30px;
+    }
 
+    .nova-routine-blocks {
+        grid-template-columns:
+            1fr;
+    }
+
+    .nova-routine-block:first-child {
+        grid-row:
+            auto;
+    }
+
+    .nova-info-modal-content {
+        padding:
+            38px 22px 28px;
+    }
+
+    .nova-info-modal-content h2 {
+        font-size:
+            44px;
+    }
+
+    .nova-coach-modal-grid {
         grid-template-columns:
             1fr;
 
-        gap: 28px;
+        gap:
+            22px;
+    }
 
+    .nova-coach-modal-photo {
+        height:
+            280px;
+    }
+
+    .nova-footer {
+        width:
+            calc(100% - 32px);
+
+        padding:
+            60px 0 24px;
+    }
+
+    .nova-footer-bottom {
+        margin-top:
+            42px;
     }
 
 }
 
 
 /* =========================================================
-   36 · ACCESSIBILITY / REDUCED MOTION
+   22 · PHONE
+   ========================================================= */
+
+@media (max-width: 430px) {
+
+    .nova-top {
+        height:
+            70px;
+    }
+
+    .nova-page {
+        padding-top:
+            70px;
+    }
+
+    .nova-top-inner {
+        width:
+            calc(100% - 28px);
+    }
+
+    .nova-menu-inner {
+        padding:
+            92px 24px 24px;
+    }
+
+    .nova-menu-link {
+        min-height:
+            82px;
+
+        grid-template-columns:
+            35px
+            1fr
+            auto;
+    }
+
+    .nova-menu-link strong {
+        font-size:
+            38px;
+    }
+
+    .nova-menu-footer {
+        left:
+            24px;
+
+        right:
+            24px;
+
+        bottom:
+            24px;
+    }
+
+    .nova-training-section,
+    .nova-training-extra-section {
+        width:
+            calc(100% - 28px);
+    }
+
+    .nova-training-card {
+        min-height:
+            365px;
+
+        border-radius:
+            20px;
+    }
+
+    .nova-training-extra-grid > article {
+        min-height:
+            365px;
+
+        height:
+            365px;
+
+        border-radius:
+            22px;
+    }
+
+    .nova-coach-pill,
+    .nova-discipline-pill {
+        padding:
+            22px;
+    }
+
+    .nova-coach-pill-content {
+        padding-top:
+            28px;
+    }
+
+    .nova-coach-pill-content h3,
+    .nova-discipline-pill-content h3 {
+        font-size:
+            35px;
+    }
+
+    .nova-coach-pill-content p,
+    .nova-discipline-pill-content p {
+        font-size:
+            11px;
+
+        line-height:
+            1.5;
+    }
+
+    .nova-coach-photo-button {
+        width:
+            58px;
+
+        height:
+            58px;
+
+        flex-basis:
+            58px;
+    }
+
+    .nova-footer {
+        width:
+            calc(100% - 28px);
+    }
+
+}
+
+
+/* =========================================================
+   23 · VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .nova-training-card {
+        min-height:
+            345px;
+    }
+
+    .nova-training-extra-grid > article {
+        min-height:
+            345px;
+
+        height:
+            345px;
+
+        border-radius:
+            20px;
+    }
+
+    .nova-coach-pill,
+    .nova-discipline-pill {
+        padding:
+            19px;
+    }
+
+    .nova-coach-pill-content h3,
+    .nova-discipline-pill-content h3 {
+        font-size:
+            32px;
+    }
+
+}
+
+
+/* =========================================================
+   24 · ACCESSIBILITY
+   ========================================================= */
+
+button:focus-visible,
+a:focus-visible {
+    outline:
+        2px solid
+        var(--nova-yellow);
+
+    outline-offset:
+        4px;
+}
+
+
+/* =========================================================
+   25 · REDUCED MOTION
    ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
     html {
-
         scroll-behavior:
             auto;
-
     }
 
+    *,
+    *::before,
+    *::after {
+        animation-duration:
+            .01ms !important;
 
-    .nova-page-transition,
-    .nova-page-transition-line::after,
-    .nova-menu-overlay,
-    .nova-menu-inner,
-    .nova-menu-button span,
-    .nova-training-card,
-    .nova-training-card-image,
-    .nova-training-card-top span:last-child,
-    .nova-training-card-button,
-    .nova-training-card-button span:last-child,
-    .nova-training-extra-card,
-    .nova-training-extra-image,
-    .nova-coach-photo-button,
-    .nova-coach-pill-action span:last-child,
-    .nova-info-modal,
-    .nova-info-modal-panel,
-    .nova-info-modal-close,
-    .nova-methodology-image img,
-    .nova-routine-modal,
-    .nova-routine-modal-panel {
+        animation-iteration-count:
+            1 !important;
 
-        transition:
-            none !important;
+        transition-duration:
+            .01ms !important;
 
-        animation:
-            none !important;
-
+        scroll-behavior:
+            auto !important;
     }
 
 }
