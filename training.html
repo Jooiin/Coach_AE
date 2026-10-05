@@ -17,1329 +17,6 @@
         href="css/training.css"
     >
 
-    <style>
-
-        /* =====================================================
-           NOVA · TRAINING · CARTAS SECUNDARIAS
-        ====================================================== */
-
-        .nova-training-extra-section {
-
-            width: min(
-                var(--nova-max-width, 1309px),
-                calc(100% - 56px)
-            );
-
-            margin: 0 auto;
-
-            padding:
-                0 0 90px;
-
-        }
-
-
-        /* =====================================================
-           COACH · TARJETA COMPACTA
-        ====================================================== */
-
-        .nova-training-extra-grid {
-
-            display: grid;
-
-            grid-template-columns:
-                minmax(0, 1fr);
-
-            gap: 20px;
-
-        }
-
-
-        .nova-coach-pill {
-
-            position: relative;
-
-            min-height: 190px;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: space-between;
-
-            gap: 30px;
-
-            padding: 28px;
-
-            overflow: hidden;
-
-            border-radius:
-                var(--nova-radius-lg, 26px);
-
-            background:
-                var(--nova-bg-alt, #e9e8e2);
-
-            color:
-                var(--nova-black, #111111);
-
-        }
-
-
-        .nova-coach-pill-top {
-
-            display: contents;
-
-        }
-
-
-        .nova-coach-pill-label {
-
-            font-size: 10px;
-
-            font-weight: 800;
-
-            letter-spacing: .13em;
-
-            text-transform: uppercase;
-
-            color:
-                var(--nova-gray, #686868);
-
-        }
-
-
-        .nova-coach-pill-content {
-
-            display: flex;
-
-            flex-direction: column;
-
-            justify-content: center;
-
-            min-width: 0;
-
-            margin: 0;
-
-            padding: 0;
-
-        }
-
-
-        .nova-coach-pill-content > .nova-coach-pill-label {
-
-            margin-bottom: 8px;
-
-        }
-
-
-        .nova-coach-pill-content h3 {
-
-            margin: 0 0 8px;
-
-            font-size: clamp(
-                30px,
-                4vw,
-                48px
-            );
-
-            line-height: .92;
-
-            letter-spacing: -.05em;
-
-        }
-
-
-        .nova-coach-pill-content p {
-
-            margin: 0;
-
-            max-width: 480px;
-
-            font-size: 13px;
-
-            line-height: 1.5;
-
-            color:
-                var(--nova-gray, #686868);
-
-        }
-
-
-        .nova-coach-pill-action {
-
-            display: inline-flex;
-
-            align-items: center;
-
-            gap: 10px;
-
-            width: fit-content;
-
-            margin-top: 17px;
-
-            padding: 0;
-
-            border: 0;
-
-            background: transparent;
-
-            color:
-                var(--nova-black, #111111);
-
-            font: inherit;
-
-            font-size: 10px;
-
-            font-weight: 800;
-
-            letter-spacing: .08em;
-
-            text-transform: uppercase;
-
-            cursor: pointer;
-
-        }
-
-
-        .nova-coach-pill-action span:last-child {
-
-            display: inline-flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            width: 28px;
-
-            height: 28px;
-
-            border-radius: 50%;
-
-            background:
-                var(--nova-black, #111111);
-
-            color:
-                #fff;
-
-        }
-
-
-        /* =====================================================
-           FOTO · ÚNICO ELEMENTO VISUAL DEL COACH
-        ====================================================== */
-
-        .nova-coach-photo-button {
-
-            order: 2;
-
-            width: 122px;
-
-            height: 122px;
-
-            min-width: 122px;
-
-            padding: 0;
-
-            border: 0;
-
-            border-radius: 50%;
-
-            overflow: hidden;
-
-            background:
-                #111;
-
-            cursor: pointer;
-
-            flex-shrink: 0;
-
-            box-shadow:
-                0 10px 28px rgba(0,0,0,.14);
-
-        }
-
-
-        .nova-coach-photo-button img {
-
-            width: 100%;
-
-            height: 100%;
-
-            display: block;
-
-            object-fit: cover;
-
-        }
-
-
-        /* =====================================================
-           ROUTINE SECTIONS
-        ====================================================== */
-
-        .nova-training-section {
-
-            width: min(
-                var(--nova-max-width, 1309px),
-                calc(100% - 56px)
-            );
-
-            margin:
-                0 auto 100px;
-
-        }
-
-
-        .nova-training-section-header {
-
-            margin-bottom: 28px;
-
-        }
-
-
-        .nova-training-section-header p {
-
-            max-width: 560px;
-
-        }
-
-
-        .nova-training-grid {
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, minmax(0, 1fr));
-
-            gap: 18px;
-
-        }
-
-
-        /* =====================================================
-           RUTINAS · TARJETAS VERTICALES
-        ====================================================== */
-
-        .nova-training-card {
-
-            position: relative;
-
-            min-height: 420px;
-
-            display: flex;
-
-            flex-direction: column;
-
-            justify-content: flex-end;
-
-            overflow: hidden;
-
-            border-radius:
-                var(--nova-radius-lg, 26px);
-
-            background:
-                var(--nova-black, #111111);
-
-            color:
-                #fff;
-
-            isolation: isolate;
-
-        }
-
-
-        .nova-training-card-image {
-
-            position: absolute;
-
-            inset: 0;
-
-            z-index: -2;
-
-            background-position: center;
-
-            background-size: cover;
-
-            background-repeat: no-repeat;
-
-        }
-
-
-        .nova-training-card-overlay {
-
-            position: absolute;
-
-            inset: 0;
-
-            z-index: -1;
-
-            background:
-                linear-gradient(
-                    to bottom,
-                    rgba(0,0,0,.04) 15%,
-                    rgba(0,0,0,.28) 45%,
-                    rgba(0,0,0,.88) 100%
-                );
-
-        }
-
-
-        .nova-training-card-top {
-
-            position: absolute;
-
-            top: 22px;
-
-            left: 22px;
-
-            right: 22px;
-
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: center;
-
-        }
-
-
-        .nova-training-card-top span {
-
-            display: inline-flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            width: 34px;
-
-            height: 34px;
-
-            border: 1px solid
-                rgba(255,255,255,.35);
-
-            border-radius: 50%;
-
-            font-size: 10px;
-
-            font-weight: 800;
-
-            letter-spacing: .04em;
-
-        }
-
-
-        .nova-training-card-content {
-
-            padding: 24px;
-
-        }
-
-
-        .nova-training-card-label {
-
-            margin-bottom: 9px;
-
-            font-size: 9px;
-
-            font-weight: 800;
-
-            letter-spacing: .13em;
-
-            text-transform: uppercase;
-
-            color:
-                rgba(255,255,255,.68);
-
-        }
-
-
-        .nova-training-card-content h3 {
-
-            margin: 0 0 10px;
-
-            max-width: 260px;
-
-            font-size: clamp(
-                25px,
-                2.5vw,
-                35px
-            );
-
-            line-height: .94;
-
-            letter-spacing: -.045em;
-
-        }
-
-
-        .nova-training-card-content p {
-
-            margin: 0;
-
-            max-width: 290px;
-
-            font-size: 12px;
-
-            line-height: 1.55;
-
-            color:
-                rgba(255,255,255,.74);
-
-        }
-
-
-        .nova-training-card-button {
-
-            display: inline-flex;
-
-            align-items: center;
-
-            gap: 10px;
-
-            margin-top: 18px;
-
-            padding: 0;
-
-            border: 0;
-
-            background: transparent;
-
-            color: #fff;
-
-            font: inherit;
-
-            font-size: 9px;
-
-            font-weight: 800;
-
-            letter-spacing: .10em;
-
-            text-transform: uppercase;
-
-            cursor: pointer;
-
-        }
-
-
-        .nova-training-card-button span:last-child {
-
-            display: inline-flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            width: 27px;
-
-            height: 27px;
-
-            border-radius: 50%;
-
-            background: #fff;
-
-            color:
-                var(--nova-black, #111111);
-
-        }
-
-
-        /* =====================================================
-           INFORMATION MODAL
-        ====================================================== */
-
-        .nova-info-modal {
-
-            position: fixed;
-
-            inset: 0;
-
-            z-index: 6000;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            padding: 24px;
-
-            opacity: 0;
-
-            visibility: hidden;
-
-            pointer-events: none;
-
-        }
-
-
-        .nova-info-modal.is-open {
-
-            opacity: 1;
-
-            visibility: visible;
-
-            pointer-events: auto;
-
-        }
-
-
-        .nova-info-modal-overlay {
-
-            position: absolute;
-
-            inset: 0;
-
-            background:
-                rgba(0,0,0,.58);
-
-            backdrop-filter:
-                blur(12px);
-
-            -webkit-backdrop-filter:
-                blur(12px);
-
-        }
-
-
-        .nova-info-modal-panel {
-
-            position: relative;
-
-            width: min(
-                760px,
-                100%
-            );
-
-            max-height:
-                min(850px, calc(100vh - 48px));
-
-            overflow-y: auto;
-
-            border-radius:
-                var(--nova-radius-lg, 26px);
-
-            background:
-                var(--nova-bg, #f5f4ef);
-
-            color:
-                var(--nova-black, #111111);
-
-            box-shadow:
-                0 35px 100px rgba(0,0,0,.25);
-
-        }
-
-
-        .nova-info-modal-close {
-
-            position: absolute;
-
-            top: 18px;
-
-            right: 18px;
-
-            z-index: 5;
-
-            width: 42px;
-
-            height: 42px;
-
-            border: 0;
-
-            border-radius: 50%;
-
-            background:
-                rgba(17,17,17,.08);
-
-            color:
-                var(--nova-black, #111111);
-
-            font-size: 26px;
-
-            line-height: 1;
-
-            cursor: pointer;
-
-        }
-
-
-        .nova-info-modal-content {
-
-            padding: 48px;
-
-        }
-
-
-        .nova-info-modal-eyebrow {
-
-            margin-bottom: 12px;
-
-            font-size: 10px;
-
-            font-weight: 800;
-
-            letter-spacing: .14em;
-
-            color:
-                var(--nova-gray, #686868);
-
-        }
-
-
-        .nova-info-modal-content h2 {
-
-            margin: 0 0 22px;
-
-            max-width: 620px;
-
-            font-size: clamp(
-                40px,
-                6vw,
-                68px
-            );
-
-            line-height: .92;
-
-            letter-spacing: -.055em;
-
-        }
-
-
-        .nova-info-modal-content p {
-
-            max-width: 650px;
-
-            margin: 0 0 18px;
-
-            font-size: 15px;
-
-            line-height: 1.7;
-
-            color:
-                var(--nova-gray, #686868);
-
-        }
-
-
-        /* =====================================================
-           COACH MODAL · SIN FOTOGRAFÍA
-        ====================================================== */
-
-        .nova-coach-modal-grid {
-
-            display: block;
-
-        }
-
-
-        .nova-coach-modal-photo {
-
-            display: none;
-
-        }
-
-
-        .nova-coach-modal-copy p {
-
-            margin: 0 0 18px;
-
-            font-size: 14px;
-
-            line-height: 1.7;
-
-            color:
-                var(--nova-gray, #686868);
-
-        }
-
-
-        .nova-coach-modal-role {
-
-            display: inline-flex;
-
-            padding: 8px 12px;
-
-            border-radius: 999px;
-
-            background:
-                var(--nova-black, #111111);
-
-            color:
-                #fff;
-
-            font-size: 9px;
-
-            font-weight: 800;
-
-            letter-spacing: .08em;
-
-            text-transform: uppercase;
-
-            margin-bottom: 22px;
-
-        }
-
-
-        .nova-coach-modal-list {
-
-            display: grid;
-
-            gap: 0;
-
-            margin-top: 28px;
-
-        }
-
-
-        .nova-coach-modal-list div {
-
-            padding:
-                16px 0;
-
-            border-top:
-                1px solid
-                rgba(17,17,17,.10);
-
-            font-size: 12px;
-
-            line-height: 1.55;
-
-        }
-
-
-        .nova-coach-modal-list div:last-child {
-
-            border-bottom:
-                1px solid
-                rgba(17,17,17,.10);
-
-        }
-
-
-        .nova-coach-modal-list strong {
-
-            display: block;
-
-            margin-bottom: 5px;
-
-            font-size: 10px;
-
-            letter-spacing: .08em;
-
-            text-transform: uppercase;
-
-        }
-
-
-        /* =====================================================
-           INFORMACIÓN SECUNDARIA
-        ====================================================== */
-
-        .nova-card-secondary {
-
-            display: none;
-
-            margin-top: 18px;
-
-            padding-top: 18px;
-
-            border-top:
-                1px solid
-                rgba(17,17,17,.12);
-
-        }
-
-
-        .nova-card-secondary.is-visible {
-
-            display: block;
-
-        }
-
-
-        .nova-card-secondary p {
-
-            margin: 0 0 12px;
-
-            font-size: 12px;
-
-            line-height: 1.6;
-
-            color:
-                var(--nova-gray, #686868);
-
-        }
-
-
-        .nova-card-secondary-title {
-
-            margin-bottom: 8px;
-
-            font-size: 10px;
-
-            font-weight: 800;
-
-            letter-spacing: .12em;
-
-            text-transform: uppercase;
-
-        }
-
-
-        body.nova-info-modal-open {
-
-            overflow: hidden;
-
-        }
-
-
-        /* =====================================================
-           FOOTER MINIMAL
-        ====================================================== */
-
-        .nova-footer {
-
-            width:
-                min(
-                    var(--nova-max-width, 1309px),
-                    calc(100% - 56px)
-                );
-
-            margin:
-                0 auto;
-
-            padding:
-                90px 0 32px;
-
-        }
-
-
-        .nova-footer-main {
-
-            display: flex;
-
-            align-items: flex-end;
-
-            justify-content: space-between;
-
-            gap: 30px;
-
-        }
-
-
-        .nova-footer-brand {
-
-            display: grid;
-
-            gap: 6px;
-
-        }
-
-
-        .nova-footer-brand strong {
-
-            font-size: 18px;
-
-            font-weight: 900;
-
-            letter-spacing: -.04em;
-
-        }
-
-
-        .nova-footer-brand span {
-
-            font-size: 11px;
-
-            font-weight: 800;
-
-            letter-spacing: .10em;
-
-            text-transform: uppercase;
-
-        }
-
-
-        .nova-footer-brand p {
-
-            margin: 8px 0 0;
-
-            font-size: 13px;
-
-            color:
-                var(--nova-gray, #686868);
-
-        }
-
-
-        .nova-footer-bottom {
-
-            display: flex;
-
-            justify-content: space-between;
-
-            gap: 20px;
-
-            margin-top: 70px;
-
-            padding-top: 18px;
-
-            border-top:
-                1px solid
-                rgba(17,17,17,.10);
-
-            font-size: 10px;
-
-            font-weight: 800;
-
-            letter-spacing: .08em;
-
-            text-transform: uppercase;
-
-            color:
-                var(--nova-gray, #686868);
-
-        }
-
-
-        /* =====================================================
-           RESPONSIVE
-        ====================================================== */
-
-        @media (max-width: 900px) {
-
-            .nova-training-extra-section,
-            .nova-training-section {
-
-                width:
-                    calc(100% - 32px);
-
-            }
-
-
-            .nova-training-grid {
-
-                grid-template-columns:
-                    repeat(3, minmax(0, 1fr));
-
-                gap: 12px;
-
-            }
-
-
-            .nova-training-card {
-
-                min-height:
-                    360px;
-
-            }
-
-
-            .nova-training-card-content {
-
-                padding: 18px;
-
-            }
-
-
-            .nova-training-card-content h3 {
-
-                font-size:
-                    24px;
-
-            }
-
-
-            .nova-training-card-content p {
-
-                font-size:
-                    11px;
-
-            }
-
-
-            .nova-coach-pill {
-
-                min-height:
-                    175px;
-
-            }
-
-        }
-
-
-        @media (max-width: 640px) {
-
-            .nova-training-extra-section,
-            .nova-training-section {
-
-                width:
-                    calc(100% - 32px);
-
-            }
-
-
-            .nova-training-extra-section {
-
-                padding-bottom:
-                    65px;
-
-            }
-
-
-            .nova-training-section {
-
-                margin-bottom:
-                    72px;
-
-            }
-
-
-            .nova-coach-pill {
-
-                min-height:
-                    170px;
-
-                padding:
-                    21px;
-
-                gap:
-                    18px;
-
-                border-radius:
-                    20px;
-
-            }
-
-
-            .nova-coach-photo-button {
-
-                width:
-                    92px;
-
-                height:
-                    92px;
-
-                min-width:
-                    92px;
-
-            }
-
-
-            .nova-coach-pill-content h3 {
-
-                font-size:
-                    31px;
-
-            }
-
-
-            .nova-coach-pill-content p {
-
-                font-size:
-                    11px;
-
-            }
-
-
-            .nova-coach-pill-action {
-
-                margin-top:
-                    13px;
-
-            }
-
-
-            .nova-training-grid {
-
-                grid-template-columns:
-                    1fr;
-
-                gap:
-                    14px;
-
-            }
-
-
-            .nova-training-card {
-
-                min-height:
-                    310px;
-
-                border-radius:
-                    20px;
-
-            }
-
-
-            .nova-training-card-content {
-
-                padding:
-                    21px;
-
-            }
-
-
-            .nova-training-card-content h3 {
-
-                max-width:
-                    320px;
-
-                font-size:
-                    30px;
-
-            }
-
-
-            .nova-training-card-content p {
-
-                max-width:
-                    340px;
-
-                font-size:
-                    12px;
-
-            }
-
-
-            .nova-info-modal {
-
-                align-items:
-                    flex-end;
-
-                padding:
-                    12px;
-
-            }
-
-
-            .nova-info-modal-panel {
-
-                max-height:
-                    calc(100vh - 24px);
-
-                border-radius:
-                    22px;
-
-            }
-
-
-            .nova-info-modal-content {
-
-                padding:
-                    42px 22px 28px;
-
-            }
-
-
-            .nova-info-modal-content h2 {
-
-                font-size:
-                    42px;
-
-            }
-
-
-            .nova-footer {
-
-                width:
-                    calc(100% - 32px);
-
-                padding-top:
-                    60px;
-
-            }
-
-
-            .nova-footer-main {
-
-                display:
-                    block;
-
-            }
-
-
-            .nova-footer-bottom {
-
-                display:
-                    grid;
-
-                gap:
-                    8px;
-
-                margin-top:
-                    45px;
-
-            }
-
-        }
-
-
-        @media (max-width: 390px) {
-
-            .nova-coach-pill {
-
-                min-height:
-                    160px;
-
-            }
-
-
-            .nova-coach-photo-button {
-
-                width:
-                    78px;
-
-                height:
-                    78px;
-
-                min-width:
-                    78px;
-
-            }
-
-
-            .nova-coach-pill-content h3 {
-
-                font-size:
-                    27px;
-
-            }
-
-
-            .nova-coach-pill-content p {
-
-                display:
-                    none;
-
-            }
-
-
-            .nova-training-card {
-
-                min-height:
-                    295px;
-
-            }
-
-        }
-
-
-        @media (prefers-reduced-motion: reduce) {
-
-            .nova-info-modal,
-            .nova-info-modal-panel,
-            .nova-training-extra-card,
-            .nova-coach-photo-button {
-
-                transition:
-                    none !important;
-
-            }
-
-        }
-
-    </style>
-
 </head>
 
 
@@ -1406,6 +83,15 @@
                 >
                     INICIO
                 </a>
+
+
+                <button
+                    type="button"
+                    class="nova-nav-link js-open-coach"
+                    aria-label="Ver información del Coach"
+                >
+                    COACH
+                </button>
 
             </nav>
 
@@ -1482,6 +168,27 @@
 
                 </a>
 
+
+                <button
+                    type="button"
+                    class="nova-menu-link js-open-coach"
+                    aria-label="Ver información del Coach"
+                >
+
+                    <span class="nova-menu-number">
+                        02
+                    </span>
+
+                    <strong>
+                        COACH
+                    </strong>
+
+                    <span class="nova-menu-arrow">
+                        →
+                    </span>
+
+                </button>
+
             </nav>
 
 
@@ -1503,109 +210,7 @@
 
 
         <!-- =================================================
-             01 · COACH
-        ================================================== -->
-
-        <section class="nova-training-extra-section">
-
-            <div class="nova-training-section-header">
-
-                <div>
-
-                    <div class="nova-eyebrow">
-                        NOVA · COACH
-                    </div>
-
-                    <h2>
-                        COACH
-                    </h2>
-
-                </div>
-
-                <p>
-                    Información del coach y la forma en que NOVA
-                    acompaña cada proceso.
-                </p>
-
-            </div>
-
-
-            <div class="nova-training-extra-grid">
-
-                <article
-                    class="nova-coach-pill nova-training-extra-card"
-                    id="coachCard"
-                    data-secondary-card="coach"
-                >
-
-                    <div class="nova-coach-pill-top">
-
-                        <div class="nova-coach-pill-label">
-                            COACH NOVA
-                        </div>
-
-
-                        <button
-                            type="button"
-                            class="nova-coach-photo-button"
-                            id="coachPhotoButton"
-                            aria-label="Ver información del coach"
-                        >
-
-                            <img
-                                src="img/perfil1.jpeg"
-                                alt="Coach Alan Espinosa"
-                            >
-
-                        </button>
-
-                    </div>
-
-
-                    <div class="nova-coach-pill-content">
-
-                        <div class="nova-coach-pill-label">
-                            ALAN ESPINOSA
-                        </div>
-
-                        <h3>
-                            Entrena<br>
-                            con intención.
-                        </h3>
-
-                        <p>
-                            Natación, aguas abiertas y fuerza
-                            funcional.
-                        </p>
-
-
-                        <button
-                            type="button"
-                            class="nova-coach-pill-action"
-                            id="coachInfoButton"
-                        >
-
-                            <span>
-                                CONOCER AL COACH
-                            </span>
-
-                            <span>
-                                →
-                            </span>
-
-                        </button>
-
-                    </div>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-        <!-- =================================================
-             02 · NATACIÓN
+             NATACIÓN
         ================================================== -->
 
         <section
@@ -1618,7 +223,7 @@
                 <div>
 
                     <div class="nova-eyebrow">
-                        01 · DISCIPLINA
+                        DISCIPLINA
                     </div>
 
                     <h2>
@@ -1644,7 +249,46 @@
 
 
         <!-- =================================================
-             03 · FUERZA
+             AGUAS ABIERTAS
+        ================================================== -->
+
+        <section
+            class="nova-training-section"
+            id="aguas-abiertas"
+        >
+
+            <div class="nova-training-section-header">
+
+                <div>
+
+                    <div class="nova-eyebrow">
+                        DISCIPLINA
+                    </div>
+
+                    <h2>
+                        AGUAS ABIERTAS
+                    </h2>
+
+                </div>
+
+                <p>
+                    Resistencia, fuerza y orientación para sostener
+                    el esfuerzo y moverte con seguridad fuera de la piscina.
+                </p>
+
+            </div>
+
+
+            <div
+                class="nova-training-grid"
+                id="openWaterRoutineGrid"
+            ></div>
+
+        </section>
+
+
+        <!-- =================================================
+             FUERZA
         ================================================== -->
 
         <section
@@ -1657,7 +301,7 @@
                 <div>
 
                     <div class="nova-eyebrow">
-                        02 · DISCIPLINA
+                        DISCIPLINA
                     </div>
 
                     <h2>
@@ -1841,6 +485,40 @@
 
                 </div>
 
+
+                <!-- =============================================
+                     COACH · SOLO ESTÉTICO DENTRO DE LA RUTINA
+                ============================================== -->
+
+                <div
+                    class="nova-routine-modal-coach-pill"
+                    aria-hidden="true"
+                >
+
+                    <div class="nova-routine-modal-coach-photo">
+
+                        <img
+                            src="img/perfil1.jpeg"
+                            alt=""
+                        >
+
+                    </div>
+
+
+                    <div class="nova-routine-modal-coach-copy">
+
+                        <span>
+                            COACH
+                        </span>
+
+                        <strong>
+                            ALAN ESPINOSA
+                        </strong>
+
+                    </div>
+
+                </div>
+
             </div>
 
         </div>
@@ -1850,7 +528,6 @@
 
     <!-- =====================================================
          NOVA · COACH MODAL
-         SIN FOTOGRAFÍA
     ====================================================== -->
 
     <div
@@ -1886,6 +563,17 @@
 
                 <div class="nova-coach-modal-grid">
 
+
+                    <div class="nova-coach-modal-photo">
+
+                        <img
+                            src="img/perfil1.jpeg"
+                            alt="Coach Alan Espinosa"
+                        >
+
+                    </div>
+
+
                     <div class="nova-coach-modal-copy">
 
                         <div class="nova-info-modal-eyebrow">
@@ -1896,6 +584,10 @@
                             Alan<br>
                             Espinosa.
                         </h2>
+
+                        <div class="nova-coach-modal-role">
+                            Coach NOVA
+                        </div>
 
 
                         <p>
@@ -1963,6 +655,7 @@
 
     <!-- =====================================================
          NOVA · FOOTER
+         SOLO INFORMACIÓN PRINCIPAL
     ====================================================== -->
 
     <footer class="nova-footer">
@@ -1991,7 +684,7 @@
         <div class="nova-footer-bottom">
 
             <span>
-                © 2026 NOVANOVA · TRAINING
+                © 2026 NOVA · TRAINING
             </span>
 
         </div>
@@ -2012,7 +705,6 @@
 
                 /* =================================================
                    PAGE TRANSITION
-                   SIN ANIMACIÓN
                 ================================================== */
 
                 const pageTransition =
@@ -2035,8 +727,39 @@
                         return;
                     }
 
-                    window.location.href =
-                        destination;
+                    const title =
+                        link.dataset.pageTitle ||
+                        link.textContent.trim() ||
+                        "NOVA";
+
+                    if (pageTransitionLabel) {
+
+                        pageTransitionLabel.textContent =
+                            title;
+
+                    }
+
+                    document.body.classList.add(
+                        "nova-page-changing"
+                    );
+
+                    if (pageTransition) {
+
+                        pageTransition.classList.add(
+                            "is-active"
+                        );
+
+                    }
+
+                    window.setTimeout(
+                        () => {
+
+                            window.location.href =
+                                destination;
+
+                        },
+                        650
+                    );
 
                 }
 
@@ -2242,73 +965,233 @@
 
                     {
                         number: "01",
-                        title: "TRABAJO FUERTE",
+                        title: "BASE AERÓBICA",
+                        objective: "Resistencia",
+                        duration: "65–70 min",
+                        level: "Base",
+                        description:
+                            "Construye una base aeróbica sólida con bloques largos y ritmo estable. El material aparece después del calentamiento para trabajar tracción y patada sin perder continuidad.",
+                        session: [
+                            "CALENTAMIENTO · 600 m · sin material: 300 m libre suave + 200 m libre progresivo + 100 m espalda.",
+                            "BLOQUE 1 · 800 m · PULL BUOY: 4×200 m libre aeróbico. Coloca el pull buoy entre los muslos durante cada 200 m. 25–30\" de descanso.",
+                            "BLOQUE 2 · 600 m · TABLA + ALETAS: 3×200 m patada de libre. Sostén la tabla al frente y usa las aletas durante cada 200 m. 25\" de descanso.",
+                            "BLOQUE 3 · 400 m · ALETAS: 4×100 m libre a ritmo estable. Usa las aletas durante cada 100 m, concentrándote en mantener una patada continua. 20\" de descanso.",
+                            "AFLOJE · 200 m · sin material: nado muy suave, alternando libre y espalda."
+                        ],
+                        material:
+                            "TABLA: se usa en el Bloque 2 para las 3×200 m de patada. PULL BUOY: se coloca entre los muslos en el Bloque 1 durante las 4×200 m. ALETAS: se usan en los Bloques 2 y 3. Si no tienes material, no hay problema: Bloque 1 se hace nadando libre normal; Bloque 2 se hace patada de libre sin tabla, con brazos extendidos al frente; Bloque 3 se hace libre sin aletas manteniendo una patada activa.",
+                        focus:
+                            "Ritmo aeróbico, posición del cuerpo y capacidad de sostener metros sin perder eficiencia."
+                    },
+
+                    {
+                        number: "02",
+                        title: "4 ESTILOS · TÉCNICA",
+                        objective: "Técnica",
+                        duration: "65–75 min",
+                        level: "Intermedio",
+                        description:
+                            "Sesión específica para los cuatro estilos: mariposa, espalda, pecho y libre. El objetivo es mantener técnica y control antes de aumentar la intensidad.",
+                        session: [
+                            "CALENTAMIENTO · 600 m · sin material: 300 m libre + 100 m espalda + 100 m pecho + 100 m libre progresivo.",
+                            "BLOQUE 1 · 400 m · 4×100 m, uno por estilo: 100 m mariposa + 100 m espalda + 100 m pecho + 100 m libre. 25–30\" de descanso entre repeticiones.",
+                            "BLOQUE 2 · 800 m · 4×200 m: cada 200 m = 100 m del estilo correspondiente + 100 m libre controlado. Orden: mariposa, espalda, pecho, libre. 30\" de descanso.",
+                            "BLOQUE 3 · 400 m · PULL BUOY: 4×100 m libre. Coloca el pull buoy entre los muslos para aislar la tracción y mantener el cuerpo alineado. 20\" de descanso.",
+                            "BLOQUE 4 · 400 m · TABLA + ALETAS: 4×100 m de patada, alternando libre y espalda. Tabla al frente en libre; en espalda, sostén la tabla sobre los muslos o realiza la patada sin tabla si resulta incómodo. Aletas durante los 400 m.",
+                            "AFLOJE · 200 m · sin material: muy suave, eligiendo libre o espalda."
+                        ],
+                        material:
+                            "PULL BUOY: Bloque 3, 4×100 m libre. TABLA: Bloque 4, principalmente en patada de libre. ALETAS: Bloque 4 durante las 4×100 m. En los cuatro estilos del Bloque 1 y Bloque 2 no se usa material. Si no tienes material, el Bloque 3 se hace libre normal concentrando la atención en la tracción y el Bloque 4 se hace patada sin aletas; la tabla puede sustituirse por brazos extendidos al frente.",
+                        focus:
+                            "Calidad técnica de mariposa, espalda, pecho y libre; cada estilo debe conservar su mecánica antes de buscar velocidad."
+                    },
+
+                    {
+                        number: "03",
+                        title: "UMBRAL CONTROLADO",
                         objective: "Umbral",
                         duration: "65–70 min",
                         level: "Rendimiento",
                         description:
-                            "Sesión orientada a sostener esfuerzos altos durante bloques largos, buscando control del ritmo y tolerancia al esfuerzo.",
+                            "Bloques largos a intensidad controlada para aprender a sostener un ritmo exigente sin convertir la sesión en una serie de sprints.",
                         session: [
-                            "300m libre continuo",
-                            "4×100m · progresivos · 20\" descanso",
-                            "4×200m · ritmo fuerte controlado · 30\" descanso",
-                            "3×200m · ritmo alto · 30\" descanso",
-                            "2×100m · fuertes · 25\" descanso",
-                            "200m suave"
+                            "CALENTAMIENTO · 600 m · sin material: 300 m libre suave + 200 m libre progresivo + 100 m espalda.",
+                            "BLOQUE 1 · 800 m · PULL BUOY: 4×200 m libre a ritmo de umbral controlado. Pull buoy entre los muslos durante cada 200 m. 30\" de descanso.",
+                            "BLOQUE 2 · 600 m · ALETAS: 3×200 m libre. Usa las aletas para mantener una posición alta y una patada constante; los primeros 100 m controlados y los segundos 100 m ligeramente más fuertes. 30\" de descanso.",
+                            "BLOQUE 3 · 400 m · TABLA + ALETAS: 4×100 m patada de libre fuerte pero sostenible. Tabla al frente y aletas durante toda la repetición. 25\" de descanso.",
+                            "BLOQUE 4 · 400 m · sin material: 2×200 m libre a ritmo sostenido. 30\" de descanso.",
+                            "AFLOJE · 200 m · sin material: nado suave."
                         ],
                         material:
-                            "Pull buoy en 2×200m si se desea aumentar el trabajo de tracción.",
+                            "PULL BUOY: Bloque 1, 4×200 m. ALETAS: Bloques 2 y 3. TABLA: Bloque 3. Si no hay material, realiza los 4×200 m nadando libre normal; sustituye las 3×200 m con aletas por libre manteniendo una patada constante y el bloque de tabla por patada sin tabla, brazos extendidos al frente.",
                         focus:
-                            "Sostener intensidad sin perder técnica ni convertir cada repetición en un sprint."
+                            "Encontrar un ritmo fuerte que puedas sostener con técnica estable y respiración controlada."
                     },
 
-
                     {
-                        number: "02",
-                        title: "VELOCIDAD E INTENSIDAD",
-                        objective: "Velocidad",
-                        duration: "55–60 min",
-                        level: "Rendimiento",
+                        number: "04",
+                        title: "4 ESTILOS · RESISTENCIA",
+                        objective: "Resistencia técnica",
+                        duration: "70–75 min",
+                        level: "Intermedio",
                         description:
-                            "Trabajo de aceleración y velocidad con recuperaciones suficientes para mantener calidad en cada bloque.",
+                            "Segundo trabajo específico de los cuatro estilos, ahora con mayor continuidad para aprender a conservar la técnica cuando aparece la fatiga.",
                         session: [
-                            "300m libre continuo",
-                            "4×100m · técnica + progresión · 20\" descanso",
-                            "6×100m · ritmo fuerte · 30\" descanso",
-                            "4×200m · 100m controlado + 100m fuerte · 30\" descanso",
-                            "4×100m · máximo controlado · 35\" descanso",
-                            "200m recuperación"
+                            "CALENTAMIENTO · 600 m · sin material: 200 m libre + 200 m espalda + 100 m pecho + 100 m libre.",
+                            "BLOQUE 1 · 800 m · 4×200 m: 100 m mariposa + 100 m libre / 100 m espalda + 100 m libre / 100 m pecho + 100 m libre / 200 m libre. 30\" de descanso.",
+                            "BLOQUE 2 · 400 m · PULL BUOY: 4×100 m libre, ritmo aeróbico alto. Pull buoy entre los muslos durante cada repetición. 20\" de descanso.",
+                            "BLOQUE 3 · 600 m · TABLA + ALETAS: 3×200 m patada. 100 m libre + 100 m espalda en cada repetición. Tabla para la parte de libre; para espalda puedes colocarla sobre los muslos. Aletas durante los 600 m. 25\" de descanso.",
+                            "BLOQUE 4 · 400 m · sin material: 4×100 m, uno por estilo, a ritmo técnico sostenido. 20–25\" de descanso.",
+                            "AFLOJE · 200 m · sin material: libre muy suave."
                         ],
                         material:
-                            "Sin material.",
+                            "PULL BUOY: Bloque 2. TABLA + ALETAS: Bloque 3. Los cuatro estilos del Bloque 1 y Bloque 4 son sin material. Si no tienes material, nada igual: sustituye el pull buoy por libre normal y realiza la patada sin tabla ni aletas, manteniendo brazos extendidos y una patada controlada.",
                         focus:
-                            "Acelerar con control, mantener frecuencia de brazada y conservar una técnica eficiente."
+                            "Sostener la técnica de los cuatro estilos cuando aumenta el volumen y aparece fatiga."
                     },
 
-
                     {
-                        number: "03",
-                        title: "FONDO Y CONTROL",
-                        objective: "Fondo",
-                        duration: "70 min",
+                        number: "05",
+                        title: "RITMO + CAMBIO",
+                        objective: "Ritmo",
+                        duration: "65–70 min",
                         level: "Rendimiento",
                         description:
-                            "Sesión de mayor volumen para desarrollar resistencia y capacidad de mantener un ritmo estable durante distancias prolongadas.",
+                            "Trabajo de cambios de ritmo dentro de bloques largos para mejorar la capacidad de acelerar y volver a controlar el esfuerzo.",
                         session: [
-                            "300m libre continuo",
-                            "2×300m · libre aeróbico · 30\" descanso",
-                            "4×200m · ritmo constante · 30\" descanso",
-                            "2×300m · ritmo medio · 35\" descanso",
-                            "200m libre suave"
+                            "CALENTAMIENTO · 600 m · sin material: 300 m libre + 100 m espalda + 200 m libre progresivo.",
+                            "BLOQUE 1 · 800 m · PULL BUOY: 4×200 m libre. Primer 100 m controlado + segundo 100 m fuerte. Pull buoy durante cada 200 m. 30\" de descanso.",
+                            "BLOQUE 2 · 600 m · TABLA + ALETAS: 3×200 m patada de libre. Primer 100 m cómodo + segundo 100 m fuerte. Tabla al frente y aletas durante cada 200 m. 25\" de descanso.",
+                            "BLOQUE 3 · 400 m · ALETAS: 4×100 m libre. 50 m ritmo estable + 50 m fuerte. Aletas durante cada repetición. 25\" de descanso.",
+                            "BLOQUE 4 · 400 m · sin material: 2×200 m libre fuerte controlado. 30\" de descanso.",
+                            "AFLOJE · 200 m · sin material: muy suave."
                         ],
                         material:
-                            "Pull buoy opcional en uno de los bloques de 300m.",
+                            "PULL BUOY: Bloque 1. TABLA + ALETAS: Bloque 2. ALETAS: Bloque 3. Si no tienes material, realiza los mismos metros sin equipo; en los bloques de patada, mantén brazos extendidos al frente y genera el movimiento desde la cadera.",
                         focus:
-                            "Regular el esfuerzo, evitar cambios innecesarios de ritmo y terminar con capacidad de mantener la técnica."
+                            "Aprender a cambiar de ritmo sin perder la posición del cuerpo, la respiración ni la longitud de brazada."
                     }
 
                 ];
 
+
+                /* =================================================
+                   AGUAS ABIERTAS
+                ================================================== */
+
+                const openWaterRoutines = [
+
+                    {
+                        number: "01",
+                        title: "FUERZA EN EL AGUA I",
+                        objective: "Fuerza",
+                        duration: "60–65 min",
+                        level: "Intermedio",
+                        description:
+                            "Trabajo de fuerza específica de nado para sostener una brazada firme y eficiente durante esfuerzos prolongados en aguas abiertas.",
+                        session: [
+                            "CALENTAMIENTO · 800 m · 400 m suave + 200 m progresivo + 200 m suave con respiración bilateral.",
+                            "BLOQUE 1 · 4×300 m: 200 m fuerte controlado + 100 m suave. 35\" de descanso.",
+                            "BLOQUE 2 · 4×200 m: brazada firme y ritmo constante. Los primeros 100 m controlados + segundos 100 m fuertes. 30\" de descanso.",
+                            "BLOQUE 3 · 4×100 m: 25–30 m de orientación cada 6–8 brazadas + continuar fuerte hasta completar 100 m. 25\" de descanso.",
+                            "AFLOJE · 300 m suave."
+                        ],
+                        material:
+                            "No requiere material. Si el entorno permite usar pull buoy de forma segura, puede utilizarse en uno de los 4×200 m, pero no es necesario.",
+                        focus:
+                            "Aplicar fuerza desde el agarre y mantener una brazada larga aun cuando aumenta la fatiga."
+                    },
+
+                    {
+                        number: "02",
+                        title: "FUERZA EN EL AGUA II",
+                        objective: "Fuerza específica",
+                        duration: "60–70 min",
+                        level: "Rendimiento",
+                        description:
+                            "Sesión de fuerza-resistencia para aguas abiertas, con cambios controlados de presión y ritmo sin depender de sprints cortos.",
+                        session: [
+                            "CALENTAMIENTO · 700 m · 300 m suave + 200 m libre progresivo + 200 m a ritmo cómodo.",
+                            "BLOQUE 1 · 3×300 m: primeros 100 m fuertes + 100 m controlados + 100 m fuertes. 40\" de descanso.",
+                            "BLOQUE 2 · 4×200 m: mantener alta presión de brazada durante todo el bloque. 30\" de descanso.",
+                            "BLOQUE 3 · 3×200 m: 150 m fuertes + 50 m suave, practicando orientación al frente sin levantar demasiado la cabeza. 30\" de descanso.",
+                            "AFLOJE · 300 m suave."
+                        ],
+                        material:
+                            "Sin material obligatorio. El ejercicio se realiza con el peso corporal y la resistencia natural del agua. No es necesario añadir equipo para generar fuerza.",
+                        focus:
+                            "Fuerza-resistencia, agarre del agua y control de la orientación mientras se mantiene presión en la brazada."
+                    },
+
+                    {
+                        number: "03",
+                        title: "RESISTENCIA CONTINUA",
+                        objective: "Resistencia",
+                        duration: "70–80 min",
+                        level: "Intermedio",
+                        description:
+                            "Sesión orientada a sostener un esfuerzo aeróbico largo y estable, reduciendo cambios innecesarios de ritmo.",
+                        session: [
+                            "CALENTAMIENTO · 600 m suave.",
+                            "BLOQUE PRINCIPAL · 1,200 m continuos a ritmo aeróbico estable. Cada 200 m realiza una breve revisión de respiración, posición y orientación.",
+                            "BLOQUE 2 · 2×500 m: ritmo estable; los últimos 100 m de cada bloque ligeramente más fuertes. 45\" de descanso.",
+                            "BLOQUE 3 · 400 m continuo suave-moderado.",
+                            "AFLOJE · 300 m muy suave."
+                        ],
+                        material:
+                            "Sin material. La sesión busca que la resistencia provenga de la continuidad del nado y del control del ritmo.",
+                        focus:
+                            "Economía de movimiento, respiración bilateral cuando sea posible y capacidad de sostener un ritmo constante."
+                    },
+
+                    {
+                        number: "04",
+                        title: "RESISTENCIA POR BLOQUES",
+                        objective: "Resistencia",
+                        duration: "70–75 min",
+                        level: "Rendimiento",
+                        description:
+                            "Bloques largos con pequeños cambios de ritmo para preparar el cuerpo para esfuerzos prolongados y variables en aguas abiertas.",
+                        session: [
+                            "CALENTAMIENTO · 700 m · 300 m suave + 200 m progresivo + 200 m cómodo.",
+                            "BLOQUE 1 · 3×400 m: 300 m ritmo aeróbico + 100 m moderadamente fuerte. 40\" de descanso.",
+                            "BLOQUE 2 · 3×300 m: 200 m estable + 100 m fuerte controlado. 35\" de descanso.",
+                            "BLOQUE 3 · 2×200 m: ritmo continuo, buscando terminar la segunda repetición al mismo ritmo que la primera. 30\" de descanso.",
+                            "AFLOJE · 300 m suave."
+                        ],
+                        material:
+                            "Sin material obligatorio. Si se dispone de pull buoy y se quiere añadir trabajo de tracción, puede usarse únicamente en uno de los 3×300 m; no es necesario para completar la sesión.",
+                        focus:
+                            "Regular el esfuerzo y evitar salir demasiado rápido para poder sostener el ritmo hasta el final."
+                    },
+
+                    {
+                        number: "05",
+                        title: "ORIENTACIÓN Y NAVEGACIÓN",
+                        objective: "Orientación",
+                        duration: "55–65 min",
+                        level: "Intermedio",
+                        description:
+                            "Sesión para practicar orientación, respiración y cambios de dirección sin perder ritmo ni eficiencia de nado.",
+                        session: [
+                            "CALENTAMIENTO · 600 m suave, identificando referencias visuales del recorrido.",
+                            "BLOQUE 1 · 4×300 m: practicar orientación cada 6–8 brazadas durante los primeros 100 m; después nadar normalmente. 30\" de descanso.",
+                            "BLOQUE 2 · 4×200 m: cambiar ligeramente la dirección al llegar a una referencia marcada, manteniendo el ritmo. 30\" de descanso.",
+                            "BLOQUE 3 · 4×100 m: orientación + respiración bilateral cuando sea posible. 25\" de descanso.",
+                            "AFLOJE · 300 m suave."
+                        ],
+                        material:
+                            "No requiere material deportivo. Se necesita un recorrido seguro y, de ser posible, referencias visibles en el entorno. En aguas abiertas, priorizar siempre una zona supervisada y segura.",
+                        focus:
+                            "Levantar la vista lo mínimo necesario, encontrar referencias, corregir la trayectoria y volver inmediatamente a una posición eficiente."
+                    }
+
+                ];
+
+
+                /* =================================================
+                   FUERZA
+                ================================================== */
 
                 const strengthRoutines = [
 
@@ -2317,48 +1200,46 @@
                         title: "CONTROL CORPORAL",
                         objective: "Control",
                         duration: "45–55 min",
-                        level: "Intermedio",
+                        level: "Base",
                         description:
-                            "Sesión enfocada en controlar el cuerpo bajo tensión, mejorando estabilidad y coordinación.",
+                            "Sesión para aprender a controlar posiciones, tensión y estabilidad antes de buscar cargas altas.",
                         session: [
-                            "Calentamiento dinámico · 8 min",
-                            "Sentadilla tempo · 4×6",
-                            "Push-up tempo · 4×8–12",
-                            "Remo unilateral · 3×10 por lado",
-                            "Split squat isométrico · 3×30–40\" por pierna",
-                            "Bear crawl · 4×20–30m",
-                            "Hollow hold · 3×30–40\""
+                            "CALENTAMIENTO · 8 min: movilidad de cadera, hombros, tobillos y 2 rondas de sentadilla + push-up + dead bug.",
+                            "SENTADILLA TEMPO · 4×8. Sin material: pies al ancho de hombros, baja en 3 segundos, pausa 1 segundo y sube con control.",
+                            "PUSH-UP · 4×8–12. Sin material: manos bajo o ligeramente fuera de hombros; cuerpo en línea. Si es difícil, apoyar rodillas.",
+                            "REMO UNILATERAL · 3×10 por lado. MATERIAL: 1 mancuerna. Apoya una mano en una superficie estable y lleva el codo hacia la cadera. SIN MATERIAL: realiza remo isométrico con una toalla, tirando de ambos extremos en sentidos opuestos.",
+                            "SPLIT SQUAT ISOMÉTRICO · 3×30–40\" por pierna. Sin material: baja a una posición estable y mantén. Con carga, sostén una mancuerna a cada lado.",
+                            "BEAR CRAWL · 4×20–30 m. Sin material: rodillas cerca del suelo, espalda estable y pasos cortos y controlados.",
+                            "HOLLOW HOLD · 3×30–40\". Sin material: espalda baja pegada al suelo; extiende brazos y piernas solo hasta donde puedas mantener esa posición."
                         ],
                         material:
-                            "Sin material obligatorio.",
+                            "Solo se utiliza una mancuerna en el remo unilateral y, opcionalmente, en el split squat. Si no hay mancuerna, ambos ejercicios se realizan sin carga siguiendo las instrucciones de la sesión.",
                         focus:
-                            "Tempo, posiciones estables, tensión corporal y control del movimiento."
+                            "Control corporal, estabilidad y calidad de movimiento. La prioridad es mantener posiciones sólidas antes que aumentar dificultad."
                     },
-
 
                     {
                         number: "02",
                         title: "PIERNA + CORE",
-                        objective: "Pierna + core",
+                        objective: "Fuerza",
                         duration: "50–60 min",
                         level: "Intermedio",
                         description:
-                            "Trabajo enfocado en fortalecer piernas y zona media para mejorar estabilidad, control y capacidad de producir fuerza.",
+                            "Trabajo de piernas y zona media para desarrollar fuerza útil y estabilidad durante movimientos básicos.",
                         session: [
-                            "Calentamiento dinámico · 8–10 min",
-                            "Sentadilla frontal · 4×6",
-                            "Zancada atrás · 3×10 por pierna",
-                            "Peso muerto rumano · 4×6",
-                            "Hip thrust · 4×8",
-                            "Dead bug · 3×10 por lado",
-                            "Hollow hold · 3×30–40\""
+                            "CALENTAMIENTO · 8–10 min: sentadillas sin peso, zancadas, puente de glúteo y movilidad de tobillo.",
+                            "SENTADILLA GOBLET · 4×8. MATERIAL: 1 mancuerna o kettlebell frente al pecho. SIN MATERIAL: sentadilla con peso corporal y tempo 3–1–1.",
+                            "PESO MUERTO RUMANO · 4×8. MATERIAL: barra o 2 mancuernas; mantén el peso cerca de las piernas y empuja la cadera atrás. SIN MATERIAL: bisagra de cadera lenta, manos en las caderas, buscando sentir isquiotibiales.",
+                            "ZANCADA ATRÁS · 3×10 por pierna. MATERIAL: 2 mancuernas a los lados si se dispone. SIN MATERIAL: usar solo el peso corporal y controlar la bajada.",
+                            "PUENTE DE GLÚTEO · 3×12–15. Sin material: elevar cadera apretando glúteos. CON CARGA: apoyar una mancuerna sobre la pelvis y sujetarla con ambas manos.",
+                            "DEAD BUG · 3×10 por lado. Sin material: espalda baja pegada al suelo mientras extiendes brazo y pierna contrarios.",
+                            "PLANK · 3×30–45\". Sin material: codos bajo hombros y cuerpo en línea."
                         ],
                         material:
-                            "Barra y discos.",
+                            "Mancuerna/kettlebell para sentadilla goblet, barra o mancuernas para peso muerto rumano y carga opcional para zancadas/puente. Si no hay material, todos los ejercicios tienen la variante con peso corporal descrita en la sesión.",
                         focus:
-                            "Control de piernas, estabilidad de cadera y tensión del core durante cada movimiento."
+                            "Fuerza de piernas, control de cadera y capacidad de mantener el tronco estable durante el esfuerzo."
                     },
-
 
                     {
                         number: "03",
@@ -2367,21 +1248,66 @@
                         duration: "55–65 min",
                         level: "Rendimiento",
                         description:
-                            "Sesión que combina fuerza y movimientos explosivos para desarrollar capacidad de producir fuerza con velocidad.",
+                            "Combina movimientos de fuerza con acciones explosivas para desarrollar capacidad de producir fuerza rápidamente.",
                         session: [
-                            "Calentamiento general · 10 min",
-                            "Saltos verticales · 4×5",
-                            "Sentadilla frontal · 5×4",
-                            "Push press · 4×5",
-                            "Peso muerto rumano · 4×6",
-                            "Zancada explosiva · 3×6 por pierna",
-                            "Farmer carry · 4×30m",
-                            "Hollow hold · 3×40\""
+                            "CALENTAMIENTO · 10 min: movilidad + 3 rondas de sentadilla, bisagra de cadera, push-up y saltos suaves.",
+                            "SALTOS VERTICALES · 4×5. Sin material: baja ligeramente y salta buscando altura; aterriza suave y estable.",
+                            "SENTADILLA FRONTAL · 5×4. MATERIAL: barra en posición frontal. SIN BARRA: sentadilla goblet con una mancuerna o sentadilla de peso corporal lenta.",
+                            "PUSH PRESS · 4×5. MATERIAL: barra o 2 mancuernas. Impulsa desde piernas y termina extendiendo brazos. SIN MATERIAL: sustituye por 5–8 flexiones explosivas controladas.",
+                            "PESO MUERTO RUMANO · 4×6. MATERIAL: barra o mancuernas. Mantén espalda neutra y lleva la cadera atrás. SIN MATERIAL: bisagra de cadera lenta con pausa abajo.",
+                            "FARMER CARRY · 4×30 m. MATERIAL: 2 mancuernas/kettlebells a los lados. Camina erguido sin inclinarte. SIN MATERIAL: marcha de carga unilateral con una mochila moderadamente pesada, si está disponible; si no, realiza marcha lenta manteniendo tensión abdominal.",
+                            "HOLLOW HOLD · 3×40\". Sin material: mantener abdomen activo y espalda baja pegada al suelo."
                         ],
                         material:
-                            "Barra, discos y espacio suficiente para movimientos explosivos.",
+                            "Barra/mancuernas para sentadilla frontal, push press y peso muerto rumano; 2 cargas para farmer carry. Si no hay equipo, usa las alternativas especificadas en cada ejercicio. Los saltos no requieren material.",
                         focus:
-                            "Producir fuerza rápidamente sin sacrificar posición, control ni calidad técnica."
+                            "Mover cargas con técnica sólida y reservar la velocidad para las repeticiones que puedas ejecutar con control."
+                    },
+
+                    {
+                        number: "04",
+                        title: "TRACCIÓN + TREN SUPERIOR",
+                        objective: "Tracción",
+                        duration: "50–60 min",
+                        level: "Intermedio",
+                        description:
+                            "Fortalece espalda, hombros, pecho y brazos para complementar el trabajo de natación y mejorar el control del tren superior.",
+                        session: [
+                            "CALENTAMIENTO · 8–10 min: movilidad de hombros + 2 rondas de scapular push-up, remo ligero y plancha.",
+                            "REMO CON MANCUERNA · 4×10 por lado. MATERIAL: 1 mancuerna. Apoya una mano y rema llevando el codo hacia la cadera. SIN MATERIAL: remo isométrico con toalla, tirando en sentidos opuestos.",
+                            "PRESS DE PISO · 4×8–10. MATERIAL: 2 mancuernas. Acostado boca arriba, baja codos hasta tocar suavemente el suelo y presiona hacia arriba. SIN MATERIAL: push-up controlado.",
+                            "PULL-OVER · 3×10. MATERIAL: 1 mancuerna. Acostado, lleva la carga por detrás de la cabeza sin perder control costal. SIN MATERIAL: dead bug con brazos extendidos por encima de la cabeza.",
+                            "ELEVACIÓN LATERAL · 3×12. MATERIAL: 2 mancuernas ligeras. Eleva hasta aproximadamente la línea de hombros. SIN MATERIAL: realizar el movimiento lento sin carga, manteniendo tensión voluntaria.",
+                            "PUSH-UP · 3×8–15. Sin material. Si es difícil, manos elevadas sobre una superficie estable.",
+                            "PLANK SHOULDER TAP · 3×10 por lado. Sin material: desde plancha alta, toca hombro contrario sin balancear la cadera."
+                        ],
+                        material:
+                            "Mancuernas para remo, press de piso, pull-over y elevaciones laterales. Si no hay mancuernas, utiliza las alternativas descritas en cada ejercicio; push-up y plancha no necesitan equipo.",
+                        focus:
+                            "Tracción, estabilidad escapular y control del tronco para que la fuerza del tren superior se transfiera mejor al movimiento."
+                    },
+
+                    {
+                        number: "05",
+                        title: "FUERZA TOTAL",
+                        objective: "Fuerza global",
+                        duration: "55–65 min",
+                        level: "Rendimiento",
+                        description:
+                            "Sesión completa de cuerpo entero que integra pierna, bisagra, empuje, tracción y zona media.",
+                        session: [
+                            "CALENTAMIENTO · 10 min: movilidad + 2 rondas de sentadilla, bisagra, push-up y dead bug.",
+                            "SENTADILLA · 4×6. MATERIAL: barra o 1 mancuerna/kettlebell. Con barra, apoya la carga de forma segura y desciende manteniendo rodillas y pies alineados. SIN MATERIAL: sentadilla tempo 4×8.",
+                            "PESO MUERTO RUMANO · 4×6. MATERIAL: barra o mancuernas. Lleva la cadera atrás manteniendo la carga cerca del cuerpo. SIN MATERIAL: bisagra de cadera lenta con pausa.",
+                            "PRESS · 4×8. MATERIAL: 2 mancuernas o barra. Empuja desde una posición estable sin arquear excesivamente la espalda. SIN MATERIAL: push-up 4×8–15.",
+                            "REMO · 4×8–10. MATERIAL: mancuerna, barra o banda. Mantén el torso estable y lleva los codos atrás. SIN MATERIAL: remo isométrico con toalla.",
+                            "CARRY · 4×30 m. MATERIAL: 2 mancuernas/kettlebells. Camina erguido. SIN MATERIAL: marcha lenta manteniendo abdomen y postura, o usa una mochila si está disponible.",
+                            "PLANK · 3×45\". Sin material: cuerpo en línea y abdomen activo."
+                        ],
+                        material:
+                            "Barra/mancuernas para los movimientos principales y 2 cargas para carry. No es obligatorio tener todo el equipo: cada ejercicio incluye una alternativa sin material o con peso corporal.",
+                        focus:
+                            "Integrar fuerza de todo el cuerpo sin sacrificar técnica. La calidad de cada repetición es más importante que la cantidad de carga."
                     }
 
                 ];
@@ -2395,6 +1321,11 @@
                 const strengthGrid =
                     document.getElementById(
                         "strengthRoutineGrid"
+                    );
+
+                const openWaterGrid =
+                    document.getElementById(
+                        "openWaterRoutineGrid"
                     );
 
 
@@ -2414,6 +1345,12 @@
 
                     card.className =
                         "nova-training-card nova-routine-card";
+
+
+                    /*
+                     * SE CONSERVA LA INFORMACIÓN SECUNDARIA
+                     * DE LA CARTA.
+                     */
 
                     card.setAttribute(
                         "data-secondary-card",
@@ -2455,17 +1392,18 @@
                                 ${routine.description}
                             </p>
 
+
                             <button
                                 type="button"
                                 class="nova-training-card-button"
                             >
+
                                 <span>
                                     VER RUTINA
                                 </span>
 
-                                <span>
-                                    →
-                                </span>
+                                <span></span>
+
                             </button>
 
                         </div>
@@ -2505,6 +1443,7 @@
                         (event) => {
 
                             event.preventDefault();
+
                             event.stopPropagation();
 
                             openRoutineModal(
@@ -2530,6 +1469,24 @@
                                 createRoutineCard(
                                     routine,
                                     "NATACIÓN"
+                                )
+                            );
+
+                        }
+                    );
+
+                }
+
+
+                if (openWaterGrid) {
+
+                    openWaterRoutines.forEach(
+                        (routine) => {
+
+                            openWaterGrid.appendChild(
+                                createRoutineCard(
+                                    routine,
+                                    "AGUAS ABIERTAS"
                                 )
                             );
 
@@ -2635,6 +1592,7 @@
                     if (!routineModal) {
                         return;
                     }
+
 
                     routineModalNumber.textContent =
                         routine.number;
@@ -2750,22 +1708,8 @@
 
                 /* =================================================
                    COACH INFORMATION
+                   HEADER + HAMBURGUESA
                 ================================================== */
-
-                const coachCard =
-                    document.getElementById(
-                        "coachCard"
-                    );
-
-                const coachPhotoButton =
-                    document.getElementById(
-                        "coachPhotoButton"
-                    );
-
-                const coachInfoButton =
-                    document.getElementById(
-                        "coachInfoButton"
-                    );
 
                 const coachModal =
                     document.getElementById(
@@ -2824,12 +1768,12 @@
                         "true"
                     );
 
-                    const anotherModalIsOpen =
-                        document.querySelector(
-                            ".nova-info-modal.is-open"
-                        );
 
-                    if (!anotherModalIsOpen) {
+                    if (
+                        !document.querySelector(
+                            ".nova-info-modal.is-open"
+                        )
+                    ) {
 
                         document.body.classList.remove(
                             "nova-info-modal-open"
@@ -2842,6 +1786,8 @@
 
                 function openCoach() {
 
+                    closeMenu();
+
                     openInfoModal(
                         coachModal
                     );
@@ -2849,58 +1795,34 @@
                 }
 
 
-                if (coachPhotoButton) {
+                /*
+                 * COACH EN HEADER Y HAMBURGUESA
+                 * ABRE EL MISMO MODAL.
+                 */
 
-                    coachPhotoButton.addEventListener(
-                        "click",
-                        (event) => {
+                document.addEventListener(
+                    "click",
+                    (event) => {
 
-                            event.stopPropagation();
+                        const coachTrigger =
+                            event.target.closest(
+                                ".js-open-coach"
+                            );
 
-                            openCoach();
 
+                        if (!coachTrigger) {
+                            return;
                         }
-                    );
-
-                }
 
 
-                if (coachInfoButton) {
+                        event.preventDefault();
 
-                    coachInfoButton.addEventListener(
-                        "click",
-                        (event) => {
+                        event.stopPropagation();
 
-                            event.stopPropagation();
+                        openCoach();
 
-                            openCoach();
-
-                        }
-                    );
-
-                }
-
-
-                if (coachCard) {
-
-                    coachCard.addEventListener(
-                        "click",
-                        (event) => {
-
-                            if (
-                                event.target.closest(
-                                    "button"
-                                )
-                            ) {
-                                return;
-                            }
-
-                            openCoach();
-
-                        }
-                    );
-
-                }
+                    }
+                );
 
 
                 if (coachModalClose) {
@@ -2942,21 +1864,35 @@
                 const secondaryCardInfo = {
 
                     natacion: {
-                        title: "NOVA · NATACIÓN",
+
+                        title:
+                            "NOVA · NATACIÓN",
+
                         text:
-                            "Técnica, resistencia, ritmo y eficiencia dentro del agua. Cada sesión busca construir una base sólida y progresar de manera ordenada."
+                            "Nadar bien no es solo recorrer más metros. La técnica, la resistencia y el control del ritmo permiten moverte con mayor eficiencia, reducir el desgaste y sostener mejor el esfuerzo."
+
                     },
+
 
                     fuerza: {
-                        title: "NOVA · FUERZA",
+
+                        title:
+                            "NOVA · FUERZA",
+
                         text:
-                            "Fuerza funcional, estabilidad, control corporal y capacidad física. El trabajo combina patrones fundamentales, progresión y calidad técnica."
+                            "La fuerza mejora la capacidad de producir y controlar movimiento. Ayuda a desarrollar estabilidad, potencia y control corporal para entrenar mejor y rendir más."
+
                     },
 
-                    coach: {
-                        title: "NOVA · COACH",
+
+                    "aguas abiertas": {
+
+                        title:
+                            "NOVA · AGUAS ABIERTAS",
+
                         text:
-                            "Alan Espinosa desarrolla entrenamientos de natación, aguas abiertas y fuerza funcional con estructura, progresión y una intención clara."
+                            "El trabajo en aguas abiertas combina resistencia, fuerza y orientación para adaptarte al entorno y sostener el esfuerzo fuera de la piscina."
+
                     }
 
                 };
@@ -2970,6 +1906,7 @@
                     if (!card) {
                         return;
                     }
+
 
                     const existing =
                         card.querySelector(
@@ -3024,21 +1961,9 @@
                         );
 
 
-                    const coachContent =
-                        card.querySelector(
-                            ".nova-coach-pill-content"
-                        );
-
-
                     if (cardContent) {
 
                         cardContent.appendChild(
-                            content
-                        );
-
-                    } else if (coachContent) {
-
-                        coachContent.appendChild(
                             content
                         );
 
@@ -3051,8 +1976,14 @@
                     }
 
 
-                    content.classList.add(
-                        "is-visible"
+                    requestAnimationFrame(
+                        () => {
+
+                            content.classList.add(
+                                "is-visible"
+                            );
+
+                        }
                     );
 
                 }
